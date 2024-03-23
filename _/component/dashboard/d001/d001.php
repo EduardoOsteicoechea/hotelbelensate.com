@@ -69,7 +69,8 @@
 				"options_card_description_card",
 				"order",
 				"viewer_2d",
-				"viewer_2d_carrousel"
+				"viewer_2d_carrousel",
+				"option_date_picker"
 			];
 
 			$search_bar =  new search_bar ( $this->search_bar_id,       $this->search_bar_class                      );

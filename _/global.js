@@ -1,6 +1,19 @@
 history.scrollRestoration = "manual";
 history.scrollRestoration = "auto";
 
+function disable_page_scrolling_function() {	
+	document.body.style.overflowY = 'hidden';
+	window.addEventListener('scroll', function(event) {
+		event.preventDefault();
+	});
+}
+function enable_page_scrolling_function() {
+	document.body.style.overflowY = 'auto';
+	window.removeEventListener('scroll', function(event) {
+		event.preventDefault();
+	});
+}
+
 function calculate_day_quantity(date_1, date_2) 
 {
 	var date_1_time = new Date(date_1).getTime();

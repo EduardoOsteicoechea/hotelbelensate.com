@@ -1,0 +1,115 @@
+.d001_option_date_picker_global_container
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	width: 100dvw;
+	height: 100dvh;
+	background: rgba(0,0,0,.5);
+	overflow: hidden;
+}
+
+
+
+
+.d001_close_option_date_picker_button
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	color: var(--c1);
+	font-size: .7dvw;
+	cursor: pointer;
+	padding: 1.5dvw 2dvw;
+	background: var(--c2);
+	overflow: hidden;
+	/* border: var(--b1); */
+}
+.d001_close_option_date_picker_button:hover
+{
+	transform: scale(1.05);
+	color: var(--c1);
+	background: var(--c2);
+}
+
+
+
+
+.d001_room_image_and_available_dates_container
+{
+	display: flex;
+	align-items: center;
+	z-index: 100;
+	width: 80dvw;
+	height: 20dvw;
+	background: var(--c1);
+	overflow: hidden;
+}
+
+
+.d001_room_image_and_available_dates_container_room_image_container
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	width: 21dvw;
+	height: 100%;
+	overflow: hidden;
+}
+.d001_room_image_and_available_dates_container_room_image_container_image
+{
+	height: 100%;
+}
+
+
+
+.d001_room_name_and_modal_prompt_container
+{
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1dvw;
+	z-index: 100;
+	width: 59dvw;
+	height: 2.5dvw;
+	overflow: hidden;
+	font-size: .8dvw;
+	padding: 1dvw 2dvw;
+	border: var(--b1);
+}
+.d001_room_name_and_modal_prompt_container_room_name
+{}
+.d001_room_name_and_modal_prompt_container_separator
+{}
+.d001_room_name_and_modal_prompt_container_prompt
+{}
+
+
+
+
+
+
+
+.d001_room_available_dates_container
+{
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 1dvw;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-size: .8dvw;
+	padding: 1dvw 2dvw;
+	border: var(--b1);
+}

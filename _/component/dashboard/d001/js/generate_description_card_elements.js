@@ -1,13 +1,10 @@
 // Called from ./generate_initial_options.js
 
-import add_room_to_order from "./add_room_to_order.js";
 import generate_description_card_icons from "./generate_description_card_icons.js";
 import generate_description_card_capacity_icons from "./generate_description_card_capacity_icons.js";
-import CLASS_room_reservation_date_picker from "./CLASS_room_reservation_date_picker.js";
-import close_2d_viewer from "./close_2d_viewer.js";
+import prompt_for_room_dates from "./prompt_for_room_dates.js";
 
-export default function generate_description_card_elements 
-( 
+export default function generate_description_card_elements ( 
 	root_folder,
 	component_name,
 	component_item_name,
@@ -26,8 +23,7 @@ export default function generate_description_card_elements
 	room_images,
 	order_container,
 	viewer_2d
-)
-{ 
+){ 
 	const card = document.createElement("div");
 	card.classList.add(component_name + "_" + component_item_name + "_" + component_item_component);
 
@@ -71,7 +67,6 @@ export default function generate_description_card_elements
 		room_capacity
 	);
 
-
 	const card_room_price_container = document.createElement("div");
 	card_room_price_container.classList.add(component_name + "_" + component_item_name + "_" + component_item_component + "_" + "room_price");
 	card.appendChild(card_room_price_container);
@@ -92,14 +87,6 @@ export default function generate_description_card_elements
 	add_button.classList.add(component_name + "_" + component_item_name + "_" + component_item_component + "_" + "add_button");
 	add_button.innerHTML = "Añadir";
 	add_button.addEventListener("pointerup", (event) => {
-		// add_room_to_order(
-		// 	event,
-		// 	order_container,
-		// 	viewer_2d,
-		// 	parent_card,
-		// 	component_name
-		// 	);
-
 		event.stopPropagation();
 		prompt_for_room_dates(
 			root_folder,
@@ -123,6 +110,5 @@ export default function generate_description_card_elements
 		);
 	});
 	card.appendChild(add_button);
-	
 	parent_card.appendChild(card);
 }
