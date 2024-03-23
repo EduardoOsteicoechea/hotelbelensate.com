@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="12.500888mm"
+   height="14.442919mm"
+   viewBox="0 0 12.500888 14.442919"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="icons_final.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4866305"
+     inkscape:cx="237.11339"
+     inkscape:cy="164.12955"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-61.513925,-29.757487)">
+    <path
+       id="rect9"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.67341;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 61.513925,29.757488 V 44.200406 H 74.014811 V 29.757488 Z m 1.461014,1.445894 h 4.276433 v 2.402456 h -4.276433 z m 5.273564,0 h 4.276433 v 2.402456 h -4.276433 z m -0.483104,4.984252 0.677581,0.885117 -0.677581,0.8858 -0.676894,-0.8858 z m -4.073729,1.164807 0.979947,0.377962 -0.10789,1.044546 -0.979948,-0.377961 z m 8.1454,0 0.107891,1.044547 -0.979265,0.377961 -0.10789,-1.044546 z m -4.555461,0.933219 h 0.483104 0.483104 l 0.808833,1.297437 1.410141,-0.733243 0.571752,0.405448 -0.572442,1.408764 h -2.701388 -2.701392 l -0.572437,-1.408764 0.571751,-0.405448 1.410137,0.733243 z"
+       inkscape:export-filename="bed_queen.svg"
+       inkscape:export-xdpi="1449.1572"
+       inkscape:export-ydpi="1449.1572"
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccc" />
+  </g>
+</svg>

@@ -1,0 +1,66 @@
+.strip_silding_VIEWER
+{
+	display: flex;
+	align-items: center;
+	width: 100dvw;
+	height: 35dvw;
+	padding: 1vw;
+	overflow: hidden;
+	background: var(--c2);
+	transition: all ease 1000ms;
+}
+.strip_silding_VIEWER_strip
+{
+	display: flex;
+	gap: 1vw;
+	height: 100%;
+	width: fit-content;
+	padding: 1.5vw;
+	overflow: hidden;
+	position: absolute;
+	transition: left 20s linear;
+	left: 0px;
+}
+.strip_silding_VIEWER_anchor
+{
+	width: 10dvw;
+	overflow: hidden;
+	height: 100%;
+}
+.strip_silding_VIEWER_anchor > img
+{
+}
+
+
+
+
+.strip_silding_VIEWER_controls
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	z-index: 20;
+	color: var(--first);
+	width: 100%;
+	height: 100%;
+	padding: 0 4vw;
+	pointer-events: none;
+}
+.strip_silding_VIEWER_controls > div
+{
+	height: 4vw;
+	width: 4vw;
+	background: rgba(255,255,255,.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10vw;
+	cursor: pointer;
+	pointer-events: all;
+}
+.strip_silding_VIEWER_controls > div:hover
+{
+	background: rgba(255,255,255,1);
+	color: var(--second);
+}

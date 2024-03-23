@@ -1,0 +1,253 @@
+.L_info_R_strip_VIEWER_global_container
+{
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+
+.L_info_R_strip_VIEWER_h2_container
+{
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	height: 20dvw;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+
+.L_info_R_strip_VIEWER_UI_container
+{
+	display: flex;
+	flex-direction: row;
+	height: 35dvw;
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+.L_info_R_strip_VIEWER_LEFT_container
+{
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	height: 100%;
+	width: 30%;
+	padding: 3dvw 0dvw;
+	color: var(--c1);
+	gap: 1.5dvw;
+}
+
+.L_info_R_strip_VIEWER_LEFT_container_BACKGROUND
+{
+	top: 0;
+	left: 0;
+	position: absolute;
+	overflow: hidden;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+.L_info_R_strip_VIEWER_LEFT_container_BACKGROUND > img
+{
+	height: 100%;
+}
+.L_info_R_strip_VIEWER_LEFT_container_BACKGROUND > div
+{
+	top: 0;
+	left: 0;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,.75);
+}
+.L_info_R_strip_VIEWER_LEFT_container > h3
+{
+	
+	font-size: 1.25dvw;
+	line-height: 2dvw;
+	letter-spacing: .5dvw;
+	padding: 0dvw 2dvw;
+}
+.L_info_R_strip_VIEWER_LEFT_container > h4
+{
+	
+	font-size: 1.25dvw;
+	line-height: 2dvw;
+	letter-spacing: .5dvw;
+	padding: 0dvw 2dvw;
+}
+.L_info_R_strip_VIEWER_LEFT_container > p
+{ 
+	font-size: .65dvw;
+	line-height: 1.5dvw;
+	padding: 0dvw 2dvw;
+}
+.L_info_R_strip_VIEWER_LEFT_container > a
+{ 
+	font-size: .75dvw;
+	border: solid .1dvw var(--c1);
+	padding: 1dvw 2dvw;
+	margin: 1dvw 2dvw 2dvw 2dvw;
+	width: 40%;
+	gap: 2dvw;
+	text-decoration: none;
+	text-align: center;
+	background: rgba(255,255,255,1);
+	color: var(--c2);
+	font-weight: 900;
+	box-shadow: .25dvw .25dvw .25dvw rgba(0,0,0,.5);
+}
+.L_info_R_strip_VIEWER_LEFT_container > ul
+{
+	display: flex;
+	flex-direction: column;
+	font-size: .75dvw;
+	font-weight: 900;
+	list-style-type: none;
+	width: 100%;
+	background: var(--c2);
+	
+}
+.L_info_R_strip_VIEWER_LEFT_container > ul > li
+{
+	border-bottom: solid .1dvw var(--c1);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	height: 2dvw;
+	font-size: .75dvw;
+	padding: 0 2dvw;
+	color: var(--c1);
+	font-weight: 900;
+}
+.L_info_R_strip_VIEWER_LEFT_container > h4
+{
+	font-size: 1.25dvw;
+	margin-top: auto;
+}
+
+
+
+
+
+
+
+
+.L_info_R_strip_VIEWER_RIGHT_container
+{
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	height: 100%;
+	width: 70%;
+}
+.L_info_R_strip_VIEWER_RIGHT_container_image_STRIP
+{
+	transition: all ease 3000ms;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	height: 100%;
+}
+.L_info_R_strip_VIEWER_RIGHT_container_IMAGE_container
+{
+	height: 100%;
+	width: fit_content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+.L_info_R_strip_VIEWER_RIGHT_container_IMAGE_container > img
+{
+	height: 120%;
+}
+
+
+
+
+
+.L_info_R_strip_VIEWER_CONTROLS_container
+{
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	height: 100%;
+	width: 70%;
+	right: 0;
+	padding: 0 3dvw;
+}
+.L_info_R_strip_VIEWER_LATERAL_CONTROLS_container
+{
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.L_info_R_strip_VIEWER_CONTROL
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 3dvw;
+	width: 3dvw;
+	top: 1dvw;
+	background: rgba(0,0,0,.5);
+	border-radius: 10dvw;
+	color: var(--c1);
+	font-weight: 600;
+	box-shadow: .25dvw .25dvw .25dvw rgba(0,0,0,.5);
+	border: solid .1dvw rgba(255,255,255,.5);
+	cursor: pointer;
+}
+.L_info_R_strip_VIEWER_CONTROL:hover
+{
+	transform: scale(1.05);
+	background: var(--c1);
+	color: var(--c2);
+}
+
+.L_info_R_strip_VIEWER_DOTS_container
+{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	overflow: hidden;
+	padding: 1dvw;
+	justify-content: center;
+	gap: 2dvw;
+}
+.L_info_R_strip_VIEWER_DOTS_container > .current
+{
+	background: rgba(255,255,255,1);
+}
+.L_info_R_strip_VIEWER_DOT
+{
+	height: 1dvw;
+	width: 1dvw;
+	border-radius: 3dvw;
+	background: rgba(0,0,0,1);
+	border: solid .1dvw rgba(255,255,255,.5);
+	box-shadow: .25dvw .25dvw .25dvw rgba(0,0,0,.5);
+	cursor: pointer;
+}
+.L_info_R_strip_VIEWER_DOT:hover
+{
+	transform: scale(1.05);
+}

@@ -1,0 +1,16 @@
+/* body::-webkit-scrollbar
+{
+	width: 0;
+} */
+
+.d001
+{
+	display: grid;
+	grid-template-rows: 0% auto 2.75dvw auto 2.75dvw;
+	grid-template-columns:  3dvw 49% 3dvw auto 4dvw;
+	margin-top: 0dvw;
+	width: 100dvw;
+	height: 48dvw;	
+	/* background: var(--c1); */
+	background: var(--c5);
+}

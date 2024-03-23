@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="13.199469mm"
+   height="12.179304mm"
+   viewBox="0 0 13.199469 12.179304"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="icons_final.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4866305"
+     inkscape:cx="237.11339"
+     inkscape:cy="164.12955"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-68.744287,-107.83112)">
+    <path
+       id="path26"
+       style="fill:#020001;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-dasharray:none;stroke-opacity:1"
+       d="m 74.541805,107.83112 c -1.68471,0.004 -3.07688,1.31548 -3.182424,2.99689 l -0.01449,-0.0137 v 0.21371 c -1.99e-4,1.76578 1.431091,3.19738 3.196866,3.19756 1.766039,1.9e-4 3.197742,-1.43152 3.197543,-3.19756 -1.93e-4,-1.76576 -1.431781,-3.19704 -3.197543,-3.19685 z m 2.792787,0 c 0.924924,0.80523 1.457226,1.97054 1.460298,3.19686 -0.0021,0.50199 -0.09307,0.99965 -0.268689,1.46993 l 2.362605,-0.3539 c 0,0 1.640356,-1.45839 0.830138,-4.31289 z m -2.792787,2.16813 c 0.56832,-1.4e-4 1.029176,0.46041 1.029424,1.02873 1.44e-4,0.5686 -0.460827,1.02958 -1.029424,1.02944 -0.568333,-2.4e-4 -1.02889,-0.46111 -1.028746,-1.02944 2.48e-4,-0.56806 0.460691,-1.02849 1.028746,-1.02873 z m -3.196866,3.83115 v 2.98244 0.0928 h 0.0066 c 0.03338,0.61652 0.389158,1.14206 0.898172,1.41839 -0.365846,0.66041 -0.813502,0.84456 -1.359285,0.84456 -0.577074,0 -1.038122,-0.26621 -1.400523,-1.22665 l -0.745615,0.35803 c 0.557579,1.39591 1.397757,1.71042 2.146138,1.71045 0.74838,1e-5 1.646419,-0.2326 2.174994,-1.47611 -1.73e-4,-7e-4 -3.32e-4,-0.001 -7.05e-4,-0.003 0.912108,-0.003 1.66396,-0.71583 1.71319,-1.6266 h 0.0066 v -0.0928 -1.53935 c -0.08054,0.005 -0.161203,0.008 -0.241894,0.008 -1.224803,-6.4e-4 -2.389863,-0.52933 -3.196865,-1.45068 z"
+       inkscape:export-filename="hair_dryer.svg"
+       inkscape:export-xdpi="1974.189"
+       inkscape:export-ydpi="1974.189"
+       sodipodi:nodetypes="cccsssccccccccccccccccccsccsccccccccc" />
+  </g>
+</svg>

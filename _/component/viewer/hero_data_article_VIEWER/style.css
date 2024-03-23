@@ -1,0 +1,67 @@
+.hero_data_article_VIEWER 
+{
+	width: 100dvw;
+	overflow: hidden;
+	padding: 0 20% 4dvw 20%;
+}
+
+.hero_data_article_VIEWER_image_container 
+{
+	justify-content: center;
+	height: 40dvw;
+}
+
+.hero_data_article_VIEWER_image 
+{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
+
+
+
+.hero_data_article_VIEWER_info_container 
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1dvw;
+	padding: 0 31%;
+	margin-top: 2dvw;
+}
+
+.hero_data_article_VIEWER_data 
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1dvw;
+
+}
+
+.hero_data_article_VIEWER_data_h3 
+{
+
+}
+
+.hero_data_article_VIEWER_data_h4 
+{
+
+}
+
+.hero_data_article_VIEWER_data_p_1 
+{
+
+}
+
+.hero_data_article_VIEWER_data_p_2 
+{
+
+}
+
+
+
+
+.hero_data_article_VIEWER_info_article 
+{
+
+}

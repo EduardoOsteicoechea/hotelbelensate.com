@@ -1,0 +1,17 @@
+.strip_highlighted_HEADING
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--first);
+	height: 30vw;
+}
+.strip_highlighted_HEADING h2
+{
+	font-size: 1.5vw;
+	font-family: f3;
+	font-weight: 200;
+	letter-spacing: .4vw;
+	text-align: center;
+	line-height: 1.75vw;
+}

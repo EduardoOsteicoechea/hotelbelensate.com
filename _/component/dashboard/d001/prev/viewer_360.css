@@ -1,0 +1,57 @@
+.d001_viewer_360
+{
+	background: var(--c2);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 900;
+	transition: all ease 2000ms;
+	position: absolute;
+	height: 0%;
+	width: 57.5dvw;
+	padding: 0dvw;
+	right: 0;
+	top: 0;
+}
+
+.visible
+{
+	height: 100%;
+	padding: 1dvw;
+}
+.d001_360_image_container
+{
+	width: 100%;
+	height: 100%;
+}
+.clicked
+{
+	display: none;
+}
+#viewer_360_close_button
+{
+	height: 2dvw;
+	width: 2dvw;
+	background: var(--c1);
+	color: var(--c2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	position: absolute;
+	top: 1dvw;
+	right: 1dvw;
+	cursor: pointer;
+	box-shadow:-.1dvw .1dvw .5dvw rgba(0,0,0,.15);
+}
+#viewer_360_close_button > p
+{
+	font-weight: 900;
+	font-size: .7dvw;
+	transform: scaleX(1.4);
+	-webkit-text-stroke-width: .1dvw;
+	-webkit-text-stroke-color: black;
+	text-align: center;
+	margin-left: .2dvw;
+}
