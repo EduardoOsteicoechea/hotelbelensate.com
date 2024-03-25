@@ -98,7 +98,7 @@
 	overflow: hidden;
 	font-size: .8dvw;
 	padding: 1dvw;
-	border: var(--b1);
+	/* border: var(--b1); */
 }
 .d001_room_name_and_modal_prompt_container_room_name
 {}
@@ -145,12 +145,12 @@
 .d001_room_available_dates_container
 {
 	display: flex;
-	gap: 1dvw;
+	gap: 2dvw;
 	width: 100%;
 	overflow: hidden;
 	font-size: .8dvw;
 	padding: 1dvw;
-	border: var(--b1);
+	/* border: var(--b1); */
 }
 
 .d001_month_elements_container
@@ -159,7 +159,7 @@
 	align-items: flex-start;
 	flex-wrap: wrap;
 	gap: .5dvw;
-	border: var(--b1);
+	/* border: var(--b1); */
 }
 .d001_month_elements_container_day_container
 {
@@ -172,5 +172,6 @@
 	background: var(--c3);
 	border-radius: .25dvw;
 	letter-spacing: 0;
+	font-size: .6dvw;
 }
 
