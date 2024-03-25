@@ -87,6 +87,65 @@ export default function display_option_date_picker (
 	room_available_dates_container.classList.add(component_name + "_" + "room_available_dates_container");
 	room_dinamic_text_and_datepicker_container.appendChild(room_available_dates_container);
 
+
+
+	const selected_dates_container = document.createElement("div");
+	selected_dates_container.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "selected_dates_container";
+	selected_dates_container.classList.add(component_name + "_" + "selected_dates_container");
+	room_dinamic_text_and_datepicker_container.appendChild(selected_dates_container);
+
+	const selected_dates_container_base_text = document.createElement("p");
+	selected_dates_container_base_text.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "selected_dates_container_base_text";
+	selected_dates_container_base_text.classList.add(component_name + "_" + "selected_dates_container_base_text");
+	selected_dates_container_base_text.innerHTML = "Fechas seleccionadas: ";
+	selected_dates_container.appendChild(selected_dates_container_base_text);
+
+	const selected_dates_container_start_date = document.createElement("p");
+	selected_dates_container_start_date.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "selected_dates_container_start_date";
+	selected_dates_container_start_date.classList.add(component_name + "_" + "selected_dates_container_start_date");
+	selected_dates_container_start_date.innerHTML = "";
+
+	selected_dates_container.appendChild(selected_dates_container_start_date);
+	const selected_dates_container_dates_separator = document.createElement("p");
+	selected_dates_container_dates_separator.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "selected_dates_container_dates_separator";
+	selected_dates_container_dates_separator.classList.add(component_name + "_" + "selected_dates_container_dates_separator");
+	selected_dates_container_dates_separator.innerHTML = "";
+	selected_dates_container.appendChild(selected_dates_container_dates_separator);
+
+	const selected_dates_container_end_date = document.createElement("p");
+	selected_dates_container_end_date.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "selected_dates_container_end_date";
+	selected_dates_container_end_date.classList.add(component_name + "_" + "selected_dates_container_end_date");
+	selected_dates_container_end_date.innerHTML = "";
+	selected_dates_container.appendChild(selected_dates_container_end_date);
+
+	const selected_dates_container_accept_dates_button = document.createElement("div");
+	selected_dates_container_accept_dates_button.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "selected_dates_container_accept_dates_button";
+	selected_dates_container_accept_dates_button.classList.add(component_name + "_" + "selected_dates_container_accept_dates_button");
+	selected_dates_container_accept_dates_button.innerHTML = "Registrar fechas";
+	selected_dates_container.appendChild(selected_dates_container_accept_dates_button);
+
+	const selected_dates_container_restart_dates_button = document.createElement("div");
+	selected_dates_container_restart_dates_button.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "selected_dates_container_restart_dates_button";
+	selected_dates_container_restart_dates_button.classList.add(component_name + "_" + "selected_dates_container_restart_dates_button");
+	selected_dates_container_restart_dates_button.innerHTML = "Reiniciar fechas";
+	selected_dates_container.appendChild(selected_dates_container_restart_dates_button);
+
+	const selected_dates_container_day_count_container = document.createElement("div");
+	selected_dates_container_day_count_container.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "selected_dates_container_day_count_container";
+	selected_dates_container_day_count_container.classList.add(component_name + "_" + "selected_dates_container_day_count_container");
+	selected_dates_container_day_count_container.innerHTML = "";
+	selected_dates_container.appendChild(selected_dates_container_day_count_container);
+
+	const selected_dates_container_total_price_container = document.createElement("div");
+	selected_dates_container_total_price_container.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "selected_dates_container_total_price_container";
+	selected_dates_container_total_price_container.classList.add(component_name + "_" + "selected_dates_container_total_price_container");
+	selected_dates_container_total_price_container.innerHTML = "";
+	selected_dates_container.appendChild(selected_dates_container_total_price_container);
+
+
+
+
+
 	generate_room_available_dates_container_elements(
 		root_folder,
 		component_name,
@@ -108,6 +167,14 @@ export default function display_option_date_picker (
 		viewer_2d,
 		room_name_and_modal_prompt_container_prompt,
 		room_available_dates_container,
+		selected_dates_container_start_date,
+		selected_dates_container_dates_separator,
+		selected_dates_container_end_date,
+		selected_dates_container_accept_dates_button,
+		selected_dates_container_restart_dates_button,
+		selected_dates_container_day_count_container,
+		selected_dates_container_total_price_container,
+		room_price_by_day,
 	);
 
 

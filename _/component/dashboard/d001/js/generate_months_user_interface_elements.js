@@ -1,16 +1,27 @@
 // Called from ./generate_room_available_dates_container_elements.js
+
+import generate_selected_day_click_event from "./generate_selected_day_click_event.js";
+
 export default function generate_month_user_interface_elements (
 	component_name, 
 	component_item_name, 
 	component_item_component, 
 	room_available_dates_container,
 	months_data_object,
+	room_name_and_modal_prompt_container_prompt,
+	selected_dates_container_start_date,
+	selected_dates_container_dates_separator,
+	selected_dates_container_end_date,
+	selected_dates_container_accept_dates_button,
+	selected_dates_container_restart_dates_button,
+	selected_dates_container_day_count_container,
+	selected_dates_container_total_price_container,
+	room_price_by_day,
 	) {
+	let day_list = [];
 		
 	for (let i = 0; i < months_data_object[0].length; i++) {
 		const month = months_data_object[0][i];
-
-		console.log(month)
 
 		const month_elements_container = document.createElement("div");
 		month_elements_container.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "month_elements_container" + "_" + i;
@@ -33,7 +44,7 @@ export default function generate_month_user_interface_elements (
 		month_days_names_container.classList.add(component_name + "_" + "month_days_names_container");
 		month_elements_container.appendChild(month_days_names_container);
 	
-		generate_day_numbers_rows(
+		const day_number_rows = generate_day_numbers_rows(
 			component_name, 
 			component_item_name, 
 			component_item_component, 
@@ -45,7 +56,7 @@ export default function generate_month_user_interface_elements (
 			i
 		);
 		
-		generate_day_div_element(
+		day_list.push(generate_day_div_element(
 			component_name, 
 			component_item_name, 
 			component_item_component, 
@@ -54,10 +65,31 @@ export default function generate_month_user_interface_elements (
 			month["year"],
 			month,
 			month_elements_container, 
-			i
-		);
+			i,
+			month_days_names_container,
+			room_available_dates_container,
+			room_name_and_modal_prompt_container_prompt
+		));
 		
 	};
+
+	generate_selected_day_click_event(
+		component_name, 
+		component_item_name, 
+		component_item_component, 
+		room_available_dates_container,
+		months_data_object,
+		room_name_and_modal_prompt_container_prompt,
+		day_list,
+		selected_dates_container_start_date,
+		selected_dates_container_dates_separator,
+		selected_dates_container_end_date,
+		selected_dates_container_accept_dates_button,
+		selected_dates_container_restart_dates_button,
+		selected_dates_container_day_count_container,
+		selected_dates_container_total_price_container,
+		room_price_by_day,
+	);
 };
 
 function generate_day_div_element(
@@ -69,21 +101,73 @@ function generate_day_div_element(
 	month_year, 
 	month,
 	month_elements_container, 
-	i
+	i,
+	month_days_names_container,
+	room_available_dates_container,
+	room_name_and_modal_prompt_container_prompt
 ) {
-	for (let i = 0; i < month_day_quantity; i++) {
+	const full_day_names_array = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+	const starting_day = full_day_names_array.indexOf(month["first day name in spanish"]);
+
+	let day_shufled_array = [];
+	let starting_day_counter = starting_day;
+	day_shufled_array.push(starting_day);
+	starting_day_counter++;
+
+	while (day_shufled_array.length < 7) {
+		if (starting_day_counter < 7){
+			day_shufled_array.push(starting_day_counter);
+			starting_day_counter++;
+		} else {
+			starting_day_counter = 0;
+			day_shufled_array.push(starting_day_counter);
+			starting_day_counter++;
+		}
+	};
+
+	for (let i = 0; i < starting_day; i++) {
+
 		const day_element_container = document.createElement("div");
-		day_element_container.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "month_elements_container" + "_" + i + "_" + "day_" + (i + 1);
+		day_element_container.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "month_elements_container" + "_" + i + "_" + "empty_day" + "_" + (i);
+		day_element_container.classList.add(component_name + "_" + "month_elements_container" + "_" + "day_container");
+		day_element_container.classList.add(component_name + "_" + "month_elements_container" + "_" + "day_container" + "_" + "empty");
+
+		month_days_names_container.children[i].appendChild(day_element_container);
+	}
+
+	let day_added_counter = 0;
+	let day_used_counter = 0;
+	let day_list = [];
+
+	while (day_added_counter < month_day_quantity) 
+	{
+		day_added_counter++;
+
+		const day_element_container = document.createElement("div");
+		day_element_container.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "month_elements_container" + "_" + i + "_" + "day_" + (day_added_counter - 1);
 		day_element_container.classList.add(component_name + "_" + "month_elements_container" + "_" + "day_container");
 		
 		const day_element_day_number = document.createElement("p");
-		day_element_day_number.innerHTML = i + 1;
-		day_element_day_number.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "month_elements_container" + "_" + i + "_" + "day_" + (i + 1) + "_" + "day_number";
+		day_element_day_number.innerHTML = day_added_counter;
+		day_element_day_number.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "month_elements_container" + "_" + i + "_" + "day_" + (day_added_counter - 1) + "_" + "day_number";
 		day_element_day_number.classList.add(component_name + "_" + "month_elements_container" + "_" + "day" + "_" + "day_number");
 
 		day_element_container.appendChild(day_element_day_number);
-		month_elements_container.appendChild(day_element_container);
-	}
+		month_days_names_container.children[day_shufled_array[day_used_counter]].appendChild(day_element_container);
+
+		if (day_used_counter < 7){
+			day_shufled_array.push(starting_day_counter);
+			day_used_counter++;
+		} else {
+			day_used_counter = 0;
+			day_shufled_array.push(starting_day_counter);
+			day_used_counter++;
+		}
+		day_list.push(day_element_container.id);
+		
+	};
+
+	return day_list;
 };
 
 function generate_day_numbers_rows(
@@ -97,11 +181,7 @@ function generate_day_numbers_rows(
 	month_days_names_container, 
 	id
 ) {
-	const full_day_names_array = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 	const abreviated_day_names_array = ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"];
-	const starting_day = full_day_names_array.indexOf(month["first day name in spanish"])
-
-	console.log(full_day_names_array[starting_day] + " is day " + starting_day)
 	
 	for (let i = 0; i < abreviated_day_names_array.length; i++) {
 		

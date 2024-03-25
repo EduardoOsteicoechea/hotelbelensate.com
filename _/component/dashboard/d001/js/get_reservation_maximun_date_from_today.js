@@ -14,7 +14,7 @@ export default function get_reservation_maximun_date_from_today (number_of_month
 
 	Array.from(reservation_dates_objects_array).forEach(month => {
 		for (let i = 0; i < month["number of days"]; i++) {
-			dates_full_days_array.push(month["year"] + "-" + month["month_number"] + "-" + (i + 1));
+			dates_full_days_array.push(month["year"] + "-" + month["month number"] + "-" + (i + 1));
 		};
 	});
 
@@ -28,22 +28,22 @@ export default function get_reservation_maximun_date_from_today (number_of_month
 		const month_data = {};
 		 
 		if (month + month_increment_integer > 11) {
-			month_data["month_number"] =     month + month_increment_integer - 12;
-			month_data["name"] =             new Date(new Date().getFullYear(), month_data["month_number"]).toLocaleString('default', { month: 'long' });
+			month_data["month number"] =     month + month_increment_integer - 12;
+			month_data["name"] =             new Date(new Date().getFullYear(), month_data["month number"]).toLocaleString('default', { month: 'long' });
 			month_data["year"] =             new Date().getFullYear() + 1;
 		} else {
-			month_data["month_number"] =     month + month_increment_integer;
-			month_data["name"] =             new Date(new Date().getFullYear(), month_data["month_number"]).toLocaleString('default', { month: 'long' });
+			month_data["month number"] =     month + month_increment_integer;
+			month_data["name"] =             new Date(new Date().getFullYear(), month_data["month number"]).toLocaleString('default', { month: 'long' });
 			month_data["year"] =             new Date().getFullYear();
 		};
-		month_data["number of days"] =             new Date(month_data["year"], month_data["month_number"] + 1, 1);
+		month_data["number of days"] =             new Date(month_data["year"], month_data["month number"] + 1, 1);
 		month_data["number of days"].setDate(0);
 		month_data["number of days"] =             month_data["number of days"].getDate();
-		month_data["first day number"] =           new Date(month_data["year"], month_data["month_number"], 1).getDay();
+		month_data["first day number"] =           new Date(month_data["year"], month_data["month number"], 1).getDay();
 		month_data["first day name"] =             days_names[month_data["first day number"]];
 		month_data["name in spanish"] =            return_month_name_in_spanish(month_data["name"]);
 		month_data["first day name in spanish"] =  return_day_name_in_spanish(month_data["first day name"]);
-		month_data["full date"] =                  new Date(month_data["year"], month_data["month_number"],  month_data["first day number"]);
+		month_data["full date"] =                  new Date(month_data["year"], month_data["month number"],  month_data["first day number"]);
 		return month_data;
 	};
 	

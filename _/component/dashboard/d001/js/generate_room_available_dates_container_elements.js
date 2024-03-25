@@ -24,8 +24,15 @@ export default function generate_room_available_dates_container_elements (
 	viewer_2d,
 	room_name_and_modal_prompt_container_prompt,
 	room_available_dates_container,
+	selected_dates_container_start_date,
+	selected_dates_container_dates_separator,
+	selected_dates_container_end_date,
+	selected_dates_container_accept_dates_button,
+	selected_dates_container_restart_dates_button,
+	selected_dates_container_day_count_container,
+	selected_dates_container_total_price_container,
 ) {
-	const months_data_object = get_reservation_maximun_date_from_today(4);
+	const months_data_object = get_reservation_maximun_date_from_today(3);
 
 	generate_months_user_interface_elements(
 		component_name, 
@@ -33,5 +40,14 @@ export default function generate_room_available_dates_container_elements (
 		component_item_component, 
 		room_available_dates_container,
 		months_data_object,
+		room_name_and_modal_prompt_container_prompt,
+		selected_dates_container_start_date,
+		selected_dates_container_dates_separator,
+		selected_dates_container_end_date,
+		selected_dates_container_accept_dates_button,
+		selected_dates_container_restart_dates_button,
+		selected_dates_container_day_count_container,
+		selected_dates_container_total_price_container,
+		room_price_by_day,
 	);
 };
