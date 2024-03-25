@@ -1,7 +1,7 @@
 // Called from ./generate_description_card_elements.js
 
 import close_2d_viewer from "./close_2d_viewer.js";
-import CLASS_option_reservation_date_picker from "./CLASS_option_reservation_date_picker.js";
+import display_option_date_picker from "./display_option_date_picker.js";
 
 export default function prompt_for_room_dates
 (
@@ -43,7 +43,7 @@ export default function prompt_for_room_dates
 		);
 	};
 
-	new CLASS_option_reservation_date_picker(
+	new display_option_date_picker(
 		root_folder,
 		component_name,
 		component_item_name,

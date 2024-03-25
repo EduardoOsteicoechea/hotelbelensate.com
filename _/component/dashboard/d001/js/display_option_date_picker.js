@@ -1,4 +1,4 @@
-// Called from ./CLASS_option_reservation_date_picker.js
+// Called from ./prompt_for_room_dates.js
 
 import close_option_date_picker from "./close_option_date_picker.js";
 import generate_room_available_dates_container_elements from "./generate_room_available_dates_container_elements.js";
