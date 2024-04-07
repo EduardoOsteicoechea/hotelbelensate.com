@@ -45,14 +45,12 @@ export default function generate_initial_options
 		const room_includes =              room[1]["incluye"];
 		const room_thumbnail =             room[1]["imagen miniatura"];
 		const room_images =                room[1]["imagenes"];
-
 		let room_description =             room[1]["descripción"];
+		
 		let description_string = "";
-		for (let i = 0; i < room_description.length; i++) 
-		{
+		for (let i = 0; i < room_description.length; i++) {
 			if (i === 0) description_string += room_description[i]
 			else description_string += "   " + "&#x2022   " + room_description[i];
-			// else description_string += "   " + "&#x25C6   " + room_description[i];
 		};
 		room_description = description_string;
 

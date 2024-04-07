@@ -1,0 +1,96 @@
+.d001_selected_room_order_container
+{
+	display: flex;
+	align-items: center;
+	height: fit-content;
+	max-height: 10dvw;
+	background: var(--c1);
+	box-shadow: 1dvw 1dvw 1dvw rgba(0,0,0,.25);
+}
+.d001_room_order_container_image_container
+{
+	display: flex;
+	height: 100%;
+	width: 15dvw;
+	overflow: hidden;
+	/* border: var(--b1); */
+}
+.d001_room_order_container_image
+{
+	height: 100%;
+}
+
+
+
+.d001_room_order_container_data_container
+{
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	background: var(--c1);
+	padding: 1dvw 1dvw 1dvw 1dvw;
+	gap: .75dvw;
+}
+.d001_room_order_container_data_container_room_name
+{
+	display: flex;
+	flex-direction: column;
+	font-size: .9dvw;
+	font-weight: 100;
+	color: var(--c2);
+	letter-spacing: .1dvw;
+	width: 100%;
+}
+.d001_room_order_container_data_container_room_number_of_days
+{
+	display: flex;
+	flex-direction: column;
+	font-size: .9dvw;
+	font-weight: 100;
+	color: var(--c7);
+	letter-spacing: .1dvw;	
+}
+.d001_room_order_container_data_container_room_dates
+{
+	display: flex;
+	flex-direction: column;
+	font-size: .9dvw;
+	font-weight: 100;
+	color: var(--c7);
+	letter-spacing: .1dvw;
+}
+.d001_room_order_container_data_container_room_price
+{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: .9dvw;
+	font-weight: 100;
+	color: var(--c2);
+	letter-spacing: .1dvw;
+	width: 80%;
+	margin-top: auto;
+}
+.d001_room_order_container_data_container_room_remove_button
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: .7dvw;
+	font-weight: 100;
+	color: var(--c1);
+	letter-spacing: .05dvw;
+	background: var(--failure_1);
+	margin-left: auto;
+	position: absolute;
+	right: 1dvw;
+	bottom: 1dvw;
+	padding: .5dvw 1dvw;
+	cursor: pointer;
+}
+.d001_room_order_container_data_container_room_remove_button:hover
+{
+	transform: scale(1.05);
+}

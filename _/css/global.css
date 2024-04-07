@@ -23,6 +23,10 @@
 
 	--c_bad:rgb(211, 62, 84);
 
+	--success_1:rgb(0, 200, 73);
+	--inactive_1:rgb(215, 215, 215);
+	--failure_1:rgb(230, 43, 80);
+
 	--shadow_1: 1vw 1vw 1vw rgba(255,255,255,.25);
 	--sh2: .0dvw .0dvw 1dvw rgba(0,0,0, 0.15);
 	--sh3: .15dvw .15dvw 1dvw rgba(0,0,0, 0.1);
@@ -42,4 +46,16 @@
 b
 {
 	font-weight: 900;
+}
+
+
+.active_button
+{
+	pointer-events: all;
+	background: var(--success_1) !important;
+}
+.disabled_button
+{
+	pointer-events: none;
+	background: var(--inactive_1) !important;
 }

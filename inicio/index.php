@@ -14,8 +14,6 @@
 			"nos alegra verte llegar ...",
 			"nos alegra verte llegar ...",
 			"nos alegra verte llegar ...",
-			"nos alegra verte llegar ...",
-			"nos alegra verte llegar ...",
 		],
 		[
 			"Hotel belensate Mérida Venezuela",
@@ -26,12 +24,8 @@
 			"Hotel belensate Mérida Venezuela",
 			"Hotel belensate Mérida Venezuela",
 			"Hotel belensate Mérida Venezuela",
-			"Hotel belensate Mérida Venezuela",
-			"Hotel belensate Mérida Venezuela",
 		],
 		[
-			"Mérida Venezuela",
-			"Mérida Venezuela",
 			"Mérida Venezuela",
 			"Mérida Venezuela",
 			"Mérida Venezuela",
@@ -47,11 +41,9 @@
 			"restaurant/restaurant_4.jpg",
 			"restaurant/restaurant_1.jpg",
 			"room/presidencial_master_1_3840x2160.webp",
-			"room/presidencial_junior_4_3840x2160.webp",
 			"room/cabana_1_3840x2160.webp",
 			"room/suite_ejecutiva_1_3840x2160.webp",
 			"event/activity_1.jpg",
-			"event/event_1.jpg",
 		],
 		"inicio"
 	)
@@ -85,7 +77,7 @@
 			"reservar",
 			[
 				"room/presidencial_master_1_3840x2160.webp",
-				"room/presidencial_junior_4_3840x2160.webp",
+				"room/presidencial_junior_2_3840x2160.webp",
 				"room/cabana_1_3840x2160.webp",
 				"room/suite_ejecutiva_1_3840x2160.webp",
 				"room/suite_nupcial_1_3840x2160.webp",
@@ -231,7 +223,6 @@
 			"Reservar",
 			"reservar",
 			[
-				"event/event_1.jpg",
 				"event/activity_1.jpg",
 			]
 		);

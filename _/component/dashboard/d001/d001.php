@@ -1,7 +1,5 @@
 <?php
-
-	// Standalone component (only use one for page);
-
+	// Called from ../../../reservar/index.php
 	class d001
 	{
 		public $id;
@@ -70,12 +68,13 @@
 				"order",
 				"viewer_2d",
 				"viewer_2d_carrousel",
-				"option_date_picker"
+				"option_date_picker",
+				"selected_room_order_container"
 			];
 
-			$search_bar =  new search_bar ( $this->search_bar_id,       $this->search_bar_class                      );
+			$search_bar =  new search_bar ( $this->search_bar_id,       $this->search_bar_class, $this->root_folder  );
 			$options =   	new options    ( $this->options_id,          $this->options_class                         );
-			$order = 	   new order      ( $this->order_id,            $this->order_class                          , $this->root_folder);
+			$order = 	   new order      ( $this->order_id,            $this->order_class, $this->root_folder       );
 			$viewer_2d = 	new viewer_2d  ( $this->viewer_2d_id,        $this->viewer_2d_class                       );
 			$styles = 	   new styles     ( $this->css_file_name_array, $this->component_id, $this->component_folder );
 			$javascript = 	new javascript ( 

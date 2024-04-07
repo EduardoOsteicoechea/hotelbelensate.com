@@ -40,11 +40,20 @@
 					id="'.$order_id.'_total_container"
 					class="'.$order_class.'_total_container"
 					>
-						<p id="'.$order_id.'_total_container_ammount">0</p>
-						<p id="'.$order_id.'_total_container_currency"> USD</p>
-						<button id="'.$order_id.'_total_payment_button"> Reservar con pago</button>
+						<p 
+						id="'.$order_id.'_total_container_ammount"
+						class="'.$order_class.'_total_container_ammount"
+						>0</p>
+						<p 
+						id="'.$order_id.'_total_container_currency"
+						class="'.$order_class.'_total_container_currency"
+						> USD</p>
+						<button 
+						id="'.$order_id.'_total_payment_button"
+						class="'.$order_class.'_total_payment_button disabled_button"
+						> Reservar con pago</button>
 					</div>
-
+					<script src="'.$root_folder.'/_/component/dashboard/d001/js/process_order.js"></script>
 				</div>
 			';
 		}

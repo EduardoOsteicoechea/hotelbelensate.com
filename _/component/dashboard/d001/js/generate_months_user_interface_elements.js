@@ -20,7 +20,8 @@ export default function generate_month_user_interface_elements (
 	) {
 	let day_list = [];
 		
-	for (let i = 0; i < months_data_object[0].length; i++) {
+	for (let i = 0; i < months_data_object[0].length; i++) 
+	{
 		const month = months_data_object[0][i];
 
 		const month_elements_container = document.createElement("div");
@@ -71,6 +72,23 @@ export default function generate_month_user_interface_elements (
 			room_name_and_modal_prompt_container_prompt
 		));
 		
+		if (i == 0) 
+		{
+			const today_number = new Date().getDate();
+			Array.from(day_number_rows).forEach(element => {
+				Array.from(element.children).forEach(day => {
+					if(day.children[0])
+					{
+						if (parseInt(day.children[0].innerHTML) < today_number) 
+						{
+							day.classList.add(component_name + "_" + "month_elements_container" + "_" + "day_container" + "_" + "empty");
+							day.innerHTML = "";
+						};
+					}
+				});
+			});
+		};
+		
 	};
 
 	generate_selected_day_click_event(
@@ -90,6 +108,40 @@ export default function generate_month_user_interface_elements (
 		selected_dates_container_total_price_container,
 		room_price_by_day,
 	);
+};
+
+function generate_day_numbers_rows(
+	component_name, 
+	component_item_name, 
+	component_item_component, 
+	month_name, 
+	month_day_quantity, 
+	month_year, 
+	month,
+	month_days_names_container, 
+	id
+) {
+	const abreviated_day_names_array = ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"];
+	const day_rows_containers = []
+	
+	for (let i = 0; i < abreviated_day_names_array.length; i++) {
+		
+		const day_row_container_day_container = document.createElement("div");
+		day_row_container_day_container.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "month_elements_container" + "_" + i + "_" + "day_row_container_day_conatiner" + "_" + (i + 1);
+		day_row_container_day_container.classList.add(component_name + "_" + "day_row_container_day_conatiner");
+
+		const day_row_container_day_name = document.createElement("p");
+		day_row_container_day_name.innerHTML = abreviated_day_names_array[i];
+		day_row_container_day_name.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "month_elements_container" + "_" + i + "_" + "day_row_container_day_name";
+		day_row_container_day_name.classList.add(component_name + "_" + "day_row_container_day_name");
+
+		day_row_container_day_container.appendChild(day_row_container_day_name);
+		month_days_names_container.appendChild(day_row_container_day_container);
+
+		day_rows_containers.push(day_row_container_day_container);
+	}
+
+	return day_rows_containers;
 };
 
 function generate_day_div_element(
@@ -170,32 +222,4 @@ function generate_day_div_element(
 	return day_list;
 };
 
-function generate_day_numbers_rows(
-	component_name, 
-	component_item_name, 
-	component_item_component, 
-	month_name, 
-	month_day_quantity, 
-	month_year, 
-	month,
-	month_days_names_container, 
-	id
-) {
-	const abreviated_day_names_array = ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"];
-	
-	for (let i = 0; i < abreviated_day_names_array.length; i++) {
-		
-		const day_row_container_day_container = document.createElement("div");
-		day_row_container_day_container.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "month_elements_container" + "_" + i + "_" + "day_row_container_day_conatiner" + "_" + (i + 1);
-		day_row_container_day_container.classList.add(component_name + "_" + "day_row_container_day_conatiner");
 
-		const day_row_container_day_name = document.createElement("p");
-		day_row_container_day_name.innerHTML = abreviated_day_names_array[i];
-		day_row_container_day_name.id = component_name + "_" + component_item_name + "_" + component_item_component + "_" + "month_elements_container" + "_" + i + "_" + "day_row_container_day_name";
-		day_row_container_day_name.classList.add(component_name + "_" + "day_row_container_day_name");
-
-		
-		day_row_container_day_container.appendChild(day_row_container_day_name);
-		month_days_names_container.appendChild(day_row_container_day_container);
-	}
-};

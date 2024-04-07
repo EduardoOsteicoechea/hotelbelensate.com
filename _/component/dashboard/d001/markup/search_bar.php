@@ -6,7 +6,8 @@
 		public function __construct
 		(
 			$search_bar_id,
-			$search_bar_class
+			$search_bar_class,
+			$root_folder,
 		)
 		{
 			$this->markup =  '
@@ -74,11 +75,13 @@
 						class="'.$search_bar_class.'_parameter_container"
 						>
 							<button
+							id="'.$search_bar_id.'_execute_parameter_container_button"
+							class="'.$search_bar_class.'_parameter_container_button"
 							type="button"
 							>Filtrar opciones</button>
 						</div>
 					</div>
-					
+					<script src="'.$root_folder.'_/component/dashboard/d001/js/filter_options.js"></script>
 				</div>
 			';
 		}

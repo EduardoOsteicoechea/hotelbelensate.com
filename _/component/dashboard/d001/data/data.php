@@ -1,5 +1,5 @@
 <?php
-
+	// Called from ../d001.php
 	$bed_king_description = "Cama King Size (200cm x 200cm).";
 	$bed_queen_description = "Cama Queen Size (180cm x 200cm).";
 	$bed_regular_description = "Cama matrimonial (150cm x 200cm).";
@@ -21,6 +21,7 @@
 
 	$capacity_2_adult = "Capacidad para dos adultos.";
 	$capacity_2_adult_1_children = "Capacidad para dos adultos y un menor de 11 años.";
+	$capacity_2_adult_2_children = "Capacidad para dos adultos y dos menores de 11 años.";
 	$capacity_3_adult_1_children = "Capacidad para tres adultos y un menor de 11 años.";
 	$capacity_3_adult = "Capacidad para tres adultos.";
 	$capacity_3_adult_pax = "Cancelando PAX: Capacidad para tres adultos.";
@@ -97,14 +98,14 @@
 			},
 		},
 		"imagenes":             [
-			"presidencial_junior_4_3840x2160.webp",
 			"presidencial_junior_2_3840x2160.webp",
+			"presidencial_junior_4_3840x2160.webp",
 			"presidencial_junior_1_3840x2160.webp",
 			"presidencial_junior_3_3840x2160.webp",
 			"presidencial_junior_5_3840x2160.webp",
 		],
 		"imagen 360":           "room_5_360.JPG",
-		"imagen miniatura":     "presidencial_junior_4_960x540.webp",
+		"imagen miniatura":     "presidencial_junior_2s_960x540.webp",
 		"cantidad disponible":  1,
 		"precio por día":       185,
 		"capacidad":[
@@ -323,7 +324,7 @@
 		"cantidad disponible":  1,
 		"precio por día":       107.5,
 		"capacidad":[
-			["3_adult_1_children.svg","'.$capacity_3_adult_1_children.'"],
+			["2_adult_2_children.svg","'.$capacity_2_adult_2_children.'"],
 			["4_adult.svg","'.$capacity_4_adult.'"],
 		],
 		"capacidad cancelando pax":"4_adult.svg",
@@ -531,7 +532,7 @@
 		"cantidad disponible":  1,
 		"precio por día":       70.7,
 		"capacidad":[
-			["3_adult_1_children.svg","'.$capacity_3_adult_1_children.'"],
+			["2_adult_2_children.svg","'.$capacity_2_adult_2_children.'"],
 			["4_adult.svg","'.$capacity_4_adult.'"],
 		],
 		"capacidad cancelando pax":"4_adult.svg",

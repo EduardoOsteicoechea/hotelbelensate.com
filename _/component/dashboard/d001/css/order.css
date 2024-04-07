@@ -58,9 +58,11 @@
 	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
-	padding: 0 1.5dvw;
+	padding: 0 1.5dvw 4dvw 1.5dvw;
 	gap: 1dvw;
 	color: var(--c1);
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 .d001_order_item_container::-webkit-scrollbar 
 {
@@ -135,11 +137,18 @@
 	max-width: 50%;
 	height: 100%;
 	padding: .75dvw 1.5dvw;
-	background: var(--c2);
+	/* background: var(--c2); */
+	background: var(--success_1);
 	color: var(--c1);
 	border: none;
 	margin-left: auto;
 	font-family: inherit;
 	font-size: .85dvw;
 	letter-spacing: .2dvw;
+	cursor: pointer;
+	transition: transform ease 100ms, background ease 1000ms;
+}
+#reservar_d001_order_total_payment_button:hover, #reservar_d001_order_total_payment_button:active
+{
+	transform: scale(1.05);
 }
