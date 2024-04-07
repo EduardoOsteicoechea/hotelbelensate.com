@@ -64,11 +64,6 @@
 	background: var(--c1);
 	font-weight: 100;
 }
-#reservar_d001_search_bar_children_age_parameter_container
-{
-	display: none;
-}
-
 
 .d001_search_bar_parameter_container:last-child
 {
@@ -93,6 +88,7 @@
 	font-size: .75dvw;
 	letter-spacing: .1dvw;
 	cursor: pointer;
+
 }
 .d001_search_bar_parameter_container > button:hover
 {

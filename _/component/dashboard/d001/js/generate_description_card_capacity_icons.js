@@ -1,7 +1,5 @@
 // Called from ./generate_description_card_elements.js
 
-import add_room_to_order from "./add_room_to_order.js";
-
 export default function generate_description_card_capacity_icons 
 (
 	root_folder,

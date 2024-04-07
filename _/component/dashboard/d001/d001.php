@@ -69,7 +69,8 @@
 				"viewer_2d",
 				"viewer_2d_carrousel",
 				"option_date_picker",
-				"selected_room_order_container"
+				"selected_room_order_container",
+				"children_age_container"
 			];
 
 			$search_bar =  new search_bar ( $this->search_bar_id,       $this->search_bar_class, $this->root_folder  );

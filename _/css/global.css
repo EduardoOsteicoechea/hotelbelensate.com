@@ -25,6 +25,7 @@
 
 	--success_1:rgb(0, 200, 73);
 	--inactive_1:rgb(215, 215, 215);
+	--disabled_1:rgb(230, 230, 230);
 	--failure_1:rgb(230, 43, 80);
 
 	--shadow_1: 1vw 1vw 1vw rgba(255,255,255,.25);
@@ -58,4 +59,23 @@ b
 {
 	pointer-events: none;
 	background: var(--inactive_1) !important;
+}
+.active_input
+{
+	pointer-events: all;
+	background: var(--c1) !important;
+}
+.disabled_input
+{
+	pointer-events: none;
+	background: var(--disabled_1) !important;
+}
+.disabled_container
+{
+	height: 0 !important;
+	padding: 0 1dvw !important;
+}
+.enabled_container
+{
+	padding: 1dvw !important;
 }
