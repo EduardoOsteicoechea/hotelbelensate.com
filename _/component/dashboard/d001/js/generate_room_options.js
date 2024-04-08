@@ -7,9 +7,10 @@ import generate_option_slider from "./generate_option_slider.js";
 
 // Called from ./class.js
 
-export default function generate_initial_options 
+export default function generate_room_options 
 (
 	root_folder,
+	search_bar_parameters_values_object,
 	option_container,
 	data_object,
 	viewer_2d,
@@ -48,88 +49,6 @@ export default function generate_initial_options
 		};
 		room_description = description_string;
 
-		const room_card = document.createElement("div");
-		room_card.classList.add("d001_options_card");
-		room_card.id = "d001_options_card_" + room_counter;
-		option_container.appendChild(room_card);
-
-		const room_images_container = document.createElement("div");
-		room_images_container.classList.add("d001_options_card_images_container");
-		room_card.appendChild(room_images_container);
-
-		generate_card_image 
-		(
-			root_folder,
-			room_card,
-			viewer_2d,
-			room_images_container,
-			room_name,
-			room_min_arrival,
-			room_max_departure,
-			room_available_quantity,
-			room_price_by_day,
-			room_capacity,
-			room_pax,
-			room_includes,
-			room_description,
-			room_images[0],
-			component_name,
-		);	
-
-		generate_description_card_elements 
-		(
-			root_folder,
-			component_name,
-			"options_card",
-			"description_card",
-			room_card,
-			room_name,
-			room_min_arrival,
-			room_max_departure,
-			room_reserved_dates_array,
-			room_available_quantity,
-			room_price_by_day,
-			room_capacity,
-			room_pax,
-			room_includes,
-			room_description,
-			room_images,
-			order_container,
-			viewer_2d
-		);
-
-		room_card.addEventListener("pointerup", function() 
-		{
-			display_room_2d_viewer( viewer_2d );
-			generate_2d_viewer_carrousel
-			(
-				root_folder,
-				room_card,
-				viewer_2d,
-				room_name,
-				room_images,
-				component_name,
-				800,
-				option_container
-			);
-			diferentiate_selected_card(room_card, viewer_2d);
-		});
-
-		room_counter++
-		
-		room_card_array.push(room_card)
-		room_name_array.push(room_name)
-		room_image_array.push(room_images)
 	});
 
-	generate_option_slider
-	(	
-		root_folder,
-		viewer_2d,
-		option_container,
-		room_card_array,
-		room_name_array,
-		room_image_array,
-		component_name
-	);
 };

@@ -1,4 +1,5 @@
 <?php
+	// ONLY USE ONE OF THIS COMPONENTS BY PAGE: It has fixed values, so it would mix functionalities between instances when instantiated more than once.
 	// Called from ../../../reservar/index.php
 	class d001
 	{

@@ -73,6 +73,8 @@ b
 .disabled_container
 {
 	height: 0 !important;
+	overflow: hidden;
+	display: none !important;
 	padding: 0 1dvw !important;
 }
 .enabled_container
