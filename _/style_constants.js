@@ -1,0 +1,10 @@
+const cg1 = "#888";
+const cg2 = "#aaa";
+const cg3 = "#bbb";
+const cg4 = "#ccc";
+const cg5 = "#ddd";
+const cg6 = "#eee";
+const cg7 = "#f0f0f0";
+const cg8 = "#fafafa";
+const cb = "#000";
+const bordT1 = "solid .1dvw red";

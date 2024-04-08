@@ -20,6 +20,7 @@
 				<link rel="stylesheet" href="'.$style_folder.'fonts.css">
 
 				<script src="'.$root_folder.'_/global.js"></script>
+				<script src="'.$root_folder.'_/style_constants.js"></script>
 				
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 

@@ -3,33 +3,10 @@
 	display: flex;
 	align-items: flex-end;
 	width: 100dvw;
-	height: 40dvw;
+	height: 50dvw;
 	overflow: hidden;
 	margin-top: 0dvw;
 }
-
-
-
-
-.h2_a_a_DARK_FOOTER_image_container 
-{
-	display: flex;
-	justify-content: center;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-}
-.h2_a_a_DARK_FOOTER_image_container > img  
-{
-	height: 150%;
-}
-.h2_a_a_DARK_FOOTER_image_container > div 
-{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-}
-
 
 
 
@@ -47,15 +24,16 @@
 	color: var(--c1);
 	transition: all ease 500ms;
 }
-.h2_a_a_DARK_FOOTER_message_container:hover
+/* .h2_a_a_DARK_FOOTER_message_container:hover
 {
-	transform: scale(1.0125);
+	transform: scale(1.005);
 	background: rgba(0,0,0,1);
-}
+} */
 .h2_a_a_DARK_FOOTER_message_container > h2
 {
-	font-size: 1.5dvw;
-	letter-spacing: 1dvw;
+	font-size: 1.25dvw;
+	font-weight: 000;
+	letter-spacing: .5dvw;
 }
 .h2_a_a_DARK_FOOTER_message_buttons_container
 {
@@ -70,12 +48,12 @@
 	align-items: center;
 	justify-content: center;
 	height: 2.5dvw;
-	padding: .5dvw 1.5dvw;
+	padding: .5dvw 1dvw;
 	font-size: .75dvw;
 	border: solid .1dvw var(--c1);
 	color: var(--c1);
 	text-decoration: none;
-	transition: all ease 500ms;
+	transition: all ease 1500ms;
 	gap: .5dvw;
 }
 .h2_a_a_DARK_FOOTER_message_buttons_container > a:first-child > image
@@ -86,10 +64,10 @@
 }
 .h2_a_a_DARK_FOOTER_message_buttons_container > a:hover
 {
-	transform: scale(1.025);
+	/* transform: scale(1.025); */
 	background: var(--c1);
 	color: var(--c2);
-	border: none;
+	border: solid .1dvw var(--c2);
 }				
 .h2_a_a_DARK_FOOTER_message_container > p 
 {

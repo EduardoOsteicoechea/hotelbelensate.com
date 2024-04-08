@@ -19,18 +19,6 @@ function h2_a_a_DARK_FOOTER
 		class="h2_a_a_DARK_FOOTER"
 		>
 			<div
-			id="'.$id.'_h2_a_a_DARK_FOOTER_image_container"
-			class="h2_a_a_DARK_FOOTER_image_container"
-			>
-				<img 
-				src="'.$root_folder.'_/media/image/'.$background_image_name.'" 
-				alt="Imagen de habitación" 
-				height="100%"
-				>
-				<div></div>
-			</div>
-
-			<div
 			id="'.$id.'_h2_a_a_DARK_FOOTER_message_container"
 			class="h2_a_a_DARK_FOOTER_message_container"
 			>

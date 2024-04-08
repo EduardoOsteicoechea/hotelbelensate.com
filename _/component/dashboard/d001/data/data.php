@@ -161,7 +161,7 @@
 		],
 		"imagen 360":           "room_5_360.JPG",
 		"imagen miniatura":     "cabana_1_960x540.webp",
-		"cantidad disponible":  1,
+		"cantidad disponible":  7,
 		"precio por día":       176.1,
 		"capacidad":[
 			["6_adult.svg","'.$capacity_6_adult.'"],
@@ -214,7 +214,7 @@
 		],
 		"imagen 360":           "room_5_360.JPG",
 		"imagen miniatura":     "suite_ejecutiva_1_960x540.webp",
-		"cantidad disponible":  1,
+		"cantidad disponible":  2,
 		"precio por día":       135,
 		"capacidad":[
 			["2_persons.svg","'.$capacity_2_adult.'"],
@@ -321,7 +321,7 @@
 		],
 		"imagen 360":           "room_5_360.JPG",
 		"imagen miniatura":     "doble_deluxe_3_960x540.webp",
-		"cantidad disponible":  1,
+		"cantidad disponible":  29,
 		"precio por día":       107.5,
 		"capacidad":[
 			["2_adult_2_children.svg","'.$capacity_2_adult_2_children.'"],
@@ -374,7 +374,7 @@
 		],
 		"imagen 360":           "room_5_360.JPG",
 		"imagen miniatura":     "especial_deluxe_1_960x540.webp",
-		"cantidad disponible":  1,
+		"cantidad disponible":  4,
 		"precio por día":       100,
 		"capacidad":[
 			["2_persons.svg","'.$capacity_2_adult.'"],
@@ -426,7 +426,7 @@
 		],
 		"imagen 360":           "room_5_360.JPG",
 		"imagen miniatura":     "matrimonial_ejecutiva_2_960x540.webp",
-		"cantidad disponible":  1,
+		"cantidad disponible":  13,
 		"precio por día":       92,
 		"capacidad":[
 			["2_persons.svg","'.$capacity_2_adult.'"],
@@ -477,7 +477,7 @@
 		],
 		"imagen 360":           "room_5_360.JPG",
 		"imagen miniatura":     "semi_suite_1_960x540.webp",
-		"cantidad disponible":  1,
+		"cantidad disponible":  6,
 		"precio por día":       74.7,
 		"capacidad":[
 			["2_persons.svg","'.$capacity_2_adult.'"],
@@ -529,7 +529,7 @@
 		],
 		"imagen 360":           "room_5_360.JPG",
 		"imagen miniatura":     "doble_colonial_2_960x540.webp",
-		"cantidad disponible":  1,
+		"cantidad disponible":  19,
 		"precio por día":       70.7,
 		"capacidad":[
 			["2_adult_2_children.svg","'.$capacity_2_adult_2_children.'"],
@@ -582,7 +582,7 @@
 		],
 		"imagen 360":           "room_5_360.JPG",
 		"imagen miniatura":     "matrimonial_colonial_1_960x540.webp",
-		"cantidad disponible":  1,
+		"cantidad disponible":  14,
 		"precio por día":       58.7,
 		"capacidad":[
 			["2_persons.svg","'.$capacity_2_adult.'"],

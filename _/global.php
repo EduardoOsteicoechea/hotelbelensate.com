@@ -69,7 +69,9 @@
 	include $component_folder . 'viewer/strip_silding_VIEWER/strip_silding_VIEWER.php';
 	include $component_folder . 'viewer/hero_data_article_VIEWER/hero_data_article_VIEWER.php';
 
-	include $component_folder . 'dashboard/L_add_R_report_DASHBOARD/L_add_R_report_DASHBOARD.php';
+	
+	include $root_folder . '_/component/header/header.php';
+	include $root_folder . '_/component/footer/h2_a_a_DARK_FOOTER/h2_a_a_DARK_FOOTER.php';
 
 	///////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////

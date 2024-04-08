@@ -1,5 +1,5 @@
 history.scrollRestoration = "manual";
-history.scrollRestoration = "auto";
+// history.scrollRestoration = "auto";
 
 function disable_page_scrolling_function() {	
 	document.body.style.overflowY = 'hidden';
@@ -63,3 +63,31 @@ function slide_info_image_slider(event)
 	info_image_slider_information_container.classList.add("visible");
 	info_image_slider_image_container.classList.add("visible");
 };
+
+function apply_styles(
+	element, 
+	desktop_style_object,
+	tablet_style_object,
+	mobile_style_object,
+){
+	apply();
+	window.addEventListener("resize", function(){
+		apply();
+	});
+	function apply(){
+		if (window.innerWidth > 822) {	
+			for(let property in desktop_style_object) {
+				element.style[property] = desktop_style_object[property];
+			};
+		} else if (window.innerWidth > 550 && window.innerWidth < 822 ) {	
+			for(let property in tablet_style_object) {
+				element.style[property] = tablet_style_object[property];
+			};
+		} else {	
+			for(let property in mobile_style_object) {
+				element.style[property] = mobile_style_object[property];
+			};
+		}
+	}
+};
+
