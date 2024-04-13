@@ -31,16 +31,18 @@
 				class="'.$this->component_class.'"
 				>
 					<script type="module">
-						import '.$class_name.' from "'. $this->component_folder .'js/'.$class_name.'.js";
-						const '. $class_name .'_instance = new '.$class_name.'(
-							"'.$this->root_folder.'",
-							"'.$this->component_id.'",
-							"'.$this->component_class.'",
-							"'.$this->component_folder.'",
-							"'.$this->component_type.'",
-							{'.implode($this->sesion_array).'},
-							{'.implode($this->data).'},
-						);
+						import '.$class_name.' from "'. $this->component_folder .'element/'.$class_name.'.js";
+						window.addEventListener("load",()=>{
+							const '. $class_name .'_instance = new '.$class_name.'(
+								"'.$this->root_folder.'",
+								"'.$this->component_id.'",
+								"'.$this->component_class.'",
+								"'.$this->component_folder.'",
+								"'.$this->component_type.'",
+								{'.implode($this->sesion_array).'},
+								{'.implode($this->data).'},
+							);
+						});
 					</script>
 				</div>
 			';

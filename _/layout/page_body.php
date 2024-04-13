@@ -1,5 +1,5 @@
 <?php
-   function page_body($root_folder,$page_name, $session)
+   function page_body($root_folder, $page_name, $session)
    {
 	   return '
 			</head>

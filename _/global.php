@@ -49,8 +49,6 @@
 	///////////////////////////////////////////////////////////
 	
 	include $layout_folder . 'page_top.php';
-	include $layout_folder . 'page_body.php';
-	include $layout_folder . 'page_bottom.php';
 
 	include $component_folder . 'hero/h1_p_a_a_hero/h1_p_a_a_hero.php';
 	include $component_folder . 'hero/h1_p_a_hero/h1_p_a_hero.php';
@@ -70,8 +68,12 @@
 	include $component_folder . 'viewer/hero_data_article_VIEWER/hero_data_article_VIEWER.php';
 
 	
-	include $root_folder . '_/component/header/header.php';
-	include $root_folder . '_/component/footer/h2_a_a_DARK_FOOTER/h2_a_a_DARK_FOOTER.php';
+	include $root_folder . '_/component/header/h001/h001.php';
+	include $root_folder . '_/component/header/h002/h002.php';
+	include $root_folder . '_/component/footer/f001/f001.php';
+	include $root_folder . '_/component/footer/f002/f002.php';
+	include $root_folder . '_/component/awaiter/a001/a001.php';
+	include $root_folder . '_/component/awaiter/a002/a002.php';
 
 	///////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////

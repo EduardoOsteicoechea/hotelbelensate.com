@@ -1,0 +1,127 @@
+@font-face{ font-family: f1t; src: url(font/Raleway/static/Raleway-Thin.ttf); }
+@font-face{ font-family: f1ti; src: url(font/Raleway/static/Raleway-ThinItalic.ttf); }
+@font-face{ font-family: f1el; src: url(font/Raleway/static/Raleway-ExtraLight.ttf); }
+@font-face{ font-family: f1eli; src: url(font/Raleway/static/Raleway-ExtraLightItalic.ttf); }
+@font-face{ font-family: f1l; src: url(font/Raleway/static/Raleway-Light.ttf); }
+@font-face{ font-family: f1li; src: url(font/Raleway/static/Raleway-LightItalic.ttf); }
+@font-face{ font-family: f1m; src: url(font/Raleway/static/Raleway-Medium.ttf); }
+@font-face{ font-family: f1mi; src: url(font/Raleway/static/Raleway-MediumItalic.ttf); }
+@font-face{ font-family: f1r; src: url(font/Raleway/static/Raleway-Regular.ttf); }
+@font-face{ font-family: f1ri; src: url(font/Raleway/static/Raleway-MediumItalic.ttf); }
+@font-face{ font-family: f1sb; src: url(font/Raleway/static/Raleway-SemiBold.ttf); }
+@font-face{ font-family: f1sbi; src: url(font/Raleway/static/Raleway-SemiBoldItalic.ttf); }
+@font-face{ font-family: f1b; src: url(font/Raleway/static/Raleway-Bold.ttf); }
+@font-face{ font-family: f1bi; src: url(font/Raleway/static/Raleway-BoldItalic.ttf); }
+@font-face{ font-family: f1eb; src: url(font/Raleway/static/Raleway-ExtraBold.ttf); }
+@font-face{ font-family: f1ebi; src: url(font/Raleway/static/Raleway-ExtraBoldItalic.ttf); }
+@font-face{ font-family: f1bl; src: url(font/Raleway/static/Raleway-Black.ttf); }
+@font-face{ font-family: f1bli; src: url(font/Raleway/static/Raleway-BlackItalic.ttf); }
+
+:root {
+	letter-spacing: .4dvw;
+	font-family: f1t, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	scroll-behavior: smooth;
+
+	--b1: solid .1dvw red;
+	--b2: solid .1dvw rgb(226, 226, 226);
+	
+	--first:#fff;
+	--c1:#fff;
+	--second:#000;
+	--c2:#000;
+	--c3:#f0f0f0;
+	--c4:#fcf7cb;
+	/* --c5: rgb(75, 192, 255); */
+	--c5: rgb(255, 255, 255);
+	--c6: rgb(226, 226, 226);
+	--c7: rgb(119, 119, 119);
+	--c8: #f8f8f8;
+	--c9: #cdcdcd;
+
+	--c_good:rgb(71, 199, 62);
+
+	--c_bad:rgb(211, 62, 84);
+
+	--success_1:rgb(0, 200, 73);
+	--inactive_1:rgb(215, 215, 215);
+	--disabled_1:rgb(230, 230, 230);
+	--failure_1:rgb(230, 43, 80);
+
+	--shadow_1: 1vw 1vw 1vw rgba(255,255,255,.25);
+	--sh2: .0dvw .0dvw 1dvw rgba(0,0,0, 0.15);
+	--sh3: .15dvw .15dvw 1dvw rgba(0,0,0, 0.1);
+	--sh4: .25dvw .25dvw .25dvw rgba(0,0,0, 0.5);
+	--sh5: .25dvw .25dvw .5dvw rgba(0,0,0, 0.25);
+
+	--tr1: all ease 1000ms;
+
+	--g1:20px;
+	--g2:30px;
+	--g3:40px;
+	--g4:50px;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	position: relative;
+	text-transform: uppercase;
+}
+
+body::-webkit-scrollbar {
+	width: 0;
+}
+
+b {
+	font-weight: 900;
+}
+
+a {
+	cursor: pointer;
+}
+h1{font-family: f1b; font-size: 1.2dvw;}
+h2{font-family: f1b; font-size: 1dvw;}
+h3{font-family: f1b; font-size: .8dvw;}
+h4{font-family: f1b; font-size: .6dvw;}
+
+
+
+.active_button
+{
+	pointer-events: all;
+	background: var(--success_1) !important;
+}
+.disabled_button
+{
+	pointer-events: none;
+	background: var(--inactive_1) !important;
+}
+.active_input
+{
+	pointer-events: all;
+	background: var(--c1) !important;
+}
+.disabled_input
+{
+	pointer-events: none;
+	background: var(--disabled_1) !important;
+}
+.disabled_container
+{
+	height: 0 !important;
+	overflow: hidden;
+	display: none !important;
+	padding: 0 1dvw !important;
+}
+.enabled_container
+{
+	padding: 1dvw !important;
+}
+
+
+
+body
+{
+	overflow-x: hidden;
+	width: 100% !important;
+}

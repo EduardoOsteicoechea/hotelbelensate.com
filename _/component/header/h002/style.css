@@ -1,0 +1,242 @@
+.h002
+{
+	display:flex;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 100px;
+	padding: 0 3rem;
+	z-index: 900;
+	gap: var(--g4);
+	overflow: hidden;
+}
+.h002_logo_container
+{
+	display:flex;
+	align-items: center;
+	height: 100%;
+	min-height: 100px;
+	/* border: var(--b1); */
+	/* overflow: hidden; */
+}
+.h002_logo_image
+{
+	height: 40px;
+	/* border: var(--b1); */
+}
+.h002_menu_button
+{
+	display: none;
+	/* border: var(--b1); */
+}
+.h002_menu_button > *
+{
+	background: var(--c2);
+	height: 5px;
+	width: 100%;
+}
+.h002_navigation_container
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: fit-content;
+	/* max-width: 50%; */
+	height: 100px;
+	margin-left: auto;
+	gap: var(--g4);
+	overflow: hidden;
+	z-index: 900;
+	font-family: f1r;
+	/* border: var(--b1); */
+	overflow: hidden;
+}
+.h002_navigation_anchor
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 25ch;
+	text-decoration: none;
+	color: var(--c2);
+	font-weight: 900 !important;
+	letter-spacing: 4px;
+	font-size: 10px;
+}
+
+@media only screen and (max-width: 950px) and (min-width: 439px)
+{  
+	.h002
+	{
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: auto;
+		padding: 2dvw 0dvw 0dvw 0dvw;
+		gap: 0;
+		min-height: auto;
+		/* border: var(--b1); */
+	}
+	.h002_logo_container
+	{
+		display:flex;
+		align-items: center;
+		height: 3dvw;
+		min-height: auto;
+		left: -5px;
+		/* top: -5px; */
+		margin-left: 5dvw;
+		margin-bottom: 2dvw;
+		/* border: var(--b1); */
+	}
+	.h002_logo_image
+	{
+		height: 100%;
+	}
+	.h002_menu_button
+	{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		/* height: 30px; */
+		width: 6dvw;
+		padding: 10px 10px;
+		bottom: 0;
+		gap: .75dvw;
+		margin-top: 0dvw;
+		margin-bottom: 2dvw;
+		margin-left: auto;
+		margin-right: 5dvw;
+		background: var(--c1);
+		/* border: var(--b1); */
+	}
+	.h002_menu_button:active
+	{
+		filter: invert(100);
+	}
+	.h002_menu_button > *
+	{
+		background: var(--c2);
+		height: .3dvw;
+		width: 100%;
+		border-radius: 5px;
+	}
+	.h002_navigation_container
+	{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 2dvw;
+		left: 0;
+		height: 0px;
+		width: 100dvw;
+		background: var(--c8);
+		padding: 0 10dvw;
+		/* position: absolute; */
+		transition: all ease 2000ms;
+		/* border: var(--b1); */
+	}
+	.h002_navigation_anchor
+	{
+		width: 100%;
+		padding: 2dvw 0;
+		font-size: .8dvw;
+		/* border-bottom: solid .5px var(--c6); */
+		/* border: var(--b1); */
+	}
+	.h002_navigation_anchor:last-child
+	{
+		border-bottom: none;
+	}	
+}
+    
+
+    
+@media only screen and (max-width: 400px) 
+{   
+	.h002
+	{
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: auto;
+		gap: 0;
+		padding: 20dvw 0dvw 0dvw 0dvw;
+		/* border: var(--b1); */
+	}
+	.h002_logo_container
+	{
+		display:flex;
+		align-items: center;
+		height: 11dvw;
+		min-height: auto;
+		left: -5px;
+		/* top: -5px; */
+		/* border: var(--b1); */
+	}
+	.h002_logo_image
+	{
+		height: 100%;
+	}
+	.h002_menu_button
+	{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		/* height: 30px; */
+		width: 50px;
+		padding: 10px 10px;
+		bottom: 0;
+		gap: 1dvw;
+		margin-top: 10dvw;
+		margin-bottom: 15dvw;
+		margin-left: 0;
+		margin-right: 0;
+		background: var(--c1);
+		/* border: var(--b1); */
+	}
+	.h002_menu_button:active
+	{
+		filter: invert(100);
+	}
+	.h002_menu_button > *
+	{
+		background: var(--c2);
+		height: 3px;
+		width: 100%;
+		border-radius: 5px;
+	}
+	.h002_navigation_container
+	{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0;
+		left: 0;
+		height: 0px;
+		width: 100dvw;
+		background: var(--c8);
+		padding: 0;
+		/* position: absolute; */
+		transition: all ease 2000ms;
+		/* border: var(--b1); */
+	}
+	.h002_navigation_anchor
+	{
+		width: 100%;
+		padding: 25px 0;
+		/* border-bottom: solid .5px var(--c6); */
+		/* border: var(--b1); */
+	}
+	.h002_navigation_anchor:last-child
+	{
+		border-bottom: none;
+	}
+}

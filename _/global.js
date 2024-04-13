@@ -66,8 +66,9 @@ function slide_info_image_slider(event)
 
 function apply_styles(
 	element, 
-	desktop_style_object,
-	tablet_style_object,
+	desktop_max_style_object,
+	desktop_mid_style_object,
+	desktop_min_style_object,
 	mobile_style_object,
 ){
 	apply();
@@ -75,19 +76,25 @@ function apply_styles(
 		apply();
 	});
 	function apply(){
-		if (window.innerWidth > 822) {	
-			for(let property in desktop_style_object) {
-				element.style[property] = desktop_style_object[property];
+		const window_inner_width = window.innerWidth;
+		if (window_inner_width > 822) {	
+			for(let property in desktop_max_style_object) {
+				element.style[property] = desktop_max_style_object[property];
 			};
-		} else if (window.innerWidth > 550 && window.innerWidth < 822 ) {	
-			for(let property in tablet_style_object) {
-				element.style[property] = tablet_style_object[property];
+		} else if (window_inner_width > 550 && window_inner_width < 822 ) {		
+			for(let property in desktop_mid_style_object) {
+				element.style[property] = desktop_mid_style_object[property];
 			};
-		} else {	
+		} else if (window_inner_width < 550) {	
+			for(let property in desktop_min_style_object) {
+				element.style[property] = desktop_min_style_object[property];
+			};
+		} else if ((navigator.userAgent.indexOf('IEMobile') !== -1 || window.orientation !== "undefined")){	
 			for(let property in mobile_style_object) {
 				element.style[property] = mobile_style_object[property];
 			};
 		}
 	}
+
 };
 

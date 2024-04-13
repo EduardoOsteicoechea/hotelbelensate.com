@@ -37,7 +37,7 @@
 				class="'.$this->component_class.'"
 				>
 					<script type="module">
-						import '.$class_name.' from "'. $this->component_folder .'js/'.$class_name.'.js";
+						import '.$class_name.' from "'. $this->component_folder . $class_name.'.js";
 						const '. $class_name .'_instance = new '.$class_name.'(
 							"'.$this->root_folder.'",
 							"'.$this->component_id.'",
