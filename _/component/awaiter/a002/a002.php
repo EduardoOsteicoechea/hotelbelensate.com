@@ -32,6 +32,8 @@
 			$this->awaiter_message =        $awaiter_message;
 
 			echo '
+			<!-- PAGE AWAITER -->
+			<!-- PAGE AWAITER MARKUP -->
 			<div 
 			id="'.$this->component_id.'"
 			class="'.$this->component_class.'"
@@ -62,14 +64,58 @@
 						'.$this->awaiter_message.'
 					</h1>	
 				</div>
-				
-
+				<!-- PAGE AWAITER JAVASCRIPT -->
 				<script>
+					disable_page_scrolling_function();
 					const '.$this->component_id.' = document.getElementById("'.$this->component_id.'");
-
+					const '.$this->component_id.'_background_message_barra_de_carga = document.getElementById("'.$this->component_id.'_background_message_barra_de_carga");
 					setTimeout(()=>{
-						'.$this->component_id.'.remove();
+						const awaiter = '.$this->component_id.';
+						const load_bar = '.$this->component_id.'_background_message_barra_de_carga;
+						load_bar.style.width = "10%";
+					},500);
+					setTimeout(()=>{
+						const awaiter = '.$this->component_id.';
+						const load_bar = '.$this->component_id.'_background_message_barra_de_carga;
+						load_bar.style.width = "40%";
+					},1200);
+					setTimeout(()=>{
+						const awaiter = '.$this->component_id.';
+						const load_bar = '.$this->component_id.'_background_message_barra_de_carga;
+						load_bar.style.width = "70%";
+					},2500);
+					setTimeout(()=>{
+						const awaiter = '.$this->component_id.';
+						const load_bar = '.$this->component_id.'_background_message_barra_de_carga;
+						load_bar.style.width = "90%";
+					},3500);
+					setTimeout(()=>{
+						if (document.readyState === "complete") {
+							const awaiter = '.$this->component_id.';
+							const load_bar = '.$this->component_id.'_background_message_barra_de_carga;
+							load_bar.style.width = "100%";
+							awaiter.style.opacity = "0";
+							setTimeout(()=>{
+								awaiter.remove();
+								enable_page_scrolling_function();
+							},2000);
+						} else {
+							window.addEventListener("DOMContentLoaded",()=>{
+								const awaiter = '.$this->component_id.';
+								const load_bar = '.$this->component_id.'_background_message_barra_de_carga;
+								load_bar.style.width = "100%";
+								awaiter.style.opacity = "0";
+								setTimeout(()=>{
+									awaiter.remove();
+									enable_page_scrolling_function();
+								},2000);
+							});
+						}
 					},4000);
+
+
+					
+console.log(navigator.userAgentData.mobile)
 				</script>
 			</div>
 			';

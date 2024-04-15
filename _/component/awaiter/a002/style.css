@@ -1,5 +1,4 @@
-.a002
-{
+.a002 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -11,49 +10,172 @@
 	left: 0;
 	z-index: 1000;
 	background: var(--c1);
+	transition: all ease 4000ms;
 }
-.a002_background_message
-{
+.a002_background_message {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	width: 40%;
-	margin: auto;
+	width: 100%;
 }
-.a002_background_message_h2
-{
+.a002_background_message_h2 {
 	text-align: center;
-	font-size: 16px;
+	font-size: .8rem;
 	font-weight: 100;
-	color: rgb(214, 214, 214);
-	letter-spacing: 20px;
+	color: var(--c9);
+	letter-spacing: .2rem;
+	line-height: 2rem;
+	padding: 0 2rem;
+	word-spacing: .3rem;
 }
-.a002_background_message_contenedor_de_barra_de_carga
-{
+.a002_background_message_contenedor_de_barra_de_carga {
 	text-align: center;
 	display: flex;
 	align-items: center;
 	height: 2px;
-	background: var(--c3);
-	width: 45%;
+	color: var(--c9);
+	width: 25%;
 	margin-top: 45px;
 }
-.a002_background_message_barra_de_carga
-{
-
+.a002_background_message_barra_de_carga {
 	text-align: center;
 	background: var(--c2);
 	width: 0%;
 	height: 100%;
+	transition: all ease 4000ms;
 }
-.a002_background_message_h1
-{
+.a002_background_message_h1 {
 	text-align: center;
-	font-size: 12px;
-	font-weight: 900;
-	color: var(--c2);
-	letter-spacing: 6px;
-	margin-top: 40px;
+	font-size: .8rem;
+	font-weight: 100;
+	color: var(--c9);
+	letter-spacing: .2rem;
+	line-height: 2rem;
+	padding: 0 2rem;
+	word-spacing: .3rem;
+	margin-top: 3rem;
+}
+
+
+
+@media only screen and (max-width: 950px) and (min-width: 451px) {  
+	.a002 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		background: var(--c1);
+	}
+	.a002_background_message {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		width: 100%;
+	}
+	.a002_background_message_h2 {
+		text-align: center;
+		font-size: .8rem;
+		font-weight: 100;
+		color: var(--c9);
+		letter-spacing: .2rem;
+		line-height: 2rem;
+		padding: 0 2rem;
+		word-spacing: .3rem;
+	}
+	.a002_background_message_contenedor_de_barra_de_carga {
+		text-align: center;
+		display: flex;
+		align-items: center;
+		height: 2px;
+		color: var(--c9);
+		width: 35%;
+		margin-top: 45px;
+	}
+	.a002_background_message_barra_de_carga {
+	
+		text-align: center;
+		background: var(--c2);
+		width: 0%;
+		height: 100%;
+	}
+	.a002_background_message_h1 {
+		text-align: center;
+		font-size: .8rem;
+		font-weight: 100;
+		color: var(--c9);
+		letter-spacing: .2rem;
+		line-height: 2rem;
+		padding: 0 2rem;
+		word-spacing: .3rem;
+	}
+}
+    
+
+    
+@media only screen and (max-width: 450px) {  
+	.a002 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		background: var(--c1);
+	}
+	.a002_background_message {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		width: 100%;
+	}
+	.a002_background_message_h2 {
+		text-align: center;
+		font-size: .8rem;
+		font-weight: 100;
+		color: var(--c9);
+		letter-spacing: .2rem;
+		line-height: 2rem;
+		padding: 0 2rem;
+		word-spacing: .3rem;
+	}
+	.a002_background_message_contenedor_de_barra_de_carga {
+		text-align: center;
+		display: flex;
+		align-items: center;
+		height: 2px;
+		color: var(--c9);
+		width: 60%;
+		margin-top: 45px;
+	}
+	.a002_background_message_barra_de_carga {
+	
+		text-align: center;
+		background: var(--c2);
+		width: 0%;
+		height: 100%;
+	}
+	.a002_background_message_h1 {
+		text-align: center;
+		font-size: .8rem;
+		font-weight: 100;
+		color: var(--c9);
+		letter-spacing: .2rem;
+		line-height: 2rem;
+		padding: 0 2rem;
+		word-spacing: .3rem;
+	}
 }

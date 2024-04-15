@@ -75,14 +75,8 @@
 					id="'.$this->component_id.'_no_pets_message"
 					class="'.$this->component_class.'_no_pets_message"
 					>No ofrecemos alojamiento para mascotas</p>	
-				</div>
-
 					<script>
-						const '.$this->component_id.' = document.getElementById("'.$this->component_id.'");
-						'.$this->component_id.'.style.height = window.screen.height + "px";
-
-						const '.$this->component_id.'_message_container = document.getElementById("'.$this->component_id.'_message_container");
-						const '.$this->component_id.'_message_buttons_container = document.getElementById("'.$this->component_id.'_message_buttons_container");
+						document.getElementById("'.$this->component_id.'").style.height = window.screen.height + "px";
 					</script>
 				</div> 
 			';

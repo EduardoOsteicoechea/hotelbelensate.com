@@ -1,24 +1,25 @@
-@font-face{ font-family: f1t; src: url(font/Raleway/static/Raleway-Thin.ttf); }
-@font-face{ font-family: f1ti; src: url(font/Raleway/static/Raleway-ThinItalic.ttf); }
-@font-face{ font-family: f1el; src: url(font/Raleway/static/Raleway-ExtraLight.ttf); }
-@font-face{ font-family: f1eli; src: url(font/Raleway/static/Raleway-ExtraLightItalic.ttf); }
-@font-face{ font-family: f1l; src: url(font/Raleway/static/Raleway-Light.ttf); }
-@font-face{ font-family: f1li; src: url(font/Raleway/static/Raleway-LightItalic.ttf); }
-@font-face{ font-family: f1m; src: url(font/Raleway/static/Raleway-Medium.ttf); }
-@font-face{ font-family: f1mi; src: url(font/Raleway/static/Raleway-MediumItalic.ttf); }
-@font-face{ font-family: f1r; src: url(font/Raleway/static/Raleway-Regular.ttf); }
-@font-face{ font-family: f1ri; src: url(font/Raleway/static/Raleway-MediumItalic.ttf); }
-@font-face{ font-family: f1sb; src: url(font/Raleway/static/Raleway-SemiBold.ttf); }
-@font-face{ font-family: f1sbi; src: url(font/Raleway/static/Raleway-SemiBoldItalic.ttf); }
-@font-face{ font-family: f1b; src: url(font/Raleway/static/Raleway-Bold.ttf); }
-@font-face{ font-family: f1bi; src: url(font/Raleway/static/Raleway-BoldItalic.ttf); }
-@font-face{ font-family: f1eb; src: url(font/Raleway/static/Raleway-ExtraBold.ttf); }
-@font-face{ font-family: f1ebi; src: url(font/Raleway/static/Raleway-ExtraBoldItalic.ttf); }
-@font-face{ font-family: f1bl; src: url(font/Raleway/static/Raleway-Black.ttf); }
-@font-face{ font-family: f1bli; src: url(font/Raleway/static/Raleway-BlackItalic.ttf); }
+@font-face{ font-family: f1t; src: url(	Raleway-Thin.ttf); }
+@font-face{ font-family: f1ti; src: url(	Raleway-ThinItalic.ttf); }
+@font-face{ font-family: f1el; src: url(	Raleway-ExtraLight.ttf); }
+@font-face{ font-family: f1eli; src: url(	Raleway-ExtraLightItalic.ttf); }
+@font-face{ font-family: f1l; src: url(	Raleway-Light.ttf); }
+@font-face{ font-family: f1li; src: url(	Raleway-LightItalic.ttf); }
+@font-face{ font-family: f1m; src: url(	Raleway-Medium.ttf); }
+@font-face{ font-family: f1mi; src: url(	Raleway-MediumItalic.ttf); }
+@font-face{ font-family: f1r; src: url(	Raleway-Regular.ttf); }
+@font-face{ font-family: f1ri; src: url(	Raleway-MediumItalic.ttf); }
+@font-face{ font-family: f1sb; src: url(	Raleway-SemiBold.ttf); }
+@font-face{ font-family: f1sbi; src: url(	Raleway-SemiBoldItalic.ttf); }
+@font-face{ font-family: f1b; src: url(	Raleway-Bold.ttf); }
+@font-face{ font-family: f1bi; src: url(	Raleway-BoldItalic.ttf); }
+@font-face{ font-family: f1eb; src: url(	Raleway-ExtraBold.ttf); }
+@font-face{ font-family: f1ebi; src: url(	Raleway-ExtraBoldItalic.ttf); }
+@font-face{ font-family: f1bl; src: url(	Raleway-Black.ttf); }
+@font-face{ font-family: f1bli; src: url(	Raleway-BlackItalic.ttf); }
 
 :root {
 	letter-spacing: .4dvw;
+	font-size: 16px;
 	font-family: f1t, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	scroll-behavior: smooth;
 
@@ -55,10 +56,30 @@
 
 	--tr1: all ease 1000ms;
 
-	--g1:20px;
-	--g2:30px;
-	--g3:40px;
-	--g4:50px;
+	--g1:.1rem;
+	--g2:.25rem;
+	--g3:.5rem;
+	--g4:.6rem;
+	--g5:.7rem;
+	--g6:.8rem;
+	--g7:.9rem;
+	--g8:1rem;
+	--g9:1.1rem;
+	--g10:1.2rem;
+	--g11:1.3rem;
+	--g12:1.4rem;
+	--g13:1.5rem;
+	--g14:1.6rem;
+	--g15:1.7rem;
+	--g16:1.8rem;
+	--g17:1.9rem;
+	--g18:2rem;
+	--g19:2.25rem;
+	--g20:2.5rem;
+	--g21:2.75rem;
+	--g22:3rem;
+	--g23:3.5rem;
+	--g24:4rem;
 }
 * {
 	margin: 0;
@@ -76,13 +97,12 @@ b {
 	font-weight: 900;
 }
 
-a {
-	cursor: pointer;
-}
-h1{font-family: f1b; font-size: 1.2dvw;}
-h2{font-family: f1b; font-size: 1dvw;}
-h3{font-family: f1b; font-size: .8dvw;}
-h4{font-family: f1b; font-size: .6dvw;}
+a { font-size: 1rem; cursor: pointer; }
+p { font-size: 1rem; }
+h1{font-family: f1b; font-size: 2.5rem;}
+h2{font-family: f1b; font-size: 2rem;}
+h3{font-family: f1b; font-size: 1.5rem;}
+h4{font-family: f1b; font-size: 1rem;}
 
 
 

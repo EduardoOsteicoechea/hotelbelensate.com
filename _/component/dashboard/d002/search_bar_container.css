@@ -1,0 +1,19 @@
+.d002_search_bar_container{
+	background: var(--c3);
+	height: 8%;
+	width: 100%;
+}
+
+@media only screen and (max-width: 950px) and (min-width: 451px) {  
+	.d002_search_bar_container{
+		
+	}
+}
+    
+
+    
+@media only screen and (max-width: 450px) {   
+	.d002_search_bar_container{
+	
+	}
+}
