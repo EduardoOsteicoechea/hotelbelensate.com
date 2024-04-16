@@ -1,0 +1,30 @@
+.d002_search_bar_container_filter_parameters_container{
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	background: var(--c1);
+	height: 3rem;
+	padding: 0 1rem;
+	font-size: .6rem;
+	transition: all ease 500ms;
+}
+
+@media only screen and (max-width: 950px) and (min-width: 451px) {  
+	.d002_search_bar_container_toogle_button{
+	
+	}
+	.d002_search_bar_container_filter_parameters_container{
+	
+	}
+}
+    
+
+    
+@media only screen and (max-width: 450px) {   
+	.d002_search_bar_container_toogle_button{
+	
+	}
+	.d002_search_bar_container_filter_parameters_container{
+	
+	}
+}
