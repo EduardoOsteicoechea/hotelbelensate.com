@@ -22,6 +22,8 @@ export default class component
 		this.sesion_array =      sesion_array;
 		this.data =              data;
 
+		console.log(this.data)
+
 		this.component_container = document.getElementById(this.component_id);
 		this.component_container.style.height = window.innerHeight + "px";
 		add_component_style_tag( component_folder, this.component_class );

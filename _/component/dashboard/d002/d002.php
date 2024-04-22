@@ -23,7 +23,6 @@
 			$this->component_type =      $current_file_folder;		
 			$this->sesion_array =        $sesion_array;
 			$this->data =                $data;	
-
 			echo '
 				<div
 				id="'.$this->component_id.'"
@@ -39,7 +38,7 @@
 								"'.$this->component_folder.'",
 								"'.$this->component_type.'",
 								{'.implode($this->sesion_array).'},
-								{'.implode($this->data).'},
+								'.json_encode($this->data).',
 							);
 						});
 					</script>

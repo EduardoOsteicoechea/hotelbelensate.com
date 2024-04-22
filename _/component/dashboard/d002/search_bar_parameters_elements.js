@@ -1,5 +1,7 @@
 // Called from ./search_bar_container_elements.js
 
+import search_bar_children_age_elements from "./search_bar_children_age_elements.js";
+
 export default function search_bar_parameters_elements(
 	root_folder,
 	component_id,
@@ -12,6 +14,7 @@ export default function search_bar_parameters_elements(
 	search_bar_container,
 	search_bar_container_id,
 	search_bar_container_class,
+	search_bar_parameters_values_object,
 ){
 
 	// ARRIVAL
@@ -59,7 +62,13 @@ export default function search_bar_parameters_elements(
 	adult_quantity_input_label.innerHTML = "adultos";
 	adult_quantity_input_label.setAttribute("for",adult_quantity_input.id);
 
-	// CHILDREN QUANTITY
+	// CHILDREN AGES CONTAINER
+	
+	const children_ages_container = document.createElement("div");
+	children_ages_container.id = search_bar_container_id + "_" + "children_ages_container";
+	children_ages_container.classList.add(search_bar_container_class + "_" + "children_ages_container");
+
+	// CHILDREN QUANTITY && (ON-INPUT) CHILDREN AGES ELEMENTS
 	
 	const children_quantity_input = document.createElement("input");
 	children_quantity_input.id = search_bar_container_id + "_" + "children_quantity_input";
@@ -68,7 +77,12 @@ export default function search_bar_parameters_elements(
 	children_quantity_input.setAttribute("min",new Date("today"));
 	children_quantity_input.setAttribute("title",children_quantity_input.id);
 	children_quantity_input.addEventListener("input",()=>{
-		console.log("input")
+		search_bar_children_age_elements(
+			search_bar_container_class + "_" + "children_ages_container",
+			children_quantity_input, 
+			children_ages_container,
+			search_bar_parameters_values_object
+		) ;
 	});
 
 	const children_quantity_input_label = document.createElement("label");
@@ -77,17 +91,11 @@ export default function search_bar_parameters_elements(
 	children_quantity_input_label.innerHTML = "niños";
 	children_quantity_input_label.setAttribute("for",children_quantity_input.id);
 
-	// CHILDREN AGES
-
 	// ROOMS PREFERRED OPTIONS
 
 	// RESTART PARAMETERS BUTTON
 
 	// FILTER BY CURRENT PARAMETERS BUTTON
-
-	// CHILDREN QUANTITY
-
-	// CHILDREN QUANTITY
 
 	// APPEND ELEMENTS TO CONTAINER
 
@@ -99,4 +107,5 @@ export default function search_bar_parameters_elements(
 	search_bar_container.appendChild(adult_quantity_input_label);
 	search_bar_container.appendChild(children_quantity_input);
 	search_bar_container.appendChild(children_quantity_input_label);
+	search_bar_container.appendChild(children_ages_container);
 }

@@ -7,8 +7,8 @@ echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web ofic
 	<link rel="stylesheet" href="../_/component/footer/f002/style.css">
 	</head>
 	<body>
-		<?php new h002($root_folder, "reservas", "reservas", $_SESSION);?>	
-		<?php new d002("reservas", $root_folder, $_SESSION);?>	
-		<?php new f002($root_folder, "reservas", "reservas", $_SESSION);?>	
+		<?php new h002($root_folder, "restaurants", "restaurants", $_SESSION);?>
+		<?php new d002("reservar", $root_folder, $_SESSION);?>	
+		<?php new f002($root_folder, "restaurants", "restaurants", $_SESSION);?>
 	</body>
 </html>

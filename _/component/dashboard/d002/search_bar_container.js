@@ -16,6 +16,8 @@ export default function search_bar_container(
 	search_bar_container.classList.add(component_class + "_search_bar_container");
 	add_component_style_tag( component_folder, "search_bar_container" );
 
+	const search_bar_parameters_values_object = {};
+
 	search_bar_container_elements(
 		root_folder,
 		component_id,
@@ -28,6 +30,7 @@ export default function search_bar_container(
 		search_bar_container,
 		component_id + "_search_bar_container",
 		component_class + "_search_bar_container",
+		search_bar_parameters_values_object,
 	);
 
 	component_container.appendChild(search_bar_container);

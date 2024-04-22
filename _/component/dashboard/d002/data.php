@@ -28,5 +28,24 @@
 	$capacity_4_adult = "Cancelando PAX: Capacidad para cuatro adultos.";
 	$capacity_6_adult = "Capacidad para seis adultos.";
 
-	$data = [];
+	
+	
+	$current_date_miliseconds = round(microtime(true) * 1000);
+	$one_month_miliseconds = 30 * 24 * 60 * 60 * 1000;
+	$last_month_miliseconds = $current_date_miliseconds - $one_month_miliseconds;
+	$seconds = floor($last_month_miliseconds / 1000);
+	$date_a_month_ago = date('Y-m-d', $seconds);
+
+	$reservations = sql_command(
+		connect_to_database(), 
+		0, 
+		"SELECT * from `reservations` WHERE date > '".$date_a_month_ago."' AND departure >= CURDATE();"
+	);
+
+	echo count($reservations ?? []);
+
+	$data = [
+		"aaa"=> "Hello",
+		"reservations" => $reservations
+	];
 ?>

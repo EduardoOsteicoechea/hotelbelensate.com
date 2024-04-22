@@ -44,15 +44,15 @@ export default function generate_description_card_elements (
 	const room_assets_icons_container = document.createElement("div");
 	room_assets_icons_container.classList.add(component_name + "_" + component_item_name + "_" + component_item_component + "_" + "room_assets_icons_container");
 	card.appendChild(room_assets_icons_container);
-	// generate_description_card_icons(
-	// 	root_folder,
-	// 	component_name,
-	// 	component_item_name,
-	// 	component_item_component, 
-	// 	"room_assets_icons_container",
-	// 	room_assets_icons_container, 
-	// 	room_includes
-	// );
+	generate_description_card_icons(
+		root_folder,
+		component_name,
+		component_item_name,
+		component_item_component, 
+		"room_assets_icons_container",
+		room_assets_icons_container, 
+		room_includes
+	);
 
 	const room_assets_capacity_icons_container = document.createElement("div");
 	room_assets_capacity_icons_container.classList.add(component_name + "_" + component_item_name + "_" + component_item_component + "_" + "room_assets_capacity_icons_container");
