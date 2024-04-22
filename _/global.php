@@ -105,6 +105,27 @@
 		';
 	};
 
+	function get_todays_date_and_max_date(int $number_of_monts){
+		$current_date_miliseconds = round(microtime(true) * 1000);
+
+		$month_quantity_miliseconds = (30 * 24 * 60 * 60 * 1000) * $number_of_monts;
+		$minimum_month_miliseconds = $current_date_miliseconds - $month_quantity_miliseconds;
+		$maximum_month_miliseconds = $current_date_miliseconds + $month_quantity_miliseconds;
+		
+		$seconds_todays_date = floor($current_date_miliseconds / 1000);
+		$todays_date = date('Y-m-d', $seconds_todays_date);
+
+		$seconds_for_minimum_date = floor($minimum_month_miliseconds / 1000);
+		$date_a_month_ago = date('Y-m-d', $seconds_for_minimum_date);
+
+		$seconds_for_maximum_date = floor($maximum_month_miliseconds / 1000);
+		$date_a_month_from_today = date('Y-m-d', $seconds_for_maximum_date);
+
+		return [$todays_date, $date_a_month_ago, $date_a_month_from_today];
+	};
+
+	
+
 	///////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////
 	// Start session in each page of the application

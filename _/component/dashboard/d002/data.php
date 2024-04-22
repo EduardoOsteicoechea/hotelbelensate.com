@@ -8,7 +8,7 @@
 	$sauna_room_description = "Habitación de sauna para la relajación y bienestar.";
 	$jacuzzi_description = "Bañera de hidromasaje con chorros de agua y aire.";
 	$sofa_bed_description = "Mueble que puede funcionar como sofá durante y cama matrimonial.";
-	$special_capabilities_service_description = "Baño acondicionado para personas con capacidades especiales y silla de ruedas.";
+	$special_capabilities_service_description = "Baño acondicionado para capacidades especiales y silla de ruedas.";
 	$hair_dryer_description = "Secador de cabello integrado en habitación.";
 	$desk_description = "Escritorio de trabajo integrado en habitación.";
 	$microwave_description = "Equipo de microondas integrado en habitación.";
@@ -37,7 +37,7 @@
 	$date_a_month_ago = date('Y-m-d', $seconds);
 
 	$reservations = sql_command(
-		connect_to_database(), 
+		connect_to_database("../"), 
 		0, 
 		"SELECT * from `reservations` WHERE date > '".$date_a_month_ago."' AND departure >= CURDATE();"
 	);

@@ -6,11 +6,11 @@
 	// define('COMMAND_TYPE_DELETE', 3);
 	// define('COMMAND_TYPE_ALTER',  4);
 	// define('COMMAND_TYPE_DROP',   5);
-	$conn = connect_to_database();
+	$conn = connect_to_database($root_folder);
 	$sql = "INSERT INTO `".$reservation_table_name."` ".$reservation_fields_sql_string." VALUES ".$reservation_fields_placeholders." ;";
 	$params = set_reservation_field_params(
-		"2024-03-15",
-		"2024-03-16",
+		"2024-05-15",
+		"2024-05-16",
 		"Eduardo",
 		"Osteicoechea",
 		"eduardooost@gmail.com",
@@ -18,9 +18,9 @@
 		"+584147281033",
 		1,
 		"",
-		"Presidencial Master",
+		"Suite Presidencial Junior",
 		"215",
-		1,
+		208,
 		"0",
 		"",
 	);
