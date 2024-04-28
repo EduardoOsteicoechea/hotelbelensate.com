@@ -121,7 +121,22 @@
 		$seconds_for_maximum_date = floor($maximum_month_miliseconds / 1000);
 		$date_a_month_from_today = date('Y-m-d', $seconds_for_maximum_date);
 
-		return [$todays_date, $date_a_month_ago, $date_a_month_from_today];
+
+		$date_for_day_quantity_calculation_1 = new DateTime($todays_date);
+		$date_for_day_quantity_calculation_2 = new DateTime($date_a_month_from_today);
+
+		$day_quantity = ($date_for_day_quantity_calculation_1->diff($date_for_day_quantity_calculation_2))->days;
+
+		$reservable_dates = [];
+		for ($i=0; $i < $day_quantity; $i++) { 
+			$date = new DateTime($todays_date);
+			$date->add(new DateInterval('P'.$i.'D'));
+			array_push($reservable_dates, $date->format('Y-m-d'));		
+		};
+
+
+
+		return [$todays_date, $date_a_month_ago, $date_a_month_from_today, "day quantity" => $day_quantity, "reservable dates" => $reservable_dates];
 	};
 
 	
