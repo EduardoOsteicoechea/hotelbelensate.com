@@ -181,7 +181,7 @@
 					"king_deluxe_4_3840x2160.webp",
 				],
 				"room_5_360.JPG", "king_deluxe_3_960x540.webp",
-				2, 100,
+				2, 107.5,
 				15,
 				[$capacity_2_adult_array,],
 				"2_adult.svg", 2, 2, 2, 1,

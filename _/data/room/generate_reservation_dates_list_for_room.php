@@ -1,4 +1,5 @@
 <?php
+// Called from "./";
 function generate_reservation_dates_list_for_room(array $arrival_departure_reservation_dates_array){
 	$reservation_dates_pairs = [];
 	for ($i=0; $i < count($arrival_departure_reservation_dates_array); $i++) { 
