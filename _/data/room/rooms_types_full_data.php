@@ -13,7 +13,8 @@ $rooms_types_full_data = [
 			"monto de incremento de tipo de habitacion" => 1,
 			"precio bruto de tipo" => 215,
 			"imagenes de habitación" => [
-				"presidencial_master_1_3840x2160.webp","presidencial_master_2_3840x2160.webp","presidencial_master_3_3840x2160.webp","presidencial_master_4_3840x2160.webp","presidencial_master_5_3840x2160.webp",
+				"presidencial_master_1_3840x2160.webp","presidencial_master_2_3840x2160.webp",
+				"presidencial_master_3_3840x2160.webp","presidencial_master_4_3840x2160.webp","presidencial_master_5_3840x2160.webp",
 			],
 			"imagen 360" => "room_5_360.JPG", 
 			"imagen miniautura" => "presidencial_master_1_960x540.webp",
@@ -114,7 +115,7 @@ $rooms_types_full_data = [
 			]	
 		],
 		"datos de unidades de tipo" => [
-			["número de habitacion en administración"=>208, "esta habilitada"=>1, "ubicacion"=>"área ejecutiva", "monto de pax de unidad en dolares"=>15, "descuento de unidad"=>1, "incremento de unidad" => 1, "valor añadido" => [], "servicios" => []],
+			["número de habitacion en administración"=>209, "esta habilitada"=>1, "ubicacion"=>"área ejecutiva", "monto de pax de unidad en dolares"=>15, "descuento de unidad"=>1, "incremento de unidad" => 1, "valor añadido" => [], "servicios" => []],
 		],
 	],
 
@@ -128,21 +129,21 @@ $rooms_types_full_data = [
 			"monto de descuento de tipo de habitacion" =>1,
 			"monto de incremento de tipo de habitacion" => 1,
 			"precio bruto de tipo" => 176.1,
-			"imagenes de habitación" => [
+			-"imagenes de habitación" => [
 				"cabana_1_3840x2160.webp",
 				"cabana_2_3840x2160.webp",
 				"cabana_3_3840x2160.webp",
 				"cabana_4_3840x2160.webp",
 			],
-			"imagen 360" => "room_5_360.JPG", 
-			"imagen miniautura" => "cabana_1_960x540.webp",
-			"imagen y descripción de capacidades posibles de ocupantes" => [$capacity_6_adult_array],
-			"imagen predeterminada de capacidad de ocupacion cancelando pax" => "6_adult.svg", 
+			-"imagen 360" => "room_5_360.JPG", 
+			-"imagen miniautura" => "cabana_1_960x540.webp",
+			-"imagen y descripción de capacidades posibles de ocupantes" => [$capacity_6_adult_array],
+			-"imagen predeterminada de capacidad de ocupacion cancelando pax" => "6_adult.svg", 
 			"capacidad de ocupación cancelando pax" => 6, 
 			"capacidad de ocupación predeterminada" => 6, 
 			"capacidad de ocupación de adultos" => 6, 
 			"capacidad de ocupación de niños" => 5,
-			"servicios de habitacion" => [
+			-"servicios de habitacion" => [
 				$bed_regular_asset,
 				$second_bed_regular_asset,
 				$bed_single_double_asset,
@@ -152,7 +153,7 @@ $rooms_types_full_data = [
 				$safe_asset,
 				$executive_fridge_asset,
 			],
-			"elementos de descripcion de habitacion" => 
+			-"elementos de descripcion de habitacion" => 
 			[
 				"ubicada en el área colonial", 
 				"2 habitaciones con cama matrimonial", 
@@ -398,7 +399,6 @@ $rooms_types_full_data = [
 			"capacidad de ocupación de niños" => 1,
 			"servicios de habitacion" => [
 				$bed_queen_asset,
-				$special_capabilities_service_asset,
 				$desk_asset,
 				$tv_asset,
 				$wifi_asset,
