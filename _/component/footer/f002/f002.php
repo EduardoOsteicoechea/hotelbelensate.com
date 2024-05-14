@@ -48,8 +48,8 @@
 					>
 						<a
 						id="'.$this->component_id.'_whatsapp_button"
-						class="'.$this->component_class.'_whatsapp_button"		
-						href="https://wa.me/584123033034?text=Saludos%21"
+						class="'.$this->component_class.'_whatsapp_button"	
+						href="'.$this->root_folder.'contacto"
 						target="_blank"
 						>
 							<img
@@ -64,7 +64,7 @@
 						<a
 						id="'.$this->component_id.'_reservation_button"
 						class="'.$this->component_class.'_reservation_button" 
-						href="'. $root_folder .'reservas">Reserva</a>
+						href="'. $root_folder .'inicio">Inicio</a>
 					</div>
 					
 					<p

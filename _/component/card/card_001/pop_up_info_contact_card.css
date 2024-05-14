@@ -1,0 +1,7 @@
+.card_001_pop_up_info_contact_card{
+	/*Stylized in card_001.css*/
+}
+.card_001_pop_up_info_contact_card > span {
+	background: var(--c2) !important;
+	cursor: pointer;
+}

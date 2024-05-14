@@ -2,18 +2,19 @@
 {
 	width: 100dvw;
 	overflow: hidden;
-	padding: 0 20% 4dvw 20%;
+	padding: 1dvw 20% 0dvw 20%;
 }
 
 .hero_data_article_VIEWER_image_container 
 {
 	justify-content: center;
-	height: 40dvw;
+	height: 40dvw !important;
 }
 
 .hero_data_article_VIEWER_image 
 {
 	display: flex;
+	height: 100%;
 	justify-content: center;
 	margin: auto;
 }

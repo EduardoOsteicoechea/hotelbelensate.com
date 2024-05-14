@@ -14,13 +14,15 @@ function hero_data_article_VIEWER
 			<div
 			id="'.$id.'_hero_data_article_VIEWER_image_container"
 			class="hero_data_article_VIEWER_image_container"
+			style="margin:0 auto 0 auto; width:100%; height:50dvw;display:flex;justify-content:center;"
 			>
 				<img
 				id="'.$id.'_hero_data_article_VIEWER_image"
 				class="hero_data_article_VIEWER_image"
 				src="'.$root_folder.'_/media/image/"
 				alt="Obra de arte"
-				height="100%"
+				style="margin:0 auto 0 auto"
+				height="550px"
 				>
 			</div>
 
@@ -63,7 +65,7 @@ function hero_data_article_VIEWER
 				(function (){
 					let split_url = window.location.href.split("=").splice(1);
 					
-					console.log(split_url)
+					console.log(split_url.length)
 					if(split_url.length > 0)
 					{
 						for (let x= 0; x < split_url.length; x++) {
@@ -80,6 +82,14 @@ function hero_data_article_VIEWER
 						'.$id.'_hero_data_article_VIEWER_data_h4.innerHTML = split_url[2];
 						'.$id.'_hero_data_article_VIEWER_data_p_1.innerHTML = split_url[3];
 						'.$id.'_hero_data_article_VIEWER_data_p_2.innerHTML = split_url[4];
+					}
+					else
+					{
+						'.$id.'_hero_data_article_VIEWER_image.src = "'.$root_folder.'_/media/image/gallery/art_10.jpg";
+						'.$id.'_hero_data_article_VIEWER_data_h3.innerHTML = "";
+						'.$id.'_hero_data_article_VIEWER_data_h4.innerHTML = "";
+						'.$id.'_hero_data_article_VIEWER_data_p_1.innerHTML = "";
+						'.$id.'_hero_data_article_VIEWER_data_p_2.innerHTML = "";
 					};
 					
 				}

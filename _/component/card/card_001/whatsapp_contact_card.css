@@ -1,0 +1,6 @@
+.card_001_whatsapp_contact_card{
+	/*Stylized in card_001.css*/
+}
+.card_001_whatsapp_contact_card > a {
+	background: var(--c_whatsapp) !important;
+}
