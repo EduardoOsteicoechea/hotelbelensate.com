@@ -1,0 +1,18 @@
+.image_loader_001_heading_elements_container{
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	/* border: var(--b1); */
+}  
+
+
+.image_loader_001_heading_elements_container_h2{
+
+}
+
+ 
+
+
+.image_loader_001_heading_elements_container_p{
+	
+}

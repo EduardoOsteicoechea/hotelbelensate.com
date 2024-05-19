@@ -24,5 +24,5 @@
 		"0",
 		"",
 	);
-	sql_command($conn, 1, $sql, $params);
+	//sql_command($conn, 1, $sql, $params);
 ?>

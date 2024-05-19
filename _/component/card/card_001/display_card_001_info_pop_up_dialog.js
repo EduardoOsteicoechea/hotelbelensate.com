@@ -23,10 +23,10 @@ export default function display_card_001_info_pop_up_dialog(
 	overlay_container.id = component_id + "_" + "overlay_container";
 	overlay_container.classList.add(component_class + "_" + "overlay_container_container");
 	overlay_container.style.top = window.scrollY + "px";
-	overlay_container.addEventListener("pointerup", ()=>{
-		overlay_container.remove();
-		enable_page_scrolling_function();
-	});
+	// overlay_container.addEventListener("pointerup", ()=>{
+	// 	overlay_container.remove();
+	// 	enable_page_scrolling_function();
+	// });
 	document.body.appendChild(overlay_container);
 	add_component_style_tag( component_folder, "pop_up_info_contact_card_pop_up" );
 

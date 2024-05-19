@@ -39,9 +39,7 @@
 	///////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////
  
-	$layout_folder = $root_folder . '_/layout/';
 	$component_folder = $root_folder . '_/component/';
-	$controllers_folder = $root_folder . '_/controllers/';
 	
 	///////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////
@@ -59,33 +57,7 @@
 	///////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////
 
-	include $root_folder . '_/page/page_001/class.php';
-	include $layout_folder . 'page_top.php';
-
-	include $component_folder . 'hero/h1_p_a_a_hero/h1_p_a_a_hero.php';
-	include $component_folder . 'hero/h1_p_a_hero/h1_p_a_hero.php';
-	include $component_folder . 'hero/h2_a_DARK_HERO/h2_a_DARK_HERO.php';
-
-	include $component_folder . 'carrousel/centered_info_title_address_price/centered_info_title_address_price.php';
-
-	include $component_folder . 'heading/strip_HEADING/strip_HEADING.php';
-	include $component_folder . 'heading/strip_highlighted_HEADING/strip_highlighted_HEADING.php';
-
-	include $component_folder . 'viewer/T_none_L_h3_p_ul_h4_R_controls_strip_VIEWER/T_none_L_h3_p_ul_h4_R_controls_strip_VIEWER.php';
-	include $component_folder . 'viewer/L_info_R_strip_VIEWER/L_info_R_strip_VIEWER.php';
-	include $component_folder . 'viewer/L_h3_p_ul_h4_R_controls_strip_VIEWER/L_h3_p_ul_h4_R_controls_strip_VIEWER.php';
-	include $component_folder . 'viewer/L_h3_p_a_R_controls_strip_VIEWER/L_h3_p_a_R_controls_strip_VIEWER.php';
-	include $component_folder . 'viewer/strip_message_strip_VIEWER/strip_message_strip_VIEWER.php';
-	include $component_folder . 'viewer/strip_silding_VIEWER/strip_silding_VIEWER.php';
-	include $component_folder . 'viewer/hero_data_article_VIEWER/hero_data_article_VIEWER.php';
-
-	
-	include $root_folder . '_/component/header/h001/h001.php';
-	include $root_folder . '_/component/header/h002/h002.php';
-	include $root_folder . '_/component/footer/f001/f001.php';
-	include $root_folder . '_/component/footer/f002/f002.php';
-	include $root_folder . '_/component/awaiter/a001/a001.php';
-	include $root_folder . '_/component/awaiter/a002/a002.php';
+	include_once $root_folder . "_/page/page_001/class.php";
 
 	///////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////

@@ -100,6 +100,7 @@
 @media only screen and (max-width: 950px) and (min-width: 451px) { 
 	.card_001_card_overlay_container_message_container
 	{
+		align-items: flex-start;
 		padding: 5em 3em;
 		gap: 1.5em;
 		font-size: 1em;
@@ -160,8 +161,9 @@
 @media only screen and (max-width: 450px) {   
 	.card_001_card_overlay_container_message_container
 	{
-		padding: 5em 3em;
-		gap: 1.5em;
+		align-items: flex-start;
+		padding: 4em 3em;
+		gap: 1.7em;
 		font-size: 1em;
 	}
 	
@@ -177,13 +179,24 @@
 	
 	.card_001_card_overlay_container_message_paragraph_2
 	{
-		margin-top: -1em;
+		margin-top: -.75em;
 		font-size: .7em;
 	}
 	
 	.card_001_card_overlay_container_message_clipboard
 	{
 		
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		padding: 1em 1.5em;
+		background: var(--c2);
+		color: var(--c1);
+		font-weight: 900;
+		letter-spacing: .1em;
+		margin-top: 0em;
 		font-size: .7em;
 	}
 	.card_001_card_overlay_container_message_clipboard:hover

@@ -1,0 +1,13 @@
+.image_loader_001{
+
+	background: var(--c1);
+	width: 500px;
+	margin: 0 auto 0 auto;
+	height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 3em;
+
+}
+					
