@@ -5,6 +5,8 @@ echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web ofic
 ?>
 </head>
 	<body>
-		<?php new image_loader_001("inicio_component_001" , $root_folder,$_SESSION);?>
-	</body>
+	 	
+	<?php new image_loader_001("inicio_component_001" , $root_folder,$_SESSION);?>
+	
+</body>
 </html>
