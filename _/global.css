@@ -100,9 +100,9 @@
 	text-transform: uppercase;
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
 	width: 0;
-}
+} */
 
 b {
 	font-weight: 900;

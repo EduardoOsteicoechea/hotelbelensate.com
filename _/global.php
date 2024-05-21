@@ -104,6 +104,17 @@
 			</script>
 		';
 	};
+	function add_global_style_tag($root_folder)
+	{
+		return '
+			<script>
+				const global_style_tag = document.createElement("link")
+				global_style_tag.setAttribute("rel","stylesheet");
+				global_style_tag.setAttribute("href","'.$root_folder.'_/global.css");
+				document.head.appendChild(global_style_tag);	
+			</script>
+		';
+	};
 
 	function get_todays_date_and_max_date(int $number_of_monts){
 		$current_date_miliseconds = round(microtime(true) * 1000);

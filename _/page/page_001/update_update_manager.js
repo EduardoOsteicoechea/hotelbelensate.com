@@ -31,7 +31,7 @@ export default function(component_array, page_name, api_key, url) {
 					}
 					else
 					{
-						console.log("The "+response[i]["name"]+" component is updated at: " + current_date + " miliseconds from the Unix Epoch");
+						// console.log("The "+response[i]["name"]+" component is updated at: " + current_date + " miliseconds from the Unix Epoch");
 					}
 				};
 			} else {

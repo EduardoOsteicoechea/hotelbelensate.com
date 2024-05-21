@@ -33,7 +33,9 @@
 					$this->page_name,
 					$this->component_array[$i],
 				);
-			}
+			};
+
+			$html .= add_global_style_tag($root_folder);
 
 			$this->update_manager->generate_update_state_component();
 
