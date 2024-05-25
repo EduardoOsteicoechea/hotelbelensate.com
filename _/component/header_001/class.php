@@ -9,8 +9,8 @@
 	{
 		echo '
 		<script type="module">
-			import '.$component_name.' from "'.$root_folder.'_/component/'.$component_name.'/class.js";
-			new '.$component_name.'(
+			import '.$page_name.'_'.$component_name.' from "'.$root_folder.'_/component/'.$component_name.'/class.js";
+			new '.$page_name.'_'.$component_name.'(
 				"'.$root_folder.'",
 				{'.implode($sesion_array).'},
 				"'.$page_name.'",

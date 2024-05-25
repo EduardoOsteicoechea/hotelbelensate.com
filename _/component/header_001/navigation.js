@@ -6,6 +6,6 @@ export default function
 	component_name
 )
 {
-	const component_container = document.createElement("div")
+	const component_container = document.createElement("nav")
 	return component_container;
 }

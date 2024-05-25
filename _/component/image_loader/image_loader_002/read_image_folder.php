@@ -36,8 +36,8 @@
 				 closedir($dh);
 			}
 	  };
-	  $folder_content_array[] = $folder_content_enabled_array;
-	  $folder_content_array[] = $folder_content_disabled_array;
+	  	$folder_content_array["enabled"] = $folder_content_enabled_array;
+		$folder_content_array["disabled"] = $folder_content_disabled_array;
 		return json_encode($folder_content_array);
 	}
 ?>

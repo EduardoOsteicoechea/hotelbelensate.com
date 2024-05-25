@@ -12,7 +12,7 @@ export default class
 	)
 	{
 		const component_structure = {
-			"header_001":{
+			"header_001":{ // This
 				"logo_anchor":[ "image" ],
 				"menu_button":[ "bar_1", "bar_2", "bar_3" ]
 			},

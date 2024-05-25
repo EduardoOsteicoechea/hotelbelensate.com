@@ -5,6 +5,7 @@
 		public function __construct( 
 			$root_folder, 
 			$sesion_array,
+			$page_name,
 			$component_id,
 			$component_class,
 			$component_image_folder_path
@@ -19,6 +20,7 @@
 							(
 								"'.$root_folder.'", 
 								{'.implode($sesion_array).'},
+								"'.$page_name.'",
 								"'.$component_id.'",
 								"'.$component_class.'",	
 								'.read_image_folder($component_image_folder_path).'
