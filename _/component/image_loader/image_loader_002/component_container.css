@@ -1,0 +1,23 @@
+.image_loader_002
+{
+	display: grid;
+	height: 42dvw;
+	max-height: 2160px;
+	width: 100%;
+	margin: auto;
+	max-width: 3840px;
+	grid-template-columns: 2rem calc(30% - 3rem) 2rem calc(70% - 3rem) 2rem ;
+	grid-template-rows: 0rem 0rem 0rem auto 2rem;
+}
+
+@media only screen and (min-width: 951px) { 
+}
+
+@media only screen and (max-width: 950px) and (min-width: 451px) { 
+
+}
+
+@media only screen and (max-width: 450px) {  
+
+}
+

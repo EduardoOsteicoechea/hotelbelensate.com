@@ -13,17 +13,22 @@
 		{
 			include_once "read_image_folder.php";
 			echo '
-				<div>
+				<div
+				id="'.$component_id.'_'.$component_class.'"
+				class="'.$component_class.'"
+				>
 					<script type="module"> 
 						import '.$component_id.'_'.$component_class.' from "'.$root_folder.'_/component/image_loader/image_loader_002/class.js";
 							new '.$component_id.'_'.$component_class.'
 							(
 								"'.$root_folder.'", 
+								"'.$root_folder.'_/component/image_loader/image_loader_002/'.'", 
 								{'.implode($sesion_array).'},
 								"'.$page_name.'",
 								"'.$component_id.'",
 								"'.$component_class.'",	
-								'.read_image_folder($component_image_folder_path).'
+								'.read_image_folder($component_image_folder_path).',
+								document.getElementById('.$component_id.'_'.$component_class.')
 							);
 					</script>
 				</div>

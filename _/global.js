@@ -1,6 +1,14 @@
 history.scrollRestoration = "manual";
 // history.scrollRestoration = "auto";
 
+window.addEventListener("load",()=>{
+	const page_awaiters = document.getElementsByClassName("awaiter_screen");
+	for (let index = 0; index < page_awaiters.length; index++) {
+		const element = page_awaiters[index];
+		element.style.opacity = "0";
+	}
+});
+
 function disable_page_scrolling_function() {	
 	document.body.style.overflowY = 'hidden';
 	window.addEventListener('scroll', function(event) {
@@ -107,6 +115,9 @@ function add_component_style_tag(
 	css_style_tag.setAttribute("href", css_file_folder + component_name + ".css");
 	document.head.appendChild(css_style_tag);
 };
+
+
+
 
 
 

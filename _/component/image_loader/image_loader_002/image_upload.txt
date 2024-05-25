@@ -1,0 +1,63 @@
+Sure, I can help you with that. Here’s a simple example of how you can send an image through AJAX to a PHP Apache server and handle it in PHP using only vanilla JavaScript.
+
+First, let’s start with the HTML form:
+
+HTML
+
+<form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="image" id="image">
+    <input type="button" name="submit" id="submit" value="Upload">
+</form>
+AI-generated code. Review and use carefully. More info on FAQ.
+
+Next, we’ll use vanilla JavaScript to send the image via AJAX when the “Upload” button is clicked:
+
+JavaScript
+
+document.getElementById('submit').addEventListener('click', function() {
+    var imageFile = document.getElementById('image').files[0];
+    var formData = new FormData();
+    formData.append('image', imageFile);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'upload.php', true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            alert('Image uploaded successfully');
+        } else {
+            alert('An error occurred while uploading the image');
+        }
+    };
+    xhr.send(formData);
+});
+AI-generated code. Review and use carefully. More info on FAQ.
+Finally, here’s a simple PHP script (upload.php) to handle the uploaded image:
+
+PHP
+
+<?php
+if(isset($_FILES['image'])){
+    $errors = array();
+    $file_name = $_FILES['image']['name'];
+    $file_size = $_FILES['image']['size'];
+    $file_tmp = $_FILES['image']['tmp_name'];
+    $file_type = $_FILES['image']['type'];
+    $file_ext = strtolower(end(explode('.',$_FILES['image']['name'])));
+
+    $extensions = array("jpeg","jpg","png");
+
+    if(in_array($file_ext,$extensions)=== false){
+        $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+    }
+
+    if(empty($errors)==true){
+        move_uploaded_file($file_tmp,"images/".$file_name);
+        echo "Image uploaded successfully!";
+    }else{
+        print_r($errors);
+    }
+}
+?>
+AI-generated code. Review and use carefully. More info on FAQ.
+
+This script checks if the uploaded file is an image (JPEG or PNG), and if it is, it moves the uploaded file to the images directory. If the file is not an image, it prints an error message. Please make sure to create an images directory in the same location as your upload.php file. Also, remember to handle errors and edge cases according to your needs. This is a very basic example and might not cover all the edge cases. You might want to add more robust error handling and security measures for a production environment.
