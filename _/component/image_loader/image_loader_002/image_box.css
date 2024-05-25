@@ -2,10 +2,18 @@
 {
 	grid-column: 4;
 	grid-row: 4;
-	height: 100%;
+	height: fit-content;
+	max-height: 100%;
 	width: 100%;
-	margin: auto;
 	border: solid 1px var(--c3);
+	overflow-x: hidden;
+	overflow-y: scroll;
+	display: flex;
+	align-items: space-between;
+	justify-content: space-between;
+	flex-wrap:wrap;
+	padding: 1rem;
+	row-gap: 1rem;
 }
 
 @media only screen and (min-width: 951px) { 

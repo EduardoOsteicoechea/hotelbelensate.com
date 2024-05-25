@@ -1,7 +1,7 @@
 // called from "./class.js";
 
 import create_form from "./form.js";
-import create_image_element from "./image_box_image_element.js";
+import create_image_box_element_container from "./image_box_element_container.js";
 
 export default function 
 (
@@ -25,24 +25,32 @@ export default function
 	image_box.appendChild(image_box_awaiter_screen);
 
 	for (let a = 0; a < Object.entries(component_image_content_object).length; a++) {
-		const image_type = Object.entries(component_image_content_object)[a];
-		for (let b = 0; b < image_type[1].length; b++) {
-			const image_name = image_type[1][b];
-			image_box.appendChild(
-				create_image_element(
-					root_folder,
-					component_folder, 
-					sesion_array,
-					page_name,
-					component_id,
-					component_class,
-					component_image_content_object,
-					component_container,
-					image_box,
-					image_name
-				)
-			);
-		}
+		const enabled_or_disabled_string = Object.entries(component_image_content_object)[a][0];
+		const enabled_or_disabled_array = Object.entries(Object.entries(component_image_content_object)[a][1]);
+		for (let b = 0; b < enabled_or_disabled_array.length / 2; b++) {
+			const desktop_image_name_array = enabled_or_disabled_array[0][1];
+			const mobile_image_name_array = enabled_or_disabled_array[1][1];
+			for (let c = 0; c < desktop_image_name_array.length; c++) {
+				const desktop_image_name = desktop_image_name_array[c];
+				const mobile_image_name = mobile_image_name_array[c];
+				image_box.appendChild(
+					create_image_box_element_container(
+						root_folder,
+						component_folder, 
+						sesion_array,
+						page_name,
+						component_id,
+						component_class,
+						component_image_content_object,
+						component_container,
+						image_box,
+						enabled_or_disabled_string,
+						desktop_image_name,
+						mobile_image_name,
+					)
+				);
+			}
+		};
 	}
 
 	// Next component element

@@ -22,6 +22,7 @@ export default function
 	const form_awaiter_screen = document.createElement("div");
 	form_awaiter_screen.className = "awaiter_screen";
 	form.appendChild(form_awaiter_screen);
+	
 	form.addEventListener("pointerenter",()=>{
 		event_carrousel_image_loader_002_result_message.style.display = "flex";
 		component_container.style.gridTemplateRows = "0rem 3.5rem 2rem auto 2rem";
