@@ -1,10 +1,21 @@
 .image_loader_002_image_box_element_container
 {
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 7rem;
+	width: 23%;
+	/* overflow: hidden; */
+	/* border: var(--b1); */
+}
+
+.image_loader_002_image_box_element_container_images_container
+{
+	display: flex;
 	justify-content: flex-end;
 	gap: .1rem;
-	height: 6rem;
-	width: 23%;
+	height: 100%;
+	width: 100%;
 	overflow: hidden;
 	/* border: var(--b1); */
 }

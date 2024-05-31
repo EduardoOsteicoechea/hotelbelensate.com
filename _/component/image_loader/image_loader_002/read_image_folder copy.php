@@ -1,6 +1,6 @@
 <?php
-		$folder_path = "../../../media/image/" . $_POST["folder_path"];
-	
+	function read_image_folder($folder_path)
+	{
 		$enabled_images_folder_path = $folder_path . "/enabled";
 		$enabled_desktop_images_folder_path = $enabled_images_folder_path . "/desktop";
 		$enabled_mobile_images_folder_path = $enabled_images_folder_path . "/mobile";
@@ -28,8 +28,7 @@
 				 }
 				 closedir($dh);
 			}
-	 	};
-	  
+	  };
 		if (is_dir($enabled_mobile_images_folder_path)) 
 		{
 			if ($dh = opendir($enabled_mobile_images_folder_path)) 
@@ -79,5 +78,6 @@
 	  	$folder_content_array["disabled"]["desktop"] = $folder_content_disabled_desktop_array;
 		$folder_content_array["disabled"]["mobile"] = $folder_content_disabled_mobile_array;
 
-		echo json_encode($folder_content_array);
+		return json_encode($folder_content_array);
+	}
 ?>

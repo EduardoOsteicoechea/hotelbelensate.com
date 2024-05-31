@@ -11,18 +11,31 @@ export default function
 	page_name,
 	component_id,
 	component_class,
-	component_image_content_object,
 	component_container
 ) 
 {
+			
+	let component_image_content_object = {};
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST",component_folder + "read_image_folder.php", false);
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xhr.onreadystatechange = function() 
+	{
+		if (this.readyState === 4 && this.status === 200) {
+			component_image_content_object = JSON.parse(this.responseText);
+			console.log(component_image_content_object);
+		}
+	};
+	xhr.send("folder_path="+component_id);
+
 	const image_box = document.createElement("div");
 	image_box.id = component_id + "_" + component_class + "_" + "image_box";
 	image_box.className = component_class + "_" + "image_box";
 	add_component_style_tag(component_folder,"image_box");
 	
-	const image_box_awaiter_screen = document.createElement("div");
-	image_box_awaiter_screen.className = "awaiter_screen";
-	image_box.appendChild(image_box_awaiter_screen);
+	// const image_box_awaiter_screen = document.createElement("div");
+	// image_box_awaiter_screen.className = "awaiter_screen";
+	// image_box.appendChild(image_box_awaiter_screen);
 
 	for (let a = 0; a < Object.entries(component_image_content_object).length; a++) {
 		const enabled_or_disabled_string = Object.entries(component_image_content_object)[a][0];
@@ -58,7 +71,7 @@ export default function
 	// Next component element
 	// Next component element
 
-	component_container.appendChild(
+	document.getElementById(component_id + "_" + component_class).appendChild(
 		create_form(	
 			root_folder, 
 			component_folder,

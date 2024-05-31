@@ -11,6 +11,7 @@
 			$component_image_folder_path
 		)
 		{
+			include_once "read_image_folder.php";
 			echo '
 				<div
 				id="'.$component_id.'_'.$component_class.'"
@@ -26,6 +27,7 @@
 								"'.$page_name.'",
 								"'.$component_id.'",
 								"'.$component_class.'",	
+								'.read_image_folder($component_image_folder_path).',
 								document.getElementById('.$component_id.'_'.$component_class.')
 							);
 					</script>

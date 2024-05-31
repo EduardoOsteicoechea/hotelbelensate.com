@@ -11,7 +11,7 @@ export default class
 		page_name,
 		component_id,
 		component_class,
-		component_image_content_object,
+		container
 	)
 	{
 		// The form encripts the images in very easily apache's php server manageable manner. Our server will be an apache's php(8.2) server
@@ -20,6 +20,7 @@ export default class
 		// "Onpointerup" of the upload button, the server must validate the image, and check if it actually has the required size, extension, and doesn't exeeds the maximum size permited.
 		// If the image not compliant, add the error message to the "result_message" elements, and make it visible.
 		// If the image is compliant, add the success message to the "result_message" elements, make it visible, and update the "image_box" component.
+
 
 		const component_structure = {
 			"component_container":{
@@ -105,7 +106,6 @@ export default class
 				page_name,
 				component_id,
 				component_class,
-				component_image_content_object,
 				component_container
 			)
 		);
