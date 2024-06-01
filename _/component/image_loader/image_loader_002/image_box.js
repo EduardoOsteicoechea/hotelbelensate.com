@@ -23,7 +23,6 @@ export default function
 	{
 		if (this.readyState === 4 && this.status === 200) {
 			component_image_content_object = JSON.parse(this.responseText);
-			console.log(component_image_content_object);
 		}
 	};
 	xhr.send("folder_path="+component_id);
@@ -32,6 +31,8 @@ export default function
 	image_box.id = component_id + "_" + component_class + "_" + "image_box";
 	image_box.className = component_class + "_" + "image_box";
 	add_component_style_tag(component_folder,"image_box");
+
+	// console.log(component_image_content_object);
 	
 	// const image_box_awaiter_screen = document.createElement("div");
 	// image_box_awaiter_screen.className = "awaiter_screen";

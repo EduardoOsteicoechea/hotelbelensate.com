@@ -2,6 +2,7 @@
 
 import form_submit_action from "./form_actions.js";
 import create_result_message from "./result_message.js";
+import form_element_control_flow from "./form_element_control_flow.js";
 export default function 
 (	
 	root_folder,
@@ -36,53 +37,76 @@ export default function
 
 	const form_desktop_image_elements = document.createElement("div");
 	form_desktop_image_elements.id = component_id + "_" + component_class + "_" + "form_desktop_image_elements";
-	form_desktop_image_elements.className = component_class + "_" + "form_desktop_image_elements";
+	form_desktop_image_elements.className = component_class + "_" + "form_image_elements";
 	const form_desktop_image_elements_label = document.createElement("label");
 	form_desktop_image_elements_label.id = component_id + "_" + component_class + "_" + "form_desktop_image_elements_label";
-	form_desktop_image_elements_label.className = component_class + "_" + "form_desktop_image_elements_label";
-	form_desktop_image_elements_label.innerHTML = "Modo Escritorio (3840px - 2160px)";
+	form_desktop_image_elements_label.className = component_class + "_" + "form_image_elements_label";
+	form_desktop_image_elements_label.innerHTML = "Nombre de imagen para escritorio";
 	form_desktop_image_elements.appendChild(form_desktop_image_elements_label);
 	const form_desktop_image_elements_name_input = document.createElement("input");
 	form_desktop_image_elements_name_input.id = component_id + "_" + component_class + "_" + "form_desktop_image_elements_name_input";
-	form_desktop_image_elements_name_input.className = component_class + "_" + "form_desktop_image_elements_name_input";
+	form_desktop_image_elements_name_input.className = component_class + "_" + "form_image_elements_input";
 	form_desktop_image_elements_name_input.setAttribute("type", "text");;
 	form_desktop_image_elements_name_input.setAttribute("name", "form_desktop_image_elements_name_input");
 	form_desktop_image_elements_label.setAttribute("for", form_desktop_image_elements_name_input.id)
 	form_desktop_image_elements.appendChild(form_desktop_image_elements_name_input);
 	const form_desktop_image_elements_image_input = document.createElement("input");
 	form_desktop_image_elements_image_input.id = component_id + "_" + component_class + "_" + "form_desktop_image_elements_image_input";
-	form_desktop_image_elements_image_input.className = component_class + "_" + "form_desktop_image_elements_image_input";
+	form_desktop_image_elements_image_input.className = component_class + "_" + "form_image_elements_input";
 	form_desktop_image_elements_image_input.setAttribute("type", "file");
 	form_desktop_image_elements_image_input.setAttribute("name", "form_desktop_image_elements_image_input");
+	form_desktop_image_elements_image_input.setAttribute("disabled", "true");
 	form_desktop_image_elements.appendChild(form_desktop_image_elements_image_input);
+	const form_desktop_image_elements_error_paragraph = document.createElement("p");
+	form_desktop_image_elements_error_paragraph.id = component_id + "_" + component_class + "_" + "form_desktop_image_elements_error_paragraph";
+	form_desktop_image_elements_error_paragraph.className = component_class + "_" + "form_image_elements_error_paragraph";
+	form_desktop_image_elements.appendChild(form_desktop_image_elements_error_paragraph);
 
 
 	const form_mobile_image_elements = document.createElement("div");
 	form_mobile_image_elements.id = component_id + "_" + component_class + "_" + "form_mobile_image_elements";
-	form_mobile_image_elements.className = component_class + "_" + "form_mobile_image_elements";
+	form_mobile_image_elements.className = component_class + "_" + "form_image_elements";
 	const form_mobile_image_elements_label = document.createElement("label");
 	form_mobile_image_elements_label.id = component_id + "_" + component_class + "_" + "form_mobile_image_elements_label";
-	form_mobile_image_elements_label.className = component_class + "_" + "form_mobile_image_elements_label";
-	form_mobile_image_elements_label.innerHTML = "Modo Móvil (1080px - 1920px)";
+	form_mobile_image_elements_label.className = component_class + "_" + "form_image_elements_label";
+	form_mobile_image_elements_label.innerHTML = "Nombre de imagen para móvil";
 	form_mobile_image_elements.appendChild(form_mobile_image_elements_label);
 	const form_mobile_image_elements_name_input = document.createElement("input");
 	form_mobile_image_elements_name_input.id = component_id + "_" + component_class + "_" + "form_mobile_image_elements_name_input";
-	form_mobile_image_elements_name_input.className = component_class + "_" + "form_mobile_image_elements_name_input";
+	form_mobile_image_elements_name_input.className = component_class + "_" + "form_image_elements_input";
 	form_mobile_image_elements_name_input.setAttribute("type", "text");
 	form_mobile_image_elements_name_input.setAttribute("name", "form_mobile_image_elements_name_input");
+	form_mobile_image_elements_name_input.setAttribute("disabled", "true");
 	form_mobile_image_elements_label.setAttribute("for", form_mobile_image_elements_name_input.id);
 	form_mobile_image_elements.appendChild(form_mobile_image_elements_name_input);
 	const form_mobile_image_elements_image_input = document.createElement("input");
 	form_mobile_image_elements_image_input.id = component_id + "_" + component_class + "_" + "form_mobile_image_elements_image_input";
-	form_mobile_image_elements_image_input.className = component_class + "_" + "form_mobile_image_elements_image_input";
+	form_mobile_image_elements_image_input.className = component_class + "_" + "form_image_elements_input";
 	form_mobile_image_elements_image_input.setAttribute("type", "file");
 	form_mobile_image_elements_image_input.setAttribute("name", "form_mobile_image_elements_image_input");
+	form_mobile_image_elements_image_input.setAttribute("disabled", "true");
 	form_mobile_image_elements.appendChild(form_mobile_image_elements_image_input);
+	const form_mobile_image_elements_error_paragraph = document.createElement("p");
+	form_mobile_image_elements_error_paragraph.id = component_id + "_" + component_class + "_" + "form_mobile_image_elements_error_paragraph";
+	form_mobile_image_elements_error_paragraph.className = component_class + "_" + "form_image_elements_error_paragraph";
+	form_mobile_image_elements.appendChild(form_mobile_image_elements_error_paragraph);
 
 	const form_submit_button = document.createElement("div");
 	form_submit_button.id = component_id + "_" + component_class + "_" + "form_submit_button";
 	form_submit_button.className = component_class + "_" + "form_submit_button";
 	form_submit_button.innerHTML = "Guardar";
+	form_submit_button.classList.add("disabled");
+
+	new form_element_control_flow().activate_deactivate_according_to_input(
+		component_image_content_object,
+		form_desktop_image_elements_name_input, 
+		form_desktop_image_elements_image_input,
+		form_desktop_image_elements_error_paragraph,
+		form_mobile_image_elements_name_input,
+		form_mobile_image_elements_image_input,
+		form_mobile_image_elements_error_paragraph,
+		form_submit_button,
+	);
 
 	new form_submit_action().send_data(
 		root_folder,

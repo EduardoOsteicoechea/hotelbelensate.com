@@ -40,6 +40,20 @@ export default function
 	activate_button_tooltip.innerHTML = "Muestra esta imagen en el componente.";
 	image_box_element_buttons.appendChild(activate_button_tooltip);
 	new image_box_element_buttons_actions().display_tooltip(activate_button, activate_button_tooltip);
+	new image_box_element_buttons_actions().enable_image(
+		root_folder, 
+		component_folder,
+		sesion_array,
+		page_name,
+		component_id,
+		component_class,
+		component_image_content_object,
+		component_container, 
+		enabled_or_disabled,
+		activate_button, 
+		desktop_image_name,
+		mobile_image_name,
+	);
 
 	const disable_button = document.createElement("div");
 	disable_button.id = component_id + "_" + component_class + "_" + "disable_button";
@@ -53,6 +67,20 @@ export default function
 	disable_button_tooltip.innerHTML = "Remueve esta imagen del componente.";
 	image_box_element_buttons.appendChild(disable_button_tooltip);
 	new image_box_element_buttons_actions().display_tooltip(disable_button, disable_button_tooltip);
+	new image_box_element_buttons_actions().disable_image(
+		root_folder, 
+		component_folder,
+		sesion_array,
+		page_name,
+		component_id,
+		component_class,
+		component_image_content_object,
+		component_container, 
+		enabled_or_disabled,
+		disable_button, 
+		desktop_image_name,
+		mobile_image_name,
+	);
 	
 	const expand_button = document.createElement("div");
 	expand_button.id = component_id + "_" + component_class + "_" + "expand_button";
@@ -79,6 +107,36 @@ export default function
 	delete_button_tooltip.innerHTML = "Elimina esta imagen de todo registro.";
 	image_box_element_buttons.appendChild(delete_button_tooltip);
 	new image_box_element_buttons_actions().display_tooltip(delete_button, delete_button_tooltip);
+	new image_box_element_buttons_actions().delete_image(
+		root_folder, 
+		component_folder,
+		sesion_array,
+		page_name,
+		component_id,
+		component_class,
+		component_image_content_object,
+		component_container, 
+		enabled_or_disabled,
+		delete_button, 
+		desktop_image_name,
+		mobile_image_name,
+	);
+
+	const images_names_container = document.createElement("div");
+	images_names_container.id = component_id + "_" + component_class + "_" + "images_names_container";
+	images_names_container.className = component_class + "_" + "images_names_container";
+	image_box_element_buttons.appendChild(images_names_container);
+	const images_names_container_desktop_image_name = document.createElement("div");
+	images_names_container_desktop_image_name.id = component_id + "_" + component_class + "_" + "images_names_container_desktop_image_name";
+	images_names_container_desktop_image_name.className = component_class + "_" + "images_names_container_image_name";
+	images_names_container_desktop_image_name.innerHTML = "<b>escritorio: </b><p>" + desktop_image_name + "</p>";
+	images_names_container.appendChild(images_names_container_desktop_image_name);
+	const images_names_container_mobile_image_name = document.createElement("div");
+	images_names_container_mobile_image_name.id = component_id + "_" + component_class + "_" + "images_names_container_mobile_image_name";
+	images_names_container_mobile_image_name.className = component_class + "_" + "images_names_container_image_name";
+	images_names_container_mobile_image_name.innerHTML = "<b>móvil: </b><p>" + mobile_image_name + "</p>";
+	images_names_container.appendChild(images_names_container_mobile_image_name);
+
 
 	image_box_element_buttons.appendChild(activate_button);
 	image_box_element_buttons.appendChild(disable_button);

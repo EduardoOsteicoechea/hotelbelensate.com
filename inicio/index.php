@@ -1,5 +1,6 @@
 <?php 
 include '../_/global.php';
+include $root_folder."_/component/carrousel/carrousel_001/class.php";
 echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web oficial del Hotel Belensate Mérida Venezuela", $_SESSION); 
 ?>
 		<link rel="stylesheet" href="../_/component/header/h002/style.css">
@@ -7,6 +8,7 @@ echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web ofic
 	</head>
 	<body>
 		<?php new h002($root_folder, "inicio", "inicio", $_SESSION);?>
+
 		<?php echo centered_info_title_address_price
 		(
 			$root_folder,
@@ -53,6 +55,48 @@ echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web ofic
 			"inicio"
 		)
 		?>
+
+		<?php echo strip_highlighted_HEADING
+		(
+			$root_folder, 
+			"eventos", 
+			"Descubre nuestros últimos eventos<br>", 
+			"Descubre nuestros últimos eventos",
+		);
+		?>
+
+		
+		<?php new carrousel_001(
+			$root_folder,
+			$_SESSION,
+			"inicio",
+			"event_carrousel",
+			"carrousel_001",
+			$root_folder."_/media/image/event_carrousel"
+		);?>
+
+		<!-- <?php echo L_info_R_strip_VIEWER
+			(
+				$root_folder,
+				"eventos",
+				"",
+				"Alojamos tus eventos",
+				"Ya sea Matrimonios de ensueño, conferencias empresariales, reuniones familiares o exposiciones artística, somos la casa merideña de tus eventos",
+				[
+					"Servicio de protocolo",
+					"Decoración de eventos",
+					"Agasajos para eventos",
+					"Moderadores profesionales",
+					"Organización de actividades",
+				],
+				"",
+				"Reservar",
+				"reservar",
+				[
+					"event/activity_1.jpg",
+				]
+			);
+		?> -->
 
 		<?php echo strip_highlighted_HEADING
 		(
@@ -200,38 +244,6 @@ echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web ofic
 			);
 		?>
 
-		<?php echo strip_highlighted_HEADING
-		(
-			$root_folder, 
-			"inicio_5", 
-			"Tenemos excelentes servicios<br>
-			para tu estadía en mérida o para tus eventos", 
-			"excelentes servicios",
-		);
-		?>
-
-		<?php echo L_info_R_strip_VIEWER
-			(
-				$root_folder,
-				"servicios",
-				"",
-				"Alojamos tus eventos",
-				"Ya sea Matrimonios de ensueño, conferencias empresariales, reuniones familiares o exposiciones artística, somos la casa merideña de tus eventos",
-				[
-					"Servicio de protocolo",
-					"Decoración de eventos",
-					"Agasajos para eventos",
-					"Moderadores profesionales",
-					"Organización de actividades",
-				],
-				"",
-				"Reservar",
-				"reservar",
-				[
-					"event/activity_1.jpg",
-				]
-			);
-		?>
 		<?php echo strip_highlighted_HEADING
 		(
 			$root_folder, 
