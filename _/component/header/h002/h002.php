@@ -32,6 +32,9 @@
 
 			$navigation_anchors_data = [
 				["inicio","inicio",""],
+				["estadía","estadia",""],
+				["gastronomía","gastronomia",""],
+				["servicios","servicios",""],
 				["galería","galeria",""],
 				["contacto","contacto",""],
 			];

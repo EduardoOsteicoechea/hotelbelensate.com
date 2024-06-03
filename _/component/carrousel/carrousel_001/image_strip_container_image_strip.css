@@ -1,7 +1,7 @@
 .carrousel_001_image_strip_container
 {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
@@ -9,14 +9,14 @@
 .carrousel_001_image_strip_container_image_strip
 {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	justify-content: flex-start;
 	height: 100%;
 }
 .carrousel_001_image_container
 {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	justify-content: center;
 	overflow: hidden;
 	width: 100dvw;

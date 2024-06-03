@@ -179,8 +179,8 @@ echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web ofic
 		(
 			$root_folder, 
 			"inicio_3", 
-			"SOMOS UN HOTEL GALERÍA PARA ARTISTAS MERIDEÑOS", 
-			"HOTEL GALERÍA",
+			"SOMOS UNA GALERÍA PARA ARTISTAS MERIDEÑOS", 
+			"SOMOS UNA GALERÍA PARA ARTISTAS MERIDEÑOS",
 		);
 		?>
 

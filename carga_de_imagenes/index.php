@@ -9,6 +9,7 @@ echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web ofic
 	<body>
 		<?php new h002($root_folder, "contacto", "contacto", $_SESSION);?>	
 		<?php new image_loader_002($root_folder,$_SESSION,"carga_de_imagenes","event_carrousel","image_loader_002",$root_folder."_/media/image/event_carrousel");?>
+		<?php new image_loader_002($root_folder,$_SESSION,"carga_de_imagenes","sojourn_hero","image_loader_002",$root_folder."_/media/image/sojourn_hero");?>
 		<?php new f002($root_folder, "contacto", "contacto", $_SESSION);?>
 	</body>
 </html>

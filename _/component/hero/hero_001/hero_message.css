@@ -1,0 +1,82 @@
+.hero_001_hero_message
+{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	justify-self: center;
+	text-align: center;
+	overflow: hidden;
+	background: var(--c1);
+	gap: 1dvw;
+	padding: 3dvw 5dvw;
+}
+
+.hero_001_hero_message_heading_container
+{	
+	display: flex;
+	flex-direction: column;
+	gap: 1dvw;
+
+}
+
+.hero_001_hero_message_h1
+{
+	letter-spacing: .5dvw;
+	font-size: 1.45dvw;
+}
+
+.hero_001_hero_message_p
+{
+	letter-spacing: .15dvw;
+	color: var(--c9);
+	font-size: .9dvw;
+	font-weight: 900;
+}
+
+.hero_001_hero_message_buttons_container
+{
+	display: flex;
+	align-items: center;
+	gap: 1dvw;
+}
+
+.hero_001_hero_message_buttons_container_button
+{
+	font-size: .7dvw;
+	letter-spacing: .15dvw;
+	font-weight: 900;
+	background: var(--c2);
+	color: var(--c1);
+	padding: 1dvw 1.5dvw;
+	cursor: pointer;
+}
+.hero_001_hero_message_buttons_container_button:hover
+{
+	background: var(--c_good);
+	color: var(--c1);
+}
+.hero_001_hero_message_buttons_container_button_1
+{
+
+}
+
+.hero_001_hero_message_buttons_container_button_2
+{
+	background: var(--c3);
+	color: var(--c2);
+}
+
+
+@media only screen and (min-width: 951px) { 
+}
+
+@media only screen and (max-width: 950px) and (min-width: 451px) { 
+
+}
+
+@media only screen and (max-width: 450px) {  
+
+}
+

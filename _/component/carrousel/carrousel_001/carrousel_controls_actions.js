@@ -29,5 +29,5 @@ export default class
 			console.log(parseFloat(image_strip_container_image_strip.style.left));
 		});
 		
-	}
+	} 
 }
