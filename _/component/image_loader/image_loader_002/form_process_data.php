@@ -1,6 +1,7 @@
 <?php
-	$desktop_images_folder = "../../../media/image/event_carrousel/enabled/desktop/";
-	$mobile_images_folder = "../../../media/image/event_carrousel/enabled/mobile/";
+	$component_name = $_POST["folder_path"];
+	$desktop_images_folder = "../../../media/image/".$component_name."/enabled/desktop/";
+	$mobile_images_folder = "../../../media/image/".$component_name."/enabled/mobile/";
 
 	if(isset($_FILES)){
 		$errors= array();

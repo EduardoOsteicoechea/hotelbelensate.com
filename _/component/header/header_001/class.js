@@ -1,7 +1,7 @@
 // called from at rendering time from "../../../../carga_de_imagenes/index.php" => but parameterized at development time from "./class.php"
 
-import create_image_container from "./image_container.js";
-import create_hero_message from "./hero_message.js";
+import create_header_logo from "./header_logo.js";
+import create_header_navigation from "./header_navigation.js";
 export default class
 {
 	constructor
@@ -10,46 +10,38 @@ export default class
 		component_folder,
 		sesion_array,
 		page_name,
-		component_id,
 		component_class,
 		component_image_folder_path,
-		message_h1,
-		message_p,
-		button_1_scroll_target_id,
-		button_2_href_string,
+		highligthed_button,
 	)
 	{
-		const component_container = document.getElementById(component_id + "_" + component_class);
+		const component_container = document.getElementById(page_name + "_" + component_class);
+		add_component_style_tag(
+			root_folder + "_/component/header/header_001/",
+			"component_container"
+		);
 
 		component_container.appendChild(
-			create_image_container(
+			create_header_logo(
 				root_folder, 
 				component_folder,
 				sesion_array,
 				page_name,
-				component_id,
 				component_class,
-				component_container,
 				component_image_folder_path,
-				button_1_scroll_target_id,
-				button_2_href_string,
+				highligthed_button,
 			)
 		);
 
 		component_container.appendChild(
-			create_hero_message(
+			create_header_navigation(
 				root_folder, 
 				component_folder,
 				sesion_array,
 				page_name,
-				component_id,
 				component_class,
-				component_container,
 				component_image_folder_path,
-				message_h1,
-				message_p,
-				button_1_scroll_target_id,
-				button_2_href_string,
+				highligthed_button,
 			)
 		);
 	}

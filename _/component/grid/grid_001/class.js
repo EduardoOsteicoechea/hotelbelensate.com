@@ -35,6 +35,8 @@ export default class
 
 		const desktop_images_names_array = Object.entries(component_image_content_object)[0][1]["desktop"];
 		const mobile_images_names_array = Object.entries(component_image_content_object)[0][1]["mobile"];
+		console.log(desktop_images_names_array);
+		console.log(mobile_images_names_array);
 
 		// component_container.appendChild(
 		// 	create_image_container(

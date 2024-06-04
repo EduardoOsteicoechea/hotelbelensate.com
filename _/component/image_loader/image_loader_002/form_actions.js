@@ -23,6 +23,7 @@ export default class
 	{
 		form_submit_button.addEventListener('pointerup', ()=> {
 			var formData = new FormData(form);
+			formData.append("folder_path",component_id);
 			// console.log(formData);
 			var xhr = new XMLHttpRequest();
 			xhr.open('POST', component_folder + 'form_process_data.php', true);

@@ -1,15 +1,13 @@
-.hero_001
+.header_001
 {
-	display: flex;
-	flex-direction: column;
+	display:flex;
 	align-items: center;
 	justify-content: flex-start;
+	height: 8dvw;
+	padding: 0 2rem;
+	z-index: 900;
+	gap: var(--g23);
 	overflow: hidden;
-	height: 38dvw;
-	/* border: var(--b1); */
-	width: 100%;
-	padding: 0 0dvw;
-	margin: 0 auto;
 }
 
 @media only screen and (min-width: 951px) { 

@@ -217,8 +217,8 @@ export default class
 					form_mobile_image_elements_image_input.value != ""
 					&&
 					image_name != form_desktop_image_elements_name_input.value
-					&&
-					image_name != form_desktop_image_elements_image_input.files[0].name
+					// &&
+					// image_name != form_desktop_image_elements_image_input.files[0].name
 				) {
 					// console.log(image_object);
 					form_submit_button.classList.remove("disabled");

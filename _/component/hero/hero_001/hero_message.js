@@ -10,6 +10,8 @@ export default function
 	component_class,
 	component_container,
 	component_image_folder_path,
+	message_h1,
+	message_p,
 	button_1_scroll_target_id,
 	button_2_href_string,
 ) 
@@ -26,12 +28,12 @@ export default function
 	const hero_message_h1 = document.createElement("h1");
 		hero_message_h1.id = component_id + "_" + component_class + "_" + "hero_message_h1";
 		hero_message_h1.className = component_class + "_" + "hero_message_h1";
-		hero_message_h1.innerHTML = "Nuestras habitaciones";
+		hero_message_h1.innerHTML = message_h1;
 		hero_message_heading_container.appendChild(hero_message_h1);
 	const hero_message_p = document.createElement("p");
 		hero_message_p.id = component_id + "_" + component_class + "_" + "hero_message_p";
 		hero_message_p.className = component_class + "_" + "hero_message_p";
-		hero_message_p.innerHTML = "Descubre los espacios que preparamos para tu estadía";
+		hero_message_p.innerHTML = message_p;
 		hero_message_heading_container.appendChild(hero_message_p);
 
 	const hero_message_buttons_container = document.createElement("div");

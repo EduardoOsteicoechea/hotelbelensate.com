@@ -50,7 +50,7 @@ export default function
 	image_container_image.id = component_id + "_" + component_class + "_" + "image_container_image";
 	image_container_image.className = component_class + "_" + "image_container_image";
 	if(is_landscape){
-		image_container_image.setAttribute("width","100%");
+		image_container_image.setAttribute("height","100%");
 		image_container_image.setAttribute("alt","element_image");
 		image_container_image.setAttribute("src",root_folder + "_/media/image/" + component_id + "/enabled/desktop/" + desktop_image_name);
 	}else{
