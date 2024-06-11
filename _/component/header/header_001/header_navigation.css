@@ -1,5 +1,39 @@
+.header_001_header_navigation_container
+{
+	display: flex;
+	align-items: center;
+	gap: 4dvw;
+}
 
+.header_001_header_navigation_container > .current_page
+{
+	background: var(--c2);
+	color: var(--c1);
+}
 
+.header_001_header_anchor
+{
+	width: 11dvw;
+	height: 2.5dvw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-style: normal;
+	text-decoration: none;
+	font-size: .65dvw;
+	text-align: center;
+	letter-spacing: .432dvw;
+	/* font-family:  f1t;  
+	font-family:  f1el; 
+	font-family:  f1l  ;
+	font-family:  f1m ;
+	font-family:  f1r ; */
+	/* font-family:  f1sb ; */
+	font-family:  f1b ;
+	font-family:  f1eb ;
+	/* font-family:  f1bl  ; */
+	color: var(--c2);
+}
 
 
 

@@ -18,7 +18,8 @@
 .hero_001_image_container_image
 {
 	
-	height: 150%;
+	height: 120%;
+	/* width: 100%; */
 }
 
 @media only screen and (min-width: 951px) { 

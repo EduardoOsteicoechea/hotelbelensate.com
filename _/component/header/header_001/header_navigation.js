@@ -1,6 +1,7 @@
-// called from "./class.js";
+// called from "./header_navigation.js";
 
 import get_public_link_structure_object from "./routes_structure.js";
+import generate_header_anchors from "./header_anchors.js";
 
 export default function (
 	root_folder, 
@@ -17,7 +18,18 @@ export default function (
 	add_component_style_tag(component_folder,"header_navigation");
 
 	const link_structure_object = get_public_link_structure_object(root_folder);
-	console.log(link_structure_object)
+	generate_header_anchors(
+		root_folder, 
+		component_folder,
+		sesion_array,
+		page_name,
+		component_class,
+		component_image_folder_path,
+		highligthed_button,
+		link_structure_object, 
+		header_navigation_container
+	);
+	
 
 	return header_navigation_container;
 }

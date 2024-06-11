@@ -1,60 +1,34 @@
 <?php 
 include '../_/global.php';
+include $root_folder."_/component/header/header_001/class.php";
+include $root_folder."_/component/hero/hero_001/class.php";
 include $root_folder."_/component/carrousel/carrousel_001/class.php";
 echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web oficial del Hotel Belensate Mérida Venezuela", $_SESSION); 
 ?>
-		<link rel="stylesheet" href="../_/component/header/h002/style.css">
 		<link rel="stylesheet" href="../_/component/footer/f002/style.css">
 	</head>
 	<body>
-		<?php new h002($root_folder, "inicio", "inicio", $_SESSION);?>
-
-		<?php echo centered_info_title_address_price
-		(
+		<?php new header_001(
 			$root_folder,
-			[
-				"nos alegra verte llegar ...",
-				"nos alegra verte llegar ...",
-				"nos alegra verte llegar ...",
-				"nos alegra verte llegar ...",
-				"nos alegra verte llegar ...",
-				"nos alegra verte llegar ...",
-				"nos alegra verte llegar ...",
-				"nos alegra verte llegar ...",
-			],
-			[
-				"Hotel belensate Mérida Venezuela",
-				"Hotel belensate Mérida Venezuela",
-				"Hotel belensate Mérida Venezuela",
-				"Hotel belensate Mérida Venezuela",
-				"Hotel belensate Mérida Venezuela",
-				"Hotel belensate Mérida Venezuela",
-				"Hotel belensate Mérida Venezuela",
-				"Hotel belensate Mérida Venezuela",
-			],
-			[
-				"Mérida Venezuela",
-				"Mérida Venezuela",
-				"Mérida Venezuela",
-				"Mérida Venezuela",
-				"Mérida Venezuela",
-				"Mérida Venezuela",
-				"Mérida Venezuela",
-				"Mérida Venezuela",
-			],
-			[
-				"hero/hero_1.jpg",
-				"common/contact_1.jpg",
-				"restaurant/restaurant_4.jpg",
-				"restaurant/restaurant_1.jpg",
-				"room/presidencial_master_1_3840x2160.webp",
-				"room/cabana_1_3840x2160.webp",
-				"room/suite_ejecutiva_1_3840x2160.webp",
-				"event/activity_1.jpg",
-			],
-			"inicio"
-		)
-		?>
+			$_SESSION,
+			"inicio",
+			"header_001",
+			$root_folder."_/media/image/user_profile",
+			"inicio",
+		);?>
+
+		<?php new hero_001(
+			$root_folder,
+			$_SESSION,
+			"inicio",
+			"home_hero",
+			"hero_001",
+			$root_folder."_/media/image/sojourn_hero",
+			"inicio",
+			"Descubre los espacios que preparamos para tu estadía de ensueño",
+			"room_grid_grid_001",
+			"reservas",
+		);?>
 
 		<?php echo strip_highlighted_HEADING
 		(
