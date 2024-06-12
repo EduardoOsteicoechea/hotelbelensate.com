@@ -19,11 +19,11 @@
     align-items: center;
     overflow: hidden;
     width: 25dvw;
-    height: 17dvw;
+    height: 23dvw;
 }
 .grid_001_image_container_element_image
 {
-    height: 140%;
+    height: 100%;
 }
 
 @media only screen and (min-width: 951px) { 

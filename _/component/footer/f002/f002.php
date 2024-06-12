@@ -59,12 +59,12 @@
 							alt="WhatsApp Icon"
 							height="100%"
 							>
-							Contáctanos
+							Contacto
 						</a>
 						<a
 						id="'.$this->component_id.'_reservation_button"
 						class="'.$this->component_class.'_reservation_button" 
-						href="'. $root_folder .'reservaciones">Reservar</a>
+						href="'. $root_folder .'reservaciones">Reserva</a>
 					</div>
 					
 					<p

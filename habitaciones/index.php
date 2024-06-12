@@ -56,8 +56,8 @@ echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web ofic
 			"hospedaje",
 			"room_grid",
 			"heading_002",
-			"Contáctanos o Reverva en línea",
-			"Puedes contactarnos o reservar en línea ahora mismo",
+			"Contáctanos o Reserva en línea",
+			"Contáctanos o reserva en línea ahora mismo<br>con los botones que encontrarás abajo",
 		);?>	
 
 		
