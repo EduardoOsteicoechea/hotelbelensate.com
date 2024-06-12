@@ -1,0 +1,41 @@
+.hero_002_scroll_down_button_container
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--c2);
+    height: 3.5dvw;
+    width: 3.5dvw;
+    border-radius: 10dvw;
+    bottom: -2dvw;
+    color: var(--c1);
+    /* padding: 0 2dvw;
+    font-size: .8dvw;
+	font-family:  f1eb;
+	font-size: .65dvw;
+	text-align: center;
+	letter-spacing: .432dvw; */
+}
+
+.hero_002_scroll_down_button_container_bar_1
+{
+    height: .2dvw;
+    width: 25%;
+    background: var(--c1);
+    transform: rotate(45deg);
+    left: .2dvw;
+    margin-top: .2dvw;
+    border-top-left-radius: 2dvw;
+}
+
+.hero_002_scroll_down_button_container_bar_2
+{
+    height: .2dvw;
+    width: 25%;
+    background: var(--c1);
+    transform: rotate(-45deg);
+    right: .2dvw;
+    margin-top: .2dvw;
+    border-top-right-radius: 2dvw;
+}

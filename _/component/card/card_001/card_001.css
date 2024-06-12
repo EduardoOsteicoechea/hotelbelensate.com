@@ -1,6 +1,6 @@
 .card_001{
 	background: var(--c1);
-	padding: 0em 5% 2em 5%;
+	padding: 5dvw 5% 2em 5%;
 	display: flex;
 	align-items: center;
 	justify-content: center;

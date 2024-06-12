@@ -1,13 +1,15 @@
-.header_001
+.hero_002
 {
-	display:flex;
+	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
-	height: 8dvw;
-	padding: 0 2rem;
-	z-index: 900;
-	gap: var(--g23);
-	z-index: 2000;
+	justify-content: flex-start;
+	height: 38dvw;
+	/* border: var(--b1); */
+	width: 100%;
+	padding: 0 0dvw;
+	margin: 0 auto;
+	z-index: 1000;
 }
 
 @media only screen and (min-width: 951px) { 
@@ -18,7 +20,7 @@
 }
 
 @media only screen and (max-width: 450px) {  
-	.hero_001
+	.hero_002
 	{
 		height: 80dvw !important;
 	}

@@ -2,6 +2,7 @@
 include '../_/global.php';
 include $root_folder."_/component/header/header_001/class.php";
 include $root_folder."_/component/hero/hero_001/class.php";
+include $root_folder."_/component/hero/hero_002/class.php";
 include $root_folder."_/component/heading/heading_001/class.php";
 include $root_folder."_/component/grid/grid_001/class.php";
 echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web oficial del Hotel Belensate Mérida Venezuela", $_SESSION); 
@@ -16,17 +17,19 @@ echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web ofic
 			$root_folder."_/media/image/user_profile",
 			"hospedaje",
 		);?>
-		<?php new hero_001(
+		<?php new hero_002(
 			$root_folder,
 			$_SESSION,
 			"hospedaje",
 			"sojourn_hero",
-			"hero_001",
+			"hero_002",
 			$root_folder."_/media/image/sojourn_hero",
 			"Habitaciones",
 			"Descubre los espacios que preparamos para tu estadía de ensueño",
 			"room_grid_grid_001",
 			"reservas",
+			"conocer más",
+			"0%",
 		);?>		
 		<!-- <?php new grid_001(
 			$root_folder,

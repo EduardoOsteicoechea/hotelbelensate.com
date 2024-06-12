@@ -64,7 +64,7 @@
 						<a
 						id="'.$this->component_id.'_reservation_button"
 						class="'.$this->component_class.'_reservation_button" 
-						href="'. $root_folder .'inicio">Inicio</a>
+						href="'. $root_folder .'reservaciones">Reservar</a>
 					</div>
 					
 					<p

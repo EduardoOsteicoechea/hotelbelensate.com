@@ -1,18 +1,25 @@
 <?php 
 include '../_/global.php';
+include $root_folder."_/component/header/header_001/class.php";
 echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web oficial del Hotel Belensate Mérida Venezuela", $_SESSION); 
 ?>
 	<link rel="stylesheet" href="../_/component/header/h002/style.css">
 	<link rel="stylesheet" href="../_/component/footer/f002/style.css">
 	</head>
 	<body>
-		<?php new h002($root_folder, "galería", "galería", $_SESSION);?>	
+		<?php new header_001(
+			$root_folder,
+			$_SESSION,
+			"reservaciones",
+			"header_001",
+			$root_folder."_/media/image/user_profile",
+			"reservaciones",
+		);?>	
 
-		<?php echo hero_data_article_VIEWER(
+	<?php echo hero_data_article_VIEWER(
 		$root_folder,
 		"galery"
-	);
-	; ?>
+	);?>
 
 	
 	<?php echo strip_silding_VIEWER(

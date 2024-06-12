@@ -15,8 +15,9 @@ export default function (
 	const header_navigation_container = document.createElement("nav");
 	header_navigation_container.id = page_name + "_" + component_class + "_" + "header_navigation_container";
 	header_navigation_container.classList.add(component_class + "_" + "header_navigation_container");
+	document.body.appendChild(header_navigation_container);
 	add_component_style_tag(component_folder,"header_navigation");
-
+	
 	const link_structure_object = get_public_link_structure_object(root_folder);
 	generate_header_anchors(
 		root_folder, 
@@ -29,7 +30,4 @@ export default function (
 		link_structure_object, 
 		header_navigation_container
 	);
-	
-
-	return header_navigation_container;
 }

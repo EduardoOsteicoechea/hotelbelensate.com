@@ -33,16 +33,14 @@ export default class
 			)
 		);
 
-		component_container.appendChild(
-			create_header_navigation(
-				root_folder, 
-				component_folder,
-				sesion_array,
-				page_name,
-				component_class,
-				component_image_folder_path,
-				highligthed_button,
-			)
+		create_header_navigation(
+			root_folder, 
+			component_folder,
+			sesion_array,
+			page_name,
+			component_class,
+			component_image_folder_path,
+			highligthed_button,
 		);
 	}
 }

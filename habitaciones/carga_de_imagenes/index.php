@@ -10,13 +10,13 @@ echo page_top($root_folder, "Hotel Belensate Mérida Venezuela", "Sitio web ofic
 		<?php new header_001(
 			$root_folder,
 			$_SESSION,
-			"inicio",
+			"hospedaje",
 			"header_001",
 			$root_folder."_/media/image/user_profile",
-			"inicio",
+			"hospedaje",
 		);?>
-		<?php new image_loader_002($root_folder,$_SESSION,"carga_de_imagenes","home_hero","image_loader_002",$root_folder."_/media/image/home_hero");?>
-		<?php new image_loader_002($root_folder,$_SESSION,"carga_de_imagenes","event_carrousel","image_loader_002",$root_folder."_/media/image/event_carrousel");?>
-		<?php new f002($root_folder, "inicio", "inicio", $_SESSION);?>
+		<?php new image_loader_002($root_folder,$_SESSION,"carga_de_imagenes","sojourn_hero","image_loader_002",$root_folder."_/media/image/sojourn_hero");?>
+		<?php new image_loader_002($root_folder,$_SESSION,"carga_de_imagenes","room_grid","image_loader_002",$root_folder."_/media/image/room_grid");?>
+		<?php new f002($root_folder, "estadía", "estadia", $_SESSION);?>
 	</body>
 </html>

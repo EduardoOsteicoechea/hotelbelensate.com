@@ -25,7 +25,7 @@ export default function
 				{
 					"id_string": "habitaciones", 
 					"string_to_print": "habitaciones", 
-					"href_string": root_folder + "hospedaje/habitaciones", 
+					"href_string": root_folder + "habitaciones", 
 					"sub_routes_object":null,
 					"is_visible_boolean":true
 				},
@@ -33,7 +33,7 @@ export default function
 				{
 					"id_string": "reservaciones", 
 					"string_to_print": "reservaciones", 
-					"href_string": root_folder + "hospedaje/reservaciones", 
+					"href_string": root_folder + "reservaciones", 
 					"sub_routes_object":null,
 					"is_visible_boolean":true
 				},
@@ -70,30 +70,20 @@ export default function
 			"href_string": root_folder + "servicios", 
 			"sub_routes_object":
 			{
-				"hospedaje":
+				"habitaciones":
 				{
-					"id_string": "hospedaje", 
-					"string_to_print": "hospedaje", 
-					"href_string": root_folder + "hospedaje", 
-					"sub_routes_object":
-					{
-						"habitaciones":
-						{
-							"id_string": "habitaciones", 
-							"string_to_print": "habitaciones", 
-							"href_string": root_folder + "hospedaje/habitaciones", 
-							"sub_routes_object":null,
-							"is_visible_boolean":true
-						},
-						"reservaciones":
-						{
-							"id_string": "reservaciones", 
-							"string_to_print": "reservaciones", 
-							"href_string": root_folder + "hospedaje/reservaciones", 
-							"sub_routes_object":null,
-							"is_visible_boolean":true
-						},
-					},
+					"id_string": "habitaciones", 
+					"string_to_print": "habitaciones", 
+					"href_string": root_folder + "habitaciones", 
+					"sub_routes_object":null,
+					"is_visible_boolean":true
+				},
+				"reservaciones":
+				{
+					"id_string": "reservaciones", 
+					"string_to_print": "reservaciones", 
+					"href_string": root_folder + "reservaciones", 
+					"sub_routes_object":null,
 					"is_visible_boolean":true
 				},
 				"restaurants":
@@ -101,22 +91,7 @@ export default function
 					"id_string": "restaurants", 
 					"string_to_print": "restaurants", 
 					"href_string": root_folder + "restaurants", 
-					"sub_routes_object":{
-						"la_era":{
-							"id_string": "la_era", 
-							"string_to_print": "La Era", 
-							"href_string": root_folder + "restaurants/la_era", 
-							"sub_routes_object":null,
-							"is_visible_boolean":true
-						},
-						"ill_forno":{
-							"id_string": "ill_forno", 
-							"string_to_print": "Ill Forno", 
-							"href_string": root_folder + "restaurants/ill_forno", 
-							"sub_routes_object":null,
-							"is_visible_boolean":true
-						},
-					},
+					"sub_routes_object":null,
 					"is_visible_boolean":false
 				},
 				"galeria":
@@ -132,7 +107,7 @@ export default function
 					"string_to_print": "eventos", 
 					"href_string": root_folder + "contacto", 
 					"sub_routes_object":null,
-					"is_visible_boolean":true
+					"is_visible_boolean":false
 				},
 				"turismo":{
 					"id_string": "turismo", 
@@ -177,17 +152,17 @@ export default function
 				{
 					"id_string": "habitaciones", 
 					"string_to_print": "habitaciones", 
-					"href_string": root_folder + "servicios/hospedaje/habitaciones", 
+					"href_string": root_folder + "habitaciones", 
 					"sub_routes_object":null,
 					"is_visible_boolean":false
 				},
 				"galeria":
 				{
 					"id_string": "galeria", 
-					"string_to_print": "servicios/galería", 
-					"href_string": root_folder + "servicios/galeria", 
+					"string_to_print": "galería", 
+					"href_string": root_folder + "galeria", 
 					"sub_routes_object":null,
-					"is_visible_boolean":false
+					"is_visible_boolean":true
 				},
 				"areas_comunes":
 				{
@@ -238,7 +213,7 @@ export default function
 				{
 					"id_string": "recepcion", 
 					"string_to_print": "recepción", 
-					"href_string": root_folder + "contacto/recepcion", 
+					"href_string": root_folder + "contacto", 
 					"sub_routes_object":null,
 					"is_visible_boolean":true
 				},
@@ -246,7 +221,7 @@ export default function
 				{
 					"id_string": "eventos", 
 					"string_to_print": "eventos", 
-					"href_string": root_folder + "contacto/eventos", 
+					"href_string": root_folder + "contacto", 
 					"sub_routes_object":null,
 					"is_visible_boolean":true
 				},
