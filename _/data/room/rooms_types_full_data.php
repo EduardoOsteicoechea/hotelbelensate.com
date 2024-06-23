@@ -57,7 +57,6 @@ $rooms_types_full_data = [
 		],
 	],
 
-
 	"Suite Presidencial Junior" => [
 		"datos de tipo" => [
 			"nombre de tipo de habitacion" => "Suite Presidencial Junior",
@@ -119,7 +118,6 @@ $rooms_types_full_data = [
 		],
 	],
 
-
 	"Cabaña" => [
 		"datos de tipo" => [
 			"nombre de tipo de habitacion" => "Cabaña",
@@ -180,7 +178,6 @@ $rooms_types_full_data = [
 		],
 	],
 
-
 	"Suite Ejecutiva" => [
 		"datos de tipo" => [
 			"nombre de tipo de habitacion" => "Suite Ejecutiva",		
@@ -240,7 +237,6 @@ $rooms_types_full_data = [
 		],
 	],
 
-
 	"Suite Nupcial" => [
 		"datos de tipo" => [
 			"nombre de tipo de habitacion" => "Suite Nupcial",
@@ -293,7 +289,6 @@ $rooms_types_full_data = [
 			["número de habitacion en administración"=>201, "esta habilitada"=>1, "ubicacion"=>"área ejecutiva", "monto de pax de unidad en dolares"=>15, "descuento de unidad"=>1, "incremento de unidad" => 1, "valor añadido" => [], "servicios" => []],
 		],
 	],
-
 
 	"Doble Deluxe" => [
 		"datos de tipo" => [
@@ -373,7 +368,6 @@ $rooms_types_full_data = [
 		],
 	],
 
-
 	"King Deluxe" => [
 		"datos de tipo" => [
 			"nombre de tipo de habitacion" => "Matrimonial Colonial",
@@ -426,7 +420,6 @@ $rooms_types_full_data = [
 			["número de habitacion en administración"=>212, "esta habilitada"=>1, "ubicacion"=>"área ejecutiva", "monto de pax de unidad en dolares"=>15, "descuento de unidad"=>1, "incremento de unidad" => 1, "valor añadido" => [], "servicios" => []],
 		],
 	],
-
 
 	"Especial Deluxe" => [
 		"datos de tipo" => [
@@ -484,7 +477,6 @@ $rooms_types_full_data = [
 			["número de habitacion en administración"=>84, "esta habilitada"=>1, "ubicacion"=>"área ejecutiva", "monto de pax de unidad en dolares"=>15, "descuento de unidad"=>1, "incremento de unidad" => 1, "valor añadido" => [], "servicios" => []],
 		],
 	],
-
 
 	"Matrimonial Ejecutiva" => [
 		"datos de tipo" => [
@@ -546,7 +538,6 @@ $rooms_types_full_data = [
 		],
 	],
 
-
 	"Semi Suite" => [
 		"datos de tipo" => [
 			"nombre de tipo de habitacion" => "Semi Suite",
@@ -600,7 +591,6 @@ $rooms_types_full_data = [
 			["número de habitacion en administración"=>56, "esta habilitada"=>1, "ubicacion"=>"área ejecutiva", "monto de pax de unidad en dolares"=>15, "descuento de unidad"=>1, "incremento de unidad" => 1, "valor añadido" => [], "servicios" => []],
 		],
 	],
-
 
 	"Doble Colonial" => [
 		"datos de tipo" => [
@@ -667,7 +657,6 @@ $rooms_types_full_data = [
 			["número de habitacion en administración"=>83, "esta habilitada"=>1, "ubicacion"=>"área ejecutiva", "monto de pax de unidad en dolares"=>15, "descuento de unidad"=>1, "incremento de unidad" => 1, "valor añadido" => [], "servicios" => []],
 		],
 	],
-
 
 	"Matrimonial Colonial" => [
 		"datos de tipo" => [

@@ -1,5 +1,10 @@
 <?php
+    include "../../../server_functions/read_image_folder.php";
     $data = json_decode(file_get_contents('php://input'), true);
+
+    $image_folder_content = read_image_folder("../../../".$data["component_image_folder_path"]);
+    $data["images"] = $image_folder_content; 
+
     $root_folder = $data["root_folder"];
     $page_name = $data["page_name"];
     $component_id = $data["component_id"];
