@@ -1,5 +1,5 @@
-history.scrollRestoration = "manual";
-// history.scrollRestoration = "auto";
+// history.scrollRestoration = "manual";
+history.scrollRestoration = "auto";
 
 window.addEventListener("load",()=>{
 	const page_awaiters = document.getElementsByClassName("awaiter_screen");
@@ -71,40 +71,6 @@ function slide_info_image_slider(event)
 	info_image_slider_information_container.classList.add("visible");
 	info_image_slider_image_container.classList.add("visible");
 };
-
-// function apply_styles(
-// 	element, 
-// 	desktop_max_style_object,
-// 	desktop_mid_style_object,
-// 	desktop_min_style_object,
-// 	mobile_style_object,
-// ){
-// 	apply();
-// 	window.addEventListener("resize", function(){
-// 		apply();
-// 	});
-// 	function apply(){
-// 		const window_inner_width = window.innerWidth;
-// 		if (window_inner_width > 822) {	
-// 			for(let property in desktop_max_style_object) {
-// 				element.style[property] = desktop_max_style_object[property];
-// 			};
-// 		} else if (window_inner_width > 550 && window_inner_width < 822 ) {		
-// 			for(let property in desktop_mid_style_object) {
-// 				element.style[property] = desktop_mid_style_object[property];
-// 			};
-// 		} else if (window_inner_width < 550) {	
-// 			for(let property in desktop_min_style_object) {
-// 				element.style[property] = desktop_min_style_object[property];
-// 			};
-// 		} else if ((navigator.userAgent.indexOf('IEMobile') !== -1 || window.orientation !== "undefined")){	
-// 			for(let property in mobile_style_object) {
-// 				element.style[property] = mobile_style_object[property];
-// 			};
-// 		}
-// 	}
-
-// };
 
 function add_component_style_tag(
 	css_file_folder,

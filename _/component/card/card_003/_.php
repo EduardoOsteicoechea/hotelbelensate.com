@@ -27,9 +27,20 @@
             alt="signature_image_container_image"
             height="100%"
             >
+        </div>
+        <div
+        id="'. $page_name . "_" . $component_id . "_" . $component_class . "_" . 'room_data_container"
+        class="'.$component_class . "_" . 'room_data_container"
+        >
             
         </div>
     ';
+    
+    $data["id_array"] = [
+        $page_name . "_" . $component_id . "_" . $component_class . "_" . "signature_image_container",
+        $page_name . "_" . $component_id . "_" . $component_class . "_" . "signature_image_container_image",
+        $page_name . "_" . $component_id . "_" . $component_class . "_" . "room_data_container",
+    ];
 
     echo json_encode($data);
 ?>

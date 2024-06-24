@@ -1,17 +1,18 @@
 .card_003
 {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
-	height: 32dvw;
+	height: 24dvw;
     padding: 0 10dvw;
 	width: 100%;
+	/* border: var(--b1); */
 }
 .card_003_signature_image_container
 {
-    width: 100%;
+	height: 100%;
+    width: 52%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -19,12 +20,30 @@
     overflow: hidden;
     align-self: center;
     justify-self: center;
+	/* border: var(--b1); */
 }
 .card_003_signature_image_container_image
 {
     
 }
 
+
+
+
+.card_003_room_data_container
+{
+	height: 100%;
+    width: 48%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+    overflow: hidden;
+    align-self: center;
+    justify-self: center;
+	/* border: var(--b1); */
+	padding: 0 0 0 2dvw;
+}
 
 @media only screen and (min-width: 951px) { 
 }
