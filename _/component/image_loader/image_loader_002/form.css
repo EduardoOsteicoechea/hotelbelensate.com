@@ -1,0 +1,116 @@
+.image_loader_002_form
+{
+	grid-column: 2;
+	grid-row: 4;
+	min-height: 100%;
+	height: fit-content;
+	width: 100%;
+	margin: auto;
+	/* border: solid 1px var(--c3); */
+	/* background: var(--c3); */
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	justify-content: flex-start;
+	align-items: flex-end;
+	/* border: var(--b1); */
+}
+
+.image_loader_002_form_heading
+{
+
+}
+
+.image_loader_002_form_heading_h2
+{
+	font-size: 1.65rem;
+	font-weight: 900;
+	/* color: var(--c7); */
+	color: var(--c2);
+}
+
+.image_loader_002_form_image_elements
+{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 100%;
+	gap: 1rem;
+	/* background: var(--c3); */
+	/* padding: 1rem; */
+	margin: 0rem 0;
+}
+
+.image_loader_002_form_image_elements_label
+{
+	font-size: .7rem;
+	letter-spacing: .05rem;
+	font-weight: 900;
+	padding: .0rem 0rem;
+	color: var(--c7);
+	margin: .25rem 0 -.25rem 0;
+}
+
+
+.image_loader_002_form_image_elements_input
+{
+	width: 100%;
+	border: solid 1px var(--c6);
+	height: 2rem;
+	background: var(--c1);
+	padding: .4rem .5rem;
+	font-family: inherit;
+	font-weight: 900;
+	font-size: .6rem;
+	border: none;
+}
+
+.image_loader_002_form_image_elements_error_paragraph
+{
+	font-size: .6rem;
+	letter-spacing: .05rem;
+	line-height: .9rem;
+	font-weight: 900;
+	margin-top: .5rem;
+	color: var(--c_bad);
+	display: none;
+}
+
+
+.image_loader_002_form_submit_button
+{
+	width: 50%;
+	font-size: .7rem;
+	font-weight: 900;
+	background: var(--c2);
+	color: var(--c1);
+	text-align: center;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: end;
+	cursor: pointer;
+	margin-top: .5rem;
+}
+.image_loader_002_form_submit_button:hover
+{
+	box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
+}
+.image_loader_002_form > .disabled
+{
+	background: var(--c6);
+	color: var(--c7);
+	pointer-events: none;
+}
+
+@media only screen and (min-width: 951px) { 
+}
+
+@media only screen and (max-width: 950px) and (min-width: 451px) { 
+
+}
+
+@media only screen and (max-width: 450px) {  
+
+}

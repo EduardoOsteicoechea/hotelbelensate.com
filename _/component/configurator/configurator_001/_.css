@@ -1,0 +1,102 @@
+.room_management_dashboard{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   column-gap: 2dvw;
+   row-gap: 2dvw;
+   flex-wrap: wrap;
+   padding: 0dvw 6dvw 0 5dvw;
+   width: 100dvw;
+}
+
+.room_type_properties_container{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: start;
+   width: 100%;
+   column-gap: 1.5dvw;
+   row-gap: 1dvw;
+   background: var(--c3);
+   padding: 1.5dvw;
+}
+
+.room_type_properties_container_title{
+   display: inline-block;
+   width: 70%;
+}
+.update_register_button_container {
+   display: inline-block;
+   height: fit-content;
+   width: 20%;
+   display: flex;
+   justify-content: flex-end;
+   margin-left: auto;
+}
+.update_register_button_container > button {
+   border: none;
+   background: var(--c2);
+   color: var(--c1);
+   height: 2.75dvw;
+   padding: .5dvw 1dvw;
+   cursor: pointer;
+   letter-spacing: .1dvw;
+   font-size: .65dvw;
+}
+
+.room_type_label_and_input_container {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;  
+   row-gap: 0dvw;
+   align-items: start;
+   width: fit-content;
+}
+
+.room_type_label_and_input_container > * {   
+   font-family: inherit;
+   border: none;
+   letter-spacing: .1dvw;
+   width: 11dvw;
+}
+
+.room_type_label_and_input_container > label {   
+   height: 1.5dvw;
+   font-size: .65dvw;
+}
+
+.room_type_label_and_input_container > input {   
+   height: 2dvw;
+   padding: .25dvw .5dvw;
+   background: var(--c1);
+   font-size: .85dvw;
+}
+
+.room_type_label_and_input_container > input[type="checkbox"] {
+   height: 1dvw;
+   padding: .5dvw;
+   background: var(--c1);
+   font-size: 1dvw;
+   align-self: flex-start;
+   justify-self: flex-start;
+   width: min-content;
+ }
+
+.textareas_container{
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   gap: 2dvw;
+   width: 100%;
+}
+
+.room_type_label_and_input_container > textarea {   
+   height: 12dvw;
+   padding: .5dvw;
+   resize: none;
+   background: var(--c1);
+   font-size: .85dvw;
+   flex-grow: 1;
+   width: 20dvw;
+}
+

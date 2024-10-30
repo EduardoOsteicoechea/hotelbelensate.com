@@ -1,0 +1,39 @@
+.grid_001_image_container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    column-gap: 1dvw;
+    row-gap: 1dvw;
+    padding: 0 0 0dvw 0;
+    width: 100%;
+}
+
+
+.grid_001_image_container_element
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 25dvw;
+    height: 23dvw;
+}
+.grid_001_image_container_element_image
+{
+    height: 100%;
+}
+
+@media only screen and (min-width: 951px) { 
+}
+
+@media only screen and (max-width: 950px) and (min-width: 451px) { 
+
+}
+
+@media only screen and (max-width: 450px) {  
+
+}
+

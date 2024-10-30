@@ -1,0 +1,49 @@
+{
+   "room_name":"Matrimonial Ejecutiva",
+   "type_id":"09",
+   "room_numbers_in_administration":[
+      177,178,179,180,
+      187,188,189,190,191,192,193,
+      198,
+      199
+   ],
+   "is_enabled":true,
+   "admits_pax":false,
+   "pax_amount":15,
+   "decrement_amount":1,
+   "increment_amount":1,
+   "gross_price":92,
+   "net_price":92,
+   "capacity":2,
+   "capacity_with_pax":2,
+   "children_capacity":1,
+   "room_services":[
+      "ubicada en el área ejecutiva", 
+      "cama matrimonial", 
+      "wifi", 
+      "nevera ejecutiva", 
+      "caja fuerte", 
+      "televisor con DirecTV", 
+      "secador de cabello", 
+      "agua caliente", 
+      "aire acondicionado", 
+      "no incluye desayuno"
+   ],
+   "room_images":[
+      "matrimonial_ejecutiva_1_3840x2160.webp",
+      "matrimonial_ejecutiva_2_3840x2160.webp"
+   ],
+   "room_thumbnail_image":[
+       "matrimonial_ejecutiva_1_960x540.webp"
+   ],
+   "room_capacity_images":[
+       "2_adult.svg"
+   ],
+   "room_icons":[
+      ["cama matrimonial", "bed_regular.svg","Cama matrimonial (150cm x 200cm)."],
+      ["televisor", "tv.svg","Televisor de pantalla plana."],
+      ["wifi", "wifi.svg","Internet de alta velocidad las 24 horas."],
+      ["caja fuerte", "safe.svg","Bóveda personal para proteger sus pertenencias."],
+      ["nevera ejecutiva", "executive_fridge.svg","Nevera ejecutiva integrada en la habitación."]
+   ]
+}

@@ -1,0 +1,410 @@
+.d001_option_date_picker_global_container
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+	gap: 1dvw;
+	padding: 3dvw 10dvw 10dvw 10dvw;
+	z-index: 21000;
+	width: 100dvw;
+	height: 100dvh;
+	background: rgba(0,0,0,.65);
+	font-family: f1r;
+	letter-spacing: .3dvw;
+}
+
+
+
+
+.d001_close_option_date_picker_button
+{
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	color: var(--c1);
+	font-size: .7dvw;
+	width: 14dvw;
+	cursor: pointer;
+	padding: 1dvw 2dvw;
+	/* background: var(--c1); */
+	background: rgb(230, 43, 80);
+	/* border: var(--b1); */
+}
+.d001_close_option_date_picker_button:hover
+{
+	transform: scale(1.05);
+	color: var(--c2);
+	background: var(--c3);
+}
+
+.d001_selected_dates_container_restart_dates_button
+{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	color: var(--c1);
+	font-size: .7dvw;
+	cursor: pointer;
+	padding: 1dvw 2dvw;
+	background: var(--c2);
+	height: 3dvw;
+	margin-left: auto;
+	width: 14dvw;
+}
+.d001_selected_dates_container_restart_dates_button:hover
+{
+	transform: scale(1.05);
+	color: var(--c2);
+	background: var(--c3);
+}
+.d001_selected_dates_container_accept_dates_button
+{
+	position: absolute;
+	right: 0;
+	top: 4dvw;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	color: var(--c1);
+	font-size: .7dvw;
+	cursor: pointer;
+	padding: 1dvw 2dvw;
+	/* background: var(--c1); */
+	background: var(--success_1);
+	overflow: hidden;
+	width: 14dvw;
+}
+.d001_selected_dates_container_accept_dates_button:hover
+{
+	transform: scale(1.05);
+	color: var(--c2);
+	background: var(--c3);
+}
+
+
+
+
+
+.d001_room_image_and_available_dates_container
+{
+	display: flex;
+	align-items: center;
+	z-index: 100;
+	width: 100%;
+	max-height: 30dvw;
+	background: var(--c1);
+}
+
+
+
+
+
+
+
+
+
+
+
+.d001_room_image_and_available_dates_container_room_image_container
+{
+	z-index: 100;
+	width: 30dvw;
+	height: 100%;
+	overflow: hidden;
+}
+.d001_room_image_and_available_dates_container_room_image_container_image
+{
+	height: 100%;
+}
+
+
+
+
+
+.d001_room_dinamic_text_and_datepicker_container
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	/* gap: 1dvw; */
+}
+.d001_room_name_and_modal_prompt_container
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0dvw;
+	z-index: 100;
+	width: 100%;
+	/* height: 4dvw; */
+	overflow: hidden;
+	font-size: .8dvw;
+	padding: 2dvw 0dvw 0dvw 0;
+	/* background: var(--c3); */
+	/* border: var(--b1); */
+}
+.d001_room_name_and_modal_prompt_container_room_name
+{
+	padding: 0 2dvw .5dvw 2dvw;
+	font-weight: 900;
+	align-items: center;
+	width: 100%;
+}
+.d001_room_name_and_modal_prompt_container_separator
+{
+	
+	display: none;
+}
+.d001_room_name_and_modal_prompt_container_prompt
+{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 1dvw 2dvw;
+	font-weight: 100;
+	color: var(--c7);
+	letter-spacing: .05dvw;
+	font-size: .7dvw;
+	line-height: 1dvw;
+}
+
+
+
+
+
+.d001_room_dinamic_text_and_datepicker_container
+{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	/* border: var(--b1); */
+}
+
+
+.d001_room_available_dates_container
+{
+	position: absolute;
+	top: 10dvw;
+	/* border: var(--b1); */
+}
+.d001_month_name_container
+{
+	width: 100%;
+	height: 2dvw;
+	/* top: 1dvw; */
+	/* border: var(--b1); */
+}
+.d001_month_name_container_name_element
+{
+	margin-bottom: auto;
+	font-weight: 900;
+	/* height: 2dvw; */
+	/* border: var(--b1); */
+}
+
+
+
+.d001_month_days_names_container
+{
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	/* gap: .5dvw; */
+	/* top: 1dvw; */
+}
+.d001_day_row_container_day_conatiner
+{
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	/* gap: .5dvw; */
+	text-align: center;
+	border-right: solid .1dvw var(--c3);
+	width:100%;
+	/* padding: .25dvw; */
+}
+.d001_day_row_container_day_conatiner:nth-child(1)
+{
+	border-left: solid .1dvw var(--c3);
+}
+.d001_day_row_container_day_conatiner > p
+{
+	margin-bottom: .5dvw;
+	text-align: center;
+}
+.d001_day_row_container_day_name
+{
+	font-size: .65dvw;
+	width: 100%;
+	text-align: center;
+}
+
+
+
+
+
+.d001_room_available_dates_container
+{
+	display: flex;
+	gap: 2dvw;
+	width: 100%;
+	overflow: hidden;
+	font-size: .8dvw;
+	padding: 0dvw 2dvw;
+	margin: auto;
+}
+.d001_month_elements_container
+{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 1dvw;
+	/* border: var(--b1); */
+	width: 100%;
+}
+
+
+.d001_month_elements_container_day_day_number
+{
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	text-align: center;
+}
+.d001_month_elements_container_day_container
+{
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	text-align: center;
+	height: 1.75dvw;
+	width:100%;
+	line-height: 1.75dvw;
+	/* background: var(--c3); */
+	/* border-radius: .25dvw; */
+	letter-spacing: 0;
+	font-size: .6dvw;
+	cursor: pointer;
+	gap: .5dvw;
+	border-top: solid .1dvw var(--c3);
+}
+.d001_month_elements_container_day_container:hover
+{
+	transform: scale(1.05dvw);
+	background: var(--c2);
+	color: var(--c1);
+}
+.d001_month_elements_container_day_container_clicked
+{
+	background: var(--c2) !important;
+	color: var(--c1);
+}
+.d001_month_elements_container_day_container_disabled
+{
+	background: var(--c1) !important;
+	color: var(--c3) !important;
+	pointer-events: none;
+}
+.d001_month_elements_container_day_container_inbetween_selected
+{
+	background: var(--c2) !important;
+	color: var(--c1) !important;
+	pointer-events: none;
+}
+.d001_month_elements_container_day_container_empty
+{
+	cursor: default;
+	background: none;
+	pointer-events: none;
+}
+.d001_month_elements_container_day_day_number{}
+
+
+
+
+
+
+
+
+
+
+.d001_selected_dates_container
+{
+	display: flex;
+	align-items: center;
+	font-size: .8dvw;
+	width: 100%;
+	padding: 1.5dvw 2dvw;
+	/* background: var(--c3); */
+	margin-top: auto;
+	letter-spacing: .05dvw;
+}
+.d001_selected_dates_container_base_text
+{
+	display: flex;
+	font-size: .8dvw;
+	width: fit-content;
+}
+.d001_selected_dates_container_start_date
+{
+	margin-left: 1dvw;
+	display: flex;
+	font-size: .8dvw;
+	width: fit-content;
+	font-weight: 900;
+}
+.d001_selected_dates_container_dates_separator
+{
+	
+	margin-left: .5dvw;
+	display: flex;
+	font-size: .8dvw;
+	width: fit-content;
+	font-weight: 900;
+}
+.d001_selected_dates_container_end_date
+{
+
+	margin-left: .5dvw;
+	display: flex;
+	font-size: .8dvw;
+	width: fit-content;
+	font-weight: 900;
+}
+.d001_selected_dates_container_day_count_container
+{
+	margin-left: .5dvw;
+	display: flex;
+	font-size: .8dvw;
+	width: fit-content;
+	font-weight: 900;
+}
+.d001_selected_dates_container_total_price_container
+{
+	margin-left: .5dvw;
+	display: flex;
+	font-size: .8dvw;
+	width: fit-content;
+	font-weight: 900;
+}

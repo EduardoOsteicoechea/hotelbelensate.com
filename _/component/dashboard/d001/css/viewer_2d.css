@@ -1,0 +1,142 @@
+.d001_viewer_2d
+{
+	
+	grid-row: 4 / span 1;
+	grid-column:  4 / span 1;
+	background: var(--c3);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 900;
+	z-index: 100;
+	height: 0%;
+	right: 1dvw;
+	left: 0;
+	top:    0dvw;
+	transition: height ease 1000ms;
+}
+.visible
+{
+	height: 100%;
+	width: 100%;
+}
+.fullscreen
+{
+	grid-row: 1 / span all;
+	grid-column:  1 / span all;
+	position: absolute;
+	right: 1dvw;
+	left: 0;
+	top:    0dvw;
+	width:  calc(100% - 1dvw) !important;
+	height: 100dvh !important;
+}
+
+
+.d001_2d_image_container
+{
+	width: 100%;
+	height: 100%;
+}
+.d001_2d_image_container > img
+{
+	height: 120%;
+}
+.clicked
+{
+	display: none;
+}
+#viewer_2d_close_button
+{
+	height: 2dvw;
+	width: 2dvw;
+	background: var(--c1);
+	color: var(--c2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	position: absolute;
+	top: 1dvw;
+	right: 1dvw;
+	cursor: pointer;
+	box-shadow:-.1dvw .1dvw .5dvw rgba(0,0,0,.15);
+}
+#viewer_2d_close_button > p
+{
+	font-weight: 900;
+	font-size: .7dvw;
+	transform: scaleX(1.4);
+	-webkit-text-stroke-width: .1dvw;
+	-webkit-text-stroke-color: black;
+	text-align: center;
+	margin-left: .2dvw;
+}
+
+
+
+
+.d001_option_slider
+{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	position: absolute;
+	top: 2dvw;
+	z-index: 200;
+	height: 1.5dvw;
+}
+.d001_option_slider > *
+{
+	font-size: .5dvw;
+}
+.d001_option_slider_option_name
+{
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--c1);
+	height: 100%;
+	width: fit-content;
+	border-left: solid .1dvw var(--c3);
+	border-right: solid .1dvw var(--c3);
+	padding: 0 1dvw;
+}
+.d001_option_slider_left_button
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--c1);
+	height: 100%;
+	width: 1.5dvw;
+	border-bottom-left-radius: .35dvw;
+	border-top-left-radius: .35dvw;
+	cursor: pointer;
+	font-size: .65dvw;
+}
+.d001_option_slider_right_button
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--c1);
+	height: 100%;
+	width: 1.5dvw;
+	border-bottom-right-radius: .35dvw;
+	border-top-right-radius: .35dvw;
+	cursor: pointer;
+	font-size: .65dvw;
+}
+.d001_option_slider_left_button:hover
+{
+	background: var(--c2);
+	color: var(--c1);
+}
+.d001_option_slider_right_button:hover
+{
+	background: var(--c2);
+	color: var(--c1);
+}

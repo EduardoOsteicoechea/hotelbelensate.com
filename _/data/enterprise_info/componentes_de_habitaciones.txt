@@ -1,0 +1,60 @@
+COMPONENTES DE HABITACIONES
+
+"área colonial" : 1,
+"área ejecutiva" : 1,
+
+"cama King size" : 1,
+"cama Queen size" : 1,
+"cama matrimonial" : 1,
+"dos camas matrimoniales" : 1,
+"dos camas individuales" : 1,
+"sofá cama" : 1,
+
+"dos habitaciones" : 1,
+"dos habitaciones amplias" : 1,
+"habitación amplia" : 1,
+"tres habitaciones" : 1,
+"habitación moderna" : 1,
+
+"dos niveles" : 1,
+"dos ambientes" : 1,
+
+"cuarto de sauna" : 1,
+"jacuzzi" : 1,
+
+"2 baños" : 1,
+"baño" : 1,
+
+"sala de estar" : 1,
+"mini sala de estar" : 1,
+
+"ducha de manos" : 1,
+"secador de cabello" : 1,
+
+"televisor con DirecTV " : 1,
+"televisor con NetUno" : 1,
+
+"escritorio" : 1,
+"peinadora" : 1,
+
+"microondas" : 1,
+
+"wifi" : 1,
+"aire acondicionado" : 1,
+"agua caliente" : 1,
+"derecho a piscina" : 1,
+"caja fuerte" : 1,
+"nevera ejecutiva" : 1,
+"línea directa a recepción" : 1,
+
+"desayuno" : 0,
+"mascotas" : 0,
+
+
+
+
+
+
+¿Cuáles tienen escritorio?
+¿Todas tienen peinadora?
+¿Cuáles tienen microondas?

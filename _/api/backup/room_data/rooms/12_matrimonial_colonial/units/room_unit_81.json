@@ -1,0 +1,13 @@
+{
+   "room_name":"Matrimonial Colonial",
+   "id":81,
+   "is_enabled":true,
+   "location":"área colonial",
+   "reserved_dates":[
+   ],
+   "pax_ammount":15,
+   "decrement":1,
+   "increment": 1,
+   "added_values": [],
+   "aditional_services": []
+}

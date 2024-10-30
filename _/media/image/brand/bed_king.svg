@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="12.500884mm"
+   height="14.442919mm"
+   viewBox="0 0 12.500884 14.442919"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="icons_final.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4866305"
+     inkscape:cx="237.11339"
+     inkscape:cy="164.12955"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-36.87431,-29.757487)">
+    <path
+       id="rect133"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.67341;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 36.874313,29.757488 V 44.200406 H 49.375195 V 29.757488 Z m 1.474756,1.445894 h 4.276433 v 2.402456 h -4.276433 z m 5.272875,0 h 4.277123 v 2.402456 h -4.277123 z m -0.502343,4.158237 0.880305,1.151062 -0.880305,1.150375 -0.880307,-1.150375 z m -4.336932,1.209475 1.352413,0.520896 -0.14912,1.44175 -1.351727,-0.521585 z m 8.683481,0.04192 0.148437,1.441747 -1.351727,0.520899 -0.148437,-1.44106 z m -4.997329,1.436251 h 0.65078 0.650091 l 0.553199,1.298123 1.213598,-0.851442 c 0.169897,0.153448 1.073409,0.690637 1.073409,0.690637 l -0.788909,2.548831 H 43.119601 40.41821 l -0.788909,-2.548831 c 0,0 0.903516,-0.537189 1.073412,-0.690637 l 1.213595,0.851442 z"
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccc"
+       inkscape:export-filename="bed_king.svg"
+       inkscape:export-xdpi="1449.1572"
+       inkscape:export-ydpi="1449.1572" />
+  </g>
+</svg>

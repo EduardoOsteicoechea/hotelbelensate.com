@@ -1,0 +1,333 @@
+.card_004_outer_container
+{
+    display: flex;
+    align-items: center;
+    width: 100dvw;
+    height: 25dvw;
+    /* background: var(--c3); */
+    overflow: hidden;
+    /* border: var(--b1); */
+    font-size: 1dvw;
+    gap: 0dvw;
+    letter-spacing: .2dvw;
+    font-family: f1r;
+    transition: all ease 250ms;
+    padding: .0dvw 3.5dvw 0 0dvw;
+    background: var(--c8);
+    cursor: pointer;
+}
+/* .card_004_outer_container:hover
+{
+transform: scale(1.015);
+} */
+
+.card_004_information_container_bar
+{
+    display: flex;
+    height: 100%;
+    width: 3dvw;
+    background: rgba(240,240,240);
+    /* border: var(--b1); */
+    z-index: 1000;
+}
+.card_004_information_container_left_bar
+{
+    display: flex;
+     box-shadow: -.0dvw 0dvw 2dvw rgba(0,0,0,.2);
+     background: var(--c8);
+}
+.card_004_information_container_left_bar_2
+{
+    display: flex;
+     box-shadow: -.0dvw 0dvw 2dvw rgba(0,0,0,.2);
+     background: var(--c8);
+}
+.card_004_information_container_right_bar
+{
+    display: flex;
+     box-shadow: .5dvw 0dvw 1dvw rgba(0,0,0,.2);
+     background: var(--c8);
+     z-index: 500;
+}
+
+.card_004_image_viewer_container
+{
+    display: flex;
+    height: 100%;
+    width: 37.5dvw;
+    background: var(--c8);
+    /* border: var(--b1); */
+    overflow: hidden;
+    padding: 0 5dvw 0 0dvw;
+    z-index: 10;
+    /* box-shadow: -.5dvw 0dvw 1dvw rgba(0,0,0,.2); */
+    /* z-index: 1000; */
+}
+
+.card_004_image_viewer_container_image_container
+{   
+    height: 100%;
+    z-index: 10;
+}
+
+.card_004_image_viewer_container_image_container_image
+{
+    height: 100%;   
+}
+
+.card_004_image_viewer_container_full_screen_button_container
+{   
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,.5);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: all ease 1000ms;
+}
+
+.card_004_image_viewer_container_full_screen_button_paragraph
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: f1bl;
+    font-size: .8dvw;
+    letter-spacing: .5dvw;
+    text-align: center;
+    padding: 0 3dvw;
+    line-height: 1.5dvw;
+}
+
+/* information_container */
+/* information_container */
+/* information_container */
+/* information_container */
+/* information_container */
+
+.card_004_entity_information_container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1dvw;
+    height: 100%;
+    width: 58dvw;
+    /* border: var(--b1); */
+    padding: 2dvw 0 0 3dvw;
+    background: var(--c8);
+    box-shadow: .0dvw 0dvw 2dvw rgba(0,0,0,.2);
+    z-index: 1000;
+}
+
+
+.card_004_information_title
+{
+    font-size: 1.5dvw;
+}
+
+.card_004_information_paragraph
+{
+    display: flex;
+    text-align: left;
+    column-gap: .5dvw;
+    row-gap: .25dvw;
+    flex-wrap: wrap;
+    width: 65%;
+    font-size: .65dvw;
+    color: var(--c7);
+    padding: 0 0 0 0dvw;
+    font-family: f1el !important;
+}
+
+.card_004_card_element_services_icons_container
+{
+    height: 2.5dvw;
+    width: 100%;
+    display: flex; 
+    /* border: var(--b1); */
+    padding: .5dvw 0;
+    gap: -1dvw;
+}
+.card_004_card_element_services_icons_container_image
+{
+    /* border: var(--b1); */
+    width: 3dvw;
+}
+
+.card_004_reserve_and_price_button_container
+{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-self: end;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: var(--b1); */
+    color: var(--c2);
+    font-size: .7dvw;
+    height: 100%;
+}
+
+
+.card_004_quantity_available
+{
+    position: absolute;
+    top: 13dvw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 70%;
+    height: 100%;
+    gap: -.5dvw;
+}
+.card_004_quantity_available > div
+{
+   margin-left: .0dvw;
+   color: var(--c_2);
+   font-size: 1.25dvw;
+   top: .5dvw;
+}
+
+
+
+.card_004_information_capacity_icon_container_image{}
+.card_004_information_capacity_icon_container
+{
+    position: absolute;
+    right: 6dvw;
+    top: 10.5dvw;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    /* display: none; */
+    align-items: center;
+    justify-content: center;
+    padding: .85dvw 1dvw;
+    background: var(--c1);
+    height: 2.75dvw;
+    width: 10dvw;
+}
+
+
+.card_004_price_container
+{
+    position: absolute;
+    right: 6dvw;
+    top: 7dvw;
+    color: var(--c2);
+    background: var(--c1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.75dvw;
+    font-size: .85dvw;
+    width: 10dvw;
+    font-family: f1bl;
+}
+
+.card_004_information_button
+{
+    position: absolute;
+    right: 6dvw;
+    top: 3dvw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 10dvw;
+    /* border: var(--b1); */
+    color: var(--c1);
+    background: var(--c2);
+    font-size: .65dvw;
+    height: 2.75dvw;
+}
+.card_004_information_button:hover
+{
+    background: var(--c_whatsapp);
+    cursor: pointer;
+}
+
+
+
+
+
+.card_004_full_screen_viewer_outer_container
+{
+    position:absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100dvh;
+    background: rgba(0,0,0,.5);
+    backdrop-filter: blur(10px);
+    z-index: 25000;
+    font-family: f1r;
+}
+.card_004_full_screen_viewer_outer_container_images_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width: 100%;
+   height: 100%;
+}
+.card_004_full_screen_viewer_outer_container_images_container > img
+{
+   height: 100%;
+}
+
+.card_004_full_screen_viewer_reserve_button
+{
+    position:absolute;
+    bottom:0dvw;
+    right: 0dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1dvw 1.5dvw;
+    background: var(--success_1);
+    color: var(--c1);
+    font-family: f1bl;
+    font-size: .65dvw;
+    letter-spacing: .2dvw;
+    cursor:pointer;
+    width: 11dvw;
+}
+.card_004_full_screen_viewer_close_button
+{
+    position:absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1dvw 1.5dvw;
+    background: var(--failure_1);
+    color: var(--c1);
+    font-family: f1bl;
+    font-size: .65dvw;
+    letter-spacing: .2dvw;
+    cursor:pointer;
+    width: 11dvw;
+}
+
+
+@media only screen and (max-width: 950px) and (min-width: 451px) {
+
+    
+}
+
+
+
+@media only screen and (max-width: 450px) {
+
+    
+}

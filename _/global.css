@@ -1,0 +1,188 @@
+@font-face{ font-family:  f1t    ; src: url(	font/Raleway-Thin.ttf             ); }
+@font-face{ font-family:  f1ti   ; src: url(	font/Raleway-ThinItalic.ttf       ); }
+@font-face{ font-family:  f1el   ; src: url(	font/Raleway-ExtraLight.ttf       ); }
+@font-face{ font-family:  f1eli  ; src: url(	font/Raleway-ExtraLightItalic.ttf ); }
+@font-face{ font-family:  f1l    ; src: url(	font/Raleway-Light.ttf            ); }
+@font-face{ font-family:  f1li   ; src: url(	font/Raleway-LightItalic.ttf      ); }
+@font-face{ font-family:  f1m    ; src: url(	font/Raleway-Medium.ttf           ); }
+@font-face{ font-family:  f1mi   ; src: url(	font/Raleway-MediumItalic.ttf     ); }
+@font-face{ font-family:  f1r    ; src: url(	font/Raleway-Regular.ttf          ); }
+@font-face{ font-family:  f1ri   ; src: url(	font/Raleway-MediumItalic.ttf     ); }
+@font-face{ font-family:  f1sb   ; src: url(	font/Raleway-SemiBold.ttf         ); }
+@font-face{ font-family:  f1sbi  ; src: url(	font/Raleway-SemiBoldItalic.ttf   ); }
+@font-face{ font-family:  f1b    ; src: url(	font/Raleway-Bold.ttf             ); }
+@font-face{ font-family:  f1bi   ; src: url(	font/Raleway-BoldItalic.ttf       ); }
+@font-face{ font-family:  f1eb   ; src: url(	font/Raleway-ExtraBold.ttf        ); }
+@font-face{ font-family:  f1ebi  ; src: url(	font/Raleway-ExtraBoldItalic.ttf  ); }
+@font-face{ font-family:  f1bl   ; src: url(	font/Raleway-Black.ttf            ); }
+@font-face{ font-family:  f1bli  ; src: url(	font/Raleway-BlackItalic.ttf      ); }
+
+:root {
+	/* letter-spacing: .4dvw; */
+	font-size: 16px;
+	font-family: f1r, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	scroll-behavior: smooth;
+
+	--b1: solid .1dvw red;
+	--b2: solid .1dvw rgb(226, 226, 226);
+	
+	--c1:#fff;
+	--c2:#000;
+	--c3:#f0f0f0;
+	--c4:#fcf7cb;
+	--c5: rgb(255, 255, 255);
+	--c6: rgb(226, 226, 226);
+	--c7: rgb(119, 119, 119);
+	--c10: rgb(194, 194, 194);
+	--c8: #f8f8f8;
+	--c9: #cdcdcd;
+	--c_whatsapp: #25D366;
+	
+	--fs_1:.65dvw;
+	--fs_2:.75dvw;
+	--fs_3:.85dvw;
+	--fs_4:1dvw;
+	--fs_5:1.15dvw;
+	--fs_6:1.25dvw;
+	--fs_1:1.35dvw;
+	--fs_1:1.5dvw;
+
+	--c_good:rgb(71, 199, 62);
+	--c_bad:rgb(211, 62, 84);
+	--c_success:#28a745;
+	--c_success:rgb(40, 167, 69);
+	--c_active:#0000FF;
+	--c_active:rgb(0,0,255);
+	--c_safe:#008000;
+	--c_safe:rgb(0, 128, 0);
+	/*ISO 7010*/
+	--c_iso_error:#FF0000;
+	--c_iso_error:rgb(255,0,0);
+	--c_iso_warning:#ECE81A;
+	--c_iso_warning:rgb(236, 232, 26);
+
+	--success_1:rgb(0, 200, 73);
+	--success_1_dark:rgb(0, 185, 68);
+	--button_1:rgb(0, 110, 255);
+	--inactive_1:rgb(215, 215, 215);
+	--disabled_1:rgb(230, 230, 230);
+	--failure_1:rgb(230, 43, 80);
+
+	/* --a_1:rgb(255, 251, 195);
+	--a_1:rgb(251, 253, 221); */
+	--a_1:rgb(253, 250, 221);
+	--a_1:#f8f8f8;
+	/* --a_1:rgb(255, 254, 199); */
+	/* --a_1:rgb(241, 236, 200); */
+
+	--shadow_1: 1vw 1vw 1vw rgba(255,255,255,.25);
+	--sh2: .0dvw .0dvw 1dvw rgba(0,0,0, 0.15);
+	--sh3: .15dvw .15dvw 1dvw rgba(0,0,0, 0.1);
+	--sh4: .25dvw .25dvw .25dvw rgba(0,0,0, 0.5);
+	--sh5: .25dvw .25dvw .5dvw rgba(0,0,0, 0.25);
+
+	--tr1: all ease 1000ms;
+
+	--g1:.1rem;
+	--g2:.25rem;
+	--g3:.5rem;
+	--g4:.6rem;
+	--g5:.7rem;
+	--g6:.8rem;
+	--g7:.9rem;
+	--g8:1rem;
+	--g9:1.1rem;
+	--g10:1.2rem;
+	--g11:1.3rem;
+	--g12:1.4rem;
+	--g13:1.5rem;
+	--g14:1.6rem;
+	--g15:1.7rem;
+	--g16:1.8rem;
+	--g17:1.9rem;
+	--g18:2rem;
+	--g19:2.25rem;
+	--g20:2.5rem;
+	--g21:2.75rem;
+	--g22:3rem;
+	--g23:3.5rem;
+	--g24:4rem;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	position: relative;
+	text-transform: uppercase;
+}
+
+/* body::-webkit-scrollbar {
+	width: 0;
+} */
+
+b {
+	font-weight: 900;
+}
+
+a { font-size: 1rem; cursor: pointer; }
+p { font-size: 1rem; }
+h1{font-family: f1b; font-size: 2.5rem;}
+h2{font-family: f1b; font-size: 2rem;}
+h3{font-family: f1b; font-size: 1.5rem;}
+h4{font-family: f1b; font-size: 1rem;}
+
+
+
+.active_button
+{
+	pointer-events: all;
+	background: var(--success_1) !important;
+}
+.disabled_button
+{
+	pointer-events: none;
+	background: var(--inactive_1) !important;
+}
+.active_input
+{
+	pointer-events: all;
+	background: var(--c1) !important;
+}
+.disabled_input
+{
+	pointer-events: none;
+	background: var(--disabled_1) !important;
+}
+.disabled_container
+{
+	height: 0 !important;
+	overflow: hidden;
+	display: none !important;
+	padding: 0 1dvw !important;
+}
+.enabled_container
+{
+	padding: 1dvw !important;
+}
+.awaiter_screen
+{
+	z-index: 5000;
+	opacity: 1;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background: var(--c3);
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: opacity ease 1000ms;
+	pointer-events: none;
+}
+
+
+
+body
+{
+	overflow-x: hidden;
+	/* width: 100% !important; */
+}

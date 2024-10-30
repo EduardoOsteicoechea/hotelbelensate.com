@@ -1,0 +1,53 @@
+{
+   "room_name":"Doble Deluxe",
+   "type_id":"06",
+   "room_numbers_in_administration":[
+      102,103,104,105,106,107,108,109,110,111,112,113,114,115, 
+      202,203,204,205,206,207, 
+      210,
+      213, 
+      181,182,183,184,185,186, 
+      196
+   ],
+   "is_enabled":true,
+   "admits_pax":true,
+   "pax_amount":15,
+   "decrement_amount":1,
+   "increment_amount":1,
+   "gross_price":107.5,
+   "net_price":107.5,
+   "capacity":3,
+   "capacity_with_pax":4,
+   "children_capacity":2,
+   "room_services":[
+      "ubicada en el área ejecutiva", 
+      "2 camas matrimoniales en un mismo ambiente", 
+      "escritorio", 
+      "wifi", 
+      "nevera ejecutiva", 
+      "caja fuerte", 
+      "televisor con DirecTV", 
+      "secador de cabello", 
+      "agua caliente", 
+      "aire acondicionado", 
+      "no incluye desayuno"
+   ],
+   "room_images":[
+      "doble_deluxe_1_3840x2160.webp",
+      "doble_deluxe_2_3840x2160.webp",
+      "doble_deluxe_3_3840x2160.webp"
+   ],
+   "room_thumbnail_image":[
+       "doble_deluxe_3_960x540.webp"
+   ],
+   "room_capacity_images":[
+       "3_adult.svg"
+   ],
+   "room_icons":[
+      ["dos camas matrimoniales", "Dos camas matrimoniales, espacio para una familia pequeña."],
+      ["televisor", "tv.svg","Televisor de pantalla plana."],
+      ["wifi", "wifi.svg","Internet de alta velocidad las 24 horas."],
+      ["caja fuerte", "safe.svg","Bóveda personal para proteger sus pertenencias."],
+      ["nevera ejecutiva", "executive_fridge.svg","Nevera ejecutiva integrada en la habitación."]
+   ]
+}

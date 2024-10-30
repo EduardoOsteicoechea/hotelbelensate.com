@@ -1,0 +1,53 @@
+{
+   "room_name":"Suite ejecutiva",
+   "type_id":"04",
+   "room_numbers_in_administration":[194,195],
+   "is_enabled":true,
+   "admits_pax":true,
+   "pax_amount":15,
+   "decrement_amount":1,
+   "increment_amount":1,
+   "gross_price":135,
+   "net_price":135,
+   "capacity":2,
+   "capacity_with_pax":3,
+   "children_capacity":1,
+   "room_services":[
+      "ubicada en el área ejecutiva", 
+      "cama King size", 
+      "habitación modernizada", 
+      "2 baños", 
+      "2 ambientes", 
+      "sala de estar", 
+      "escritorio", 
+      "sofá cama", 
+      "wifi", 
+      "televisor con DirecTV", 
+      "nevera ejecutiva", 
+      "caja fuerte", 
+      "agua caliente", 
+      "aire acondicionado", 
+      "no incluye desayuno"
+   ],
+   "room_images":[
+       "suite_ejecutiva_1_3840x2160.webp",
+       "suite_ejecutiva_2_3840x2160.webp",
+       "suite_ejecutiva_3_3840x2160.webp",
+       "suite_ejecutiva_4_3840x2160.webp"
+   ],
+   "room_thumbnail_image":[
+       "suite_ejecutiva_1_960x540.webp"
+   ],
+   "room_capacity_images":[
+       "2_adult.svg"
+   ],
+   "room_icons":[
+      ["cama King size", "bed_king.svg","Cama King Size (200cm x 200cm)."],
+      ["sofá cama", "sofa_bed.svg","Mueble que puede funcionar como sofá durante y cama matrimonial."],
+      ["secador de cabello", "hair_dryer.svg","Secador de cabello integrado en habitación."],
+      ["televisor", "tv.svg","Televisor de pantalla plana."],
+      ["wifi", "wifi.svg","Internet de alta velocidad las 24 horas."],
+      ["caja fuerte", "safe.svg","Bóveda personal para proteger sus pertenencias."],
+      ["nevera ejecutiva", "executive_fridge.svg","Nevera ejecutiva integrada en la habitación."]
+   ]
+}

@@ -1,0 +1,34 @@
+.image_loader_001_form
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	/* border: var(--b1); */
+}
+
+.image_loader_001_form_landscape_image_label
+{
+
+}
+
+.image_loader_001_form_landscape_image_input
+{
+	border: solid black 1px;
+}
+
+.image_loader_001_form_vertical_image_label
+{
+
+}
+
+
+.image_loader_001_form_vertical_image_input
+{
+
+	border: solid black 1px;
+}
+
+.image_loader_001_form_submit
+{
+
+}

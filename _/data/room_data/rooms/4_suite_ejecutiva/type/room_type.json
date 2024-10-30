@@ -1,0 +1,43 @@
+{
+   "room name":"Suite ejecutiva",
+   "room numbers in administration":[194,195],
+   "is enabled":true,
+   "admits pax":false,
+   "pax amount":15,
+   "decrement amount":1,
+   "increment amount":1,
+   "type gross price":215,
+   "maximum capacity":2,
+   "capacity without pax":2,
+   "capacity with pax":2,
+   "children capacity":1,
+   "room services":[
+       "2 niveles", 
+       "2 habitaciones amplias con cama King size", 
+       "2 baños", 
+       "sala de estar", 
+       "escritorio", 
+       "wifi", 
+       "nevera ejecutiva", 
+       "microondas", 
+       "caja fuerte", 
+       "televisor con DirecTV", 
+       "nevera ejecutiva", 
+       "agua caliente", 
+       "aire acondicionado", 
+       "no incluye desayuno", 
+       "no admite mascotas"
+   ],
+   "room images":[
+       "suite_ejecutiva_1_3840x2160.webp",
+       "suite_ejecutiva_2_3840x2160.webp",
+       "suite_ejecutiva_3_3840x2160.webp",
+       "suite_ejecutiva_4_3840x2160.webp"
+   ],
+   "room thumbnail image":[
+       "suite_ejecutiva_1_960x540.webp"
+   ],
+   "room capacity images":[
+       "2_adult.svg"
+   ]
+}

@@ -1,0 +1,17 @@
+{
+   "room name":"Suite ejecutiva",
+   "id":194,
+   "is enabled":1,
+   "location":"área ejecutiva",
+   "reserved dates":[
+      "2024-10-22",
+      "2024-10-23",
+      "2024-10-24",
+      "2024-10-25"
+   ],
+   "pax ammount":15,
+   "decrement":1,
+   "increment" : 1.2,
+   "added values" : [],
+   "aditional services" : []
+}

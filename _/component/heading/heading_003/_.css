@@ -1,0 +1,21 @@
+.heading_003_outer_container
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--first);
+	height: 20vw;
+	transition: all ease 100ms;
+}
+.heading_003_outer_container:hover
+{
+	transform: scale(1.025);
+}
+.heading_003_outer_container h2
+{
+	font-size: 1.75dvw;
+	font-weight: 200;
+	letter-spacing: 0.4vw;
+	text-align: center;
+	line-height: 1.75vw;
+}

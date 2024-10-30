@@ -1,0 +1,162 @@
+import CompletedComponentState from "../../../../_componentHelpers/CompletedComponentState.js";
+import ComponentState from "../../../../_componentHelpers/ComponentState.js";
+import ControlsDisabledComponentState from "../../../../_componentHelpers/ControlsDisabledComponentState.js";
+import ErrorComponentState from "../../../../_componentHelpers/ErrorComponentState.js";
+import InitialComponentState from "../../../../_componentHelpers/InitialComponentState.js";
+import Subcomponent from "../../../../_componentHelpers/Subcomponent.js";
+import StateTracker from "../../../../_componentHelpers/StateTracker.js";
+import ControlsEnabledComponentState from "../../../../_componentHelpers/ControlsEnabledComponentState.js";
+import Component from "../../../../_componentHelpers/Component.js";
+
+export default class DepartureInputManager extends Subcomponent{
+
+   _stateTracker: StateTracker;
+
+   _compomentManger: Component;
+   _datesFiltersContainer: HTMLDivElement;
+   _arrivalInput: HTMLInputElement;
+   _departureInput: HTMLInputElement;
+   _appliedFiltersContainer: HTMLDivElement;
+   _optionsContainer: HTMLDivElement;
+   
+  constructor(
+   compomentManger:Component,
+   stateTracker: StateTracker,
+   datesFiltersContainer: HTMLDivElement,
+   _arrivalInput: HTMLInputElement,
+   departureInput: HTMLInputElement,
+   appliedFiltersContainer: HTMLDivElement,
+   optionsContainer: HTMLDivElement,
+  ){
+   super();
+   this._compomentManger = compomentManger;
+   this._stateTracker = stateTracker;
+   this._datesFiltersContainer = datesFiltersContainer;
+   this._arrivalInput = _arrivalInput;
+   this._departureInput = departureInput;
+   this._appliedFiltersContainer = appliedFiltersContainer;
+   this._optionsContainer = optionsContainer;
+  }
+
+  async determineWorkflow(): Promise<ComponentState> {
+     return new Promise((resolve, reject) => {
+        if (this._departureInput.value !== "") {
+           this._stateTracker._state = new CompletedComponentState();
+        } else {
+           this._stateTracker._state = new ControlsEnabledComponentState();
+        }
+        resolve(this._stateTracker._state);
+     });
+  }
+
+  async executeWorkflow(componentState: ComponentState): Promise<ComponentState> {
+     return new Promise((resolve, reject) => {
+        if (
+           componentState._stateName === "completed"
+        ) {
+           if (this.setControlsToCompletedState() === undefined) {
+              resolve(new CompletedComponentState());
+           } else {
+              resolve(new ErrorComponentState());
+           };
+        };
+     });
+  }
+
+  setControlsToCompletedState(): void | Error {
+      try {  
+         this._arrivalInput.disabled = true;
+         this._departureInput.disabled = true;
+         
+         try {  
+            this._createDatesCompletedIndicator();
+         } catch (error) {
+            throw new Error("Error at createDatesCompletedIndicator()");
+         };
+
+         this._datesFiltersContainer.classList.remove("initialFilterState");
+         this._datesFiltersContainer.classList.add("completedFilterState");
+
+      } catch (error) {
+         throw new Error("Error at setControlsToInitialState()");
+      };
+   }
+
+   _createDatesCompletedIndicator(): void | Error 
+   {
+      try {
+         const datesFilterAppliedIndicatorContainer:HTMLDivElement = document.createElement("div");
+         datesFilterAppliedIndicatorContainer.id = "datesFilterAppliedIndicatorContainer";
+
+         const datesFilterAppliedIndicatorHeading:HTMLDivElement = document.createElement("div");
+         datesFilterAppliedIndicatorHeading.id = "datesFilterAppliedIndicatorHeading";
+         this._printSelectedDates(datesFilterAppliedIndicatorHeading);
+         
+         const datesFilterAppliedIndicatorDeleteButton:HTMLDivElement = document.createElement("div");
+         datesFilterAppliedIndicatorDeleteButton.id = "datesFilterAppliedIndicatorDeleteButton";
+         
+         const datesFilterAppliedIndicatorDeleteButtonContainerBar1:HTMLDivElement = document.createElement("div");
+         datesFilterAppliedIndicatorDeleteButtonContainerBar1.id = "datesFilterAppliedIndicatorDeleteButtonContainerBar1";
+         
+         const datesFilterAppliedIndicatorDeleteButtonContainerBar2:HTMLDivElement = document.createElement("div");
+         datesFilterAppliedIndicatorDeleteButtonContainerBar2.id = "datesFilterAppliedIndicatorDeleteButtonContainerBar2";
+
+         try {  
+            this._appendDeleteDatesIndicatorButtonEvent(
+               datesFilterAppliedIndicatorDeleteButton, 
+               datesFilterAppliedIndicatorContainer,
+               this._stateTracker
+            );
+         } catch (error) {
+            throw new Error("Error at _appendDeleteDatesIndicatorButtonEvent()");
+         };
+
+         datesFilterAppliedIndicatorDeleteButton.appendChild(datesFilterAppliedIndicatorDeleteButtonContainerBar1);
+         datesFilterAppliedIndicatorDeleteButton.appendChild(datesFilterAppliedIndicatorDeleteButtonContainerBar2);
+
+         datesFilterAppliedIndicatorContainer.appendChild(datesFilterAppliedIndicatorHeading);
+         datesFilterAppliedIndicatorContainer.appendChild(datesFilterAppliedIndicatorDeleteButton);
+
+         this._appliedFiltersContainer.appendChild(datesFilterAppliedIndicatorContainer);
+      } catch (error) {
+         throw new Error("Error at createDatesCompletedIndicator()");
+      };
+   }
+   
+   _printSelectedDates(parentElement: HTMLDivElement): void | Error 
+   {
+      try {
+         const arrivalDate: HTMLDivElement = document.createElement("div");
+         arrivalDate.innerHTML = "Llegada: " + this._arrivalInput.value;
+
+         const departureDate: HTMLDivElement = document.createElement("div");
+         departureDate.innerHTML = "Salida: " + this._departureInput.value;
+
+         parentElement.appendChild(arrivalDate);
+         parentElement.appendChild(departureDate);
+      } catch (error) {
+         throw new Error("Error at createDatesCompletedIndicator()");
+      };
+   }
+   
+   _appendDeleteDatesIndicatorButtonEvent(
+      buttonElement: HTMLDivElement, 
+      indicatorElement: HTMLDivElement, 
+      stateTracker: StateTracker
+   ): void | Error
+   {
+      try {
+         buttonElement.addEventListener("pointerup",(event:any)=>{
+            indicatorElement.remove();
+
+            stateTracker._state = new InitialComponentState();
+         });
+      } catch (error) {
+         throw new Error("Error at _appendDeleteDatesIndicatorButtonEvent()");
+      };
+   }
+
+  ///////////////////////////////
+  // Class end
+  ///////////////////////////////
+}

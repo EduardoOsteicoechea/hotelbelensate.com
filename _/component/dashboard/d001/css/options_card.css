@@ -1,0 +1,47 @@
+.d001_options_card
+{
+	width: 100%;
+	height: 15dvw;
+	background: var(--c1);
+	margin-top: 3dvw;
+	margin-right: 1dvw;
+	display: flex;
+	gap: 1.5dvw;
+	padding: 0dvw;
+	transition: gap ease 1000ms, transform ease 300ms;
+	cursor: pointer;
+	/* border-bottom: solid .1dvw var(--c2); */
+}
+.d001_options_card:hover
+{
+	transform: scale(1.0081);
+}
+.d001_options_card_selected
+{
+	width: 100%;
+	height: 18dvw;
+	margin-top: 4dvw;
+	margin-right: 1dvw;
+	display: flex;
+	transition: gap ease 1000ms;
+	cursor: pointer;
+	/* border: solid .1dvw var(--c2); */
+}
+
+.d001_options_card:first-child
+{
+	margin-top: 0dvw;
+}
+.d001_options_card_selected:first-child
+{
+	margin-top: 0dvw;
+}
+
+.d001_options_card:last-child
+{
+	margin-bottom: 2dvw;
+}
+.d001_options_card_selected:last-child
+{
+	margin-bottom: 2dvw;
+}

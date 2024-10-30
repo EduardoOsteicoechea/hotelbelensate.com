@@ -1,0 +1,23 @@
+.heading_004_outer_container
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--first);
+	height: 20dvw;
+	transition: all ease 1000ms;
+	z-index: 2000;
+}
+.heading_004_outer_container:hover
+{
+	transform: scale(1.025);
+}
+.heading_004_outer_container h2
+{
+	font-size: 1.75dvw;
+	letter-spacing: 0.4dvw;
+	text-align: center;
+	line-height: 3.5vw;
+	font-family: f1b;
+	color: var(--c2);
+}

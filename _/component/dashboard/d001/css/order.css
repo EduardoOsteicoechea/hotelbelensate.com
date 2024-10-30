@@ -1,0 +1,151 @@
+.d001_order
+{
+	grid-row: 4 / span 1;
+	grid-column:  4 / span 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0dvw;
+	width: 100%;
+	height: 100%;	
+	background: var(--c1);
+	font-size: 1dvw;
+	overflow: hidden;
+}
+
+.d001_order_container_background
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+}
+.d001_order_container_background > div
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,.1875);
+	/* background: rgba(0,0,0,.55); */
+}
+
+.d001_order_container_main_title
+{
+	font-size: .9dvw;
+	height: 2dvw;
+	font-weight: 100;
+	letter-spacing: .2dvw;
+	display: flex;
+	/* background: var(--c3); */
+	/* color: var(--c7); */
+	color: var(--c1);
+	align-items: center;
+	gap: 1dvw;
+	padding: 2dvw 1.5dvw;
+}
+
+
+.d001_order_item_container
+{
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	padding: 0 1.5dvw 4dvw 1.5dvw;
+	gap: 1dvw;
+	color: var(--c1);
+}
+/* .d001_order_item_container::-webkit-scrollbar 
+{
+	width: 0;
+} */
+
+
+.d001_order_item_container_item_container
+{
+	display: flex;
+	align-items: center;
+	gap: .5dvw;
+	background: var(--c1);
+	color: var(--c2);
+	padding: .5dvw 1dvw;
+	font-size: .7dvw;
+}
+.d001_order_item_container_item_container > button
+{
+	background: var(--c2);
+	color: var(--c1);
+	border: none;
+	border-radius: 0;
+	width: fit-content;
+	padding: .5dvw 1dvw;
+	font-size: .7dvw;
+	font-family: inherit;
+	letter-spacing: .1dvw;
+	margin-left: auto;
+}
+
+.d001_order_item_container_item_container_item_cost
+{
+	background: var(--c3);
+	color: var(--c2);
+	border-radius: .25dvw;
+	padding: .5dvw 1dvw;
+	margin-left: .25dvw;
+}
+
+.d001_order_total_container
+{
+	margin-top: auto;
+	gap: .5dvw;
+	display: flex;
+	background: var(--c3);
+	align-items: center;
+	gap: 1dvw;
+	padding: 0 0 0 1dvw;
+	z-index: 1;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2.75dvw;
+	font-size: .9dvw;
+}
+
+.d001_order_total_container_ammount
+{
+	display: inline;
+}
+
+.d001_order_total_container_currency
+{
+	display: inline;
+}
+
+.d001_order_total_payment_button
+{
+	display: block;
+	max-width: 50%;
+	height: 100%;
+	padding: .75dvw 1.5dvw;
+	/* background: var(--c2); */
+	background: var(--success_1);
+	color: var(--c1);
+	border: none;
+	margin-left: auto;
+	font-family: inherit;
+	font-size: .85dvw;
+	letter-spacing: .2dvw;
+	cursor: pointer;
+	transition: transform ease 100ms, background ease 1000ms;
+}
+.d001_order_total_payment_button:hover, .d001_order_total_payment_button:active
+{
+	transform: scale(1.05);
+}

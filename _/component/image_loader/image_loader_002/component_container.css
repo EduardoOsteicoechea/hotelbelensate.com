@@ -1,0 +1,25 @@
+.image_loader_002
+{
+	display: grid;
+	width: 100%;
+	margin: auto;
+	max-width: 3840px;
+	grid-template-columns: 1rem calc(25% - 1.75rem) 1.5rem calc(75% - 1.75rem) 1rem ;
+	grid-template-rows: 1rem 0rem 0rem auto 1rem;
+	margin-bottom: 1rem;
+	overflow: hidden;
+	background: var(--c3);
+	padding: 1rem;
+}
+
+@media only screen and (min-width: 951px) { 
+}
+
+@media only screen and (max-width: 950px) and (min-width: 451px) { 
+
+}
+
+@media only screen and (max-width: 450px) {  
+
+}
+

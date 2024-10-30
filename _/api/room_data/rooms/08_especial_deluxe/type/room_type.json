@@ -1,0 +1,50 @@
+{
+   "room_name":"Especial Deluxe",
+   "type_id":"08",
+   "room_numbers_in_administration":[101,176,197,84],
+   "is_enabled":true,
+   "admits_pax":false,
+   "pax_amount":15,
+   "decrement_amount":1,
+   "increment_amount":1,
+   "gross_price":100,
+   "net_price":100,
+   "capacity":2,
+   "capacity_with_pax":2,
+   "children_capacity":1,
+   "room_services":[
+      "acondicionada para capacidades especiales",
+      "ubicada en el área ejecutiva", 
+      "cama Queen size", 
+      "escritorio", 
+      "wifi", 
+      "televisor con DirecTV", 
+      "caja fuerte", 
+      "ducha de manos", 
+      "secador de cabello", 
+      "agua caliente", 
+      "aire acondicionado", 
+      "no incluye desayuno"
+   ],
+   "room_images":[
+       "especial_deluxe_1_3840x2160.webp",
+       "especial_deluxe_2_3840x2160.webp",
+       "especial_deluxe_3_3840x2160.webp",
+       "especial_deluxe_4_3840x2160.webp"
+   ],
+   "room_thumbnail_image":[
+       "especial_deluxe_1_960x540.webp"
+   ],
+   "room_capacity_images":[
+       "2_adult.svg"
+   ],
+   "room_icons":[
+      ["cama Queen size", "bed_queen.svg","Cama Queen Size (180cm x 200cm)."],
+      ["acondicionamiento para capacidades especiales", "special_capabilities_service.svg","Baño acondicionado para personas con capacidades especiales y silla de ruedas."],
+      ["escritorio", "desk.svg","Escritorio de trabajo integrado en habitación."],
+      ["televisor", "tv.svg","Televisor de pantalla plana."],
+      ["wifi", "wifi.svg","Internet de alta velocidad las 24 horas."],
+      ["caja fuerte", "safe.svg","Bóveda personal para proteger sus pertenencias."],
+      ["nevera ejecutiva", "executive_fridge.svg","Nevera ejecutiva integrada en la habitación."]
+   ]
+}

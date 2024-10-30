@@ -1,0 +1,157 @@
+.message_001_outer_container
+{
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1dvw;
+    font-family: f1r;
+    letter-spacing: .1dvw;
+    padding: 1dvw 0 0 0;
+    background: var(--c8);
+}
+
+.message_001_card_container
+{
+    width: 100dvw;
+    height: 11dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0dvw;
+    padding: 0dvw 4dvw;
+    background: var(--c1);
+    /* border: var(--b1); */
+}
+.message_001_card_container_title
+{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    padding: 0 2vw 0 0dvw;
+    font-size: 1.25dvw;
+    font-family: f1b;
+    line-height: 2dvw;
+    color: var(--c2);
+    letter-spacing: .05dvw;
+    /* color: var(--c7); */
+    /* border: var(--b1); */
+}
+
+.message_001_card_container_message
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 40%;
+    font-size: .85dvw;
+    margin-left: 0dvw;
+    padding: 0 1dvw 0 1dvw;
+    line-height: 1.4dvw;
+    /* border: var(--b1); */
+
+}
+.message_001_card_container_button_container
+{
+
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    font-size: .85dvw;
+    line-height: 1.4dvw;
+    padding: 0 0dvw 0 5dvw;
+
+}
+.message_001_card_container_button
+{
+    height: 3dvw;
+    width: 11dvw;
+    font-size: .85dvw;
+    text-decoration: none;
+    color: var(--c1);
+    background: var(--c2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid .1dvw var(--c2);
+
+}
+
+.message_001_card_1_container
+{
+
+}
+.message_001_card_1_container_title
+{
+}
+.message_001_card_1_container_message
+{
+
+}
+.message_001_card_1_container_button
+{
+
+    color: var(--c1);
+    background: var(--c_whatsapp);
+    border: none;
+    font-family: f1r;
+    cursor: pointer;
+
+}
+.message_001_card_1_container_button:hover
+{
+    background: var(--c_whatsapp);
+
+}
+
+
+.message_001_card_2_container
+{
+
+}
+.message_001_card_2_container_title
+{
+}
+.message_001_card_2_container_message
+{
+
+}
+.message_001_card_2_container_button
+{
+
+}
+
+
+.message_001_card_3_container
+{
+}
+.message_001_card_3_container_title
+{
+}
+.message_001_card_3_container_message
+{
+
+}
+.message_001_card_3_container_button
+{
+
+}
+
+
+
+@media only screen and (max-width: 950px) and (min-width: 451px) {
+
+    
+}
+
+
+
+@media only screen and (max-width: 450px) {
+
+    
+}

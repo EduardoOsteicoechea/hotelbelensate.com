@@ -1,0 +1,14 @@
+{
+  "name": "hyperccomponents",
+  "version": "1.0.0",
+  "main": "global.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo Osteicoechea",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/html": "^1.0.4"
+  }
+}

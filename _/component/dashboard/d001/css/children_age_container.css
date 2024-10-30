@@ -1,0 +1,73 @@
+#reservar_d001_search_bar_children_age_parameter_container
+{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	position: absolute;
+	right: 13dvw;
+	top: 3dvw;
+	width: 20dvw;
+	height: fit-content !important;
+	background: var(--c3);
+	padding: 2dvw;
+	z-index: 1000;
+}
+
+#reservar_d001_search_bar_children_age_parameter_container > *
+{
+	width: 100%;
+}
+
+#reservar_d001_search_bar_children_age_parameter_container > label
+{
+	font-size: .7dvw !important;
+	letter-spacing: .05dvw !important;
+}
+
+#reservar_d001_search_bar_children_age_parameter_container > input
+{
+	padding: .5dvw .75dvw;
+}
+
+.d001_children_age_container_close_button
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: fit-content !important;
+	height: fit-content !important;
+	padding: .6dvw .75dvw .6dvw .95dvw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 100;
+	font-size: .7dvw;
+	background: var(--failure_1);
+	color: var(--c1);
+}
+.d001_children_age_container_close_button:hover
+{
+	transform: scale(1.05);
+}
+
+
+
+.d001_children_age_container_accept_button
+{
+	width: fit-content !important;
+	height: fit-content !important;
+	padding: .6dvw .75dvw .6dvw .95dvw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 100;
+	font-size: .7dvw;
+	background: var(--success_1);
+	color: var(--c1);
+	margin-top: .5dvw;
+	cursor: pointer;
+}
+.d001_children_age_container_accept_button:hover
+{
+	transform: scale(1.05);
+}

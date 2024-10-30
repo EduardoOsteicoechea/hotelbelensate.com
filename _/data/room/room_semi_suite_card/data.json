@@ -1,0 +1,43 @@
+{
+    "room name":"Semi Suite",
+    "room numbers in administration":[209],
+    "is enabled":true,
+    "admits pax":true,
+    "pax amount":15,
+    "decrement amount":1,
+    "increment amount":1,
+    "type gross price":215,
+    "maximum capacity":4,
+    "capacity without pax":4,
+    "capacity with pax":4,
+    "children capacity":3,
+    "room services":[
+        "2 niveles", 
+        "2 habitaciones amplias con cama King size", 
+        "2 baños", 
+        "sala de estar", 
+        "escritorio", 
+        "wifi", 
+        "nevera ejecutiva", 
+        "microondas", 
+        "caja fuerte", 
+        "televisor con DirecTV", 
+        "nevera ejecutiva", 
+        "agua caliente", 
+        "aire acondicionado", 
+        "no incluye desayuno", 
+        "no admite mascotas"
+    ],
+    "room units data":[
+        {
+            "number in administration":209, 
+            "is enabled":true, 
+            "location":"área ejecutiva", 
+            "pax amount":15, 
+            "decrement amount":1, 
+            "increment amount":1, 
+            "added values":[], 
+            "services":[]
+        }
+    ]
+}

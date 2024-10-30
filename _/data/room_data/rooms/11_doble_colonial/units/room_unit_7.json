@@ -1,0 +1,17 @@
+{
+   "room name":"Cabaña",
+   "id":59,
+   "is enabled":1,
+   "location":"área ejecutiva",
+   "reserved dates":[
+      "2024-10-22",
+      "2024-10-23",
+      "2024-10-24",
+      "2024-10-25"
+   ],
+   "pax ammount":15,
+   "decrement":1,
+   "increment" : 1,
+   "added values" : [],
+   "aditional services" : []
+}

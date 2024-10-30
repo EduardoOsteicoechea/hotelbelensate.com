@@ -1,0 +1,43 @@
+{
+   "room name":"King deluxe",
+   "room numbers in administration":[211,212],
+   "is enabled":true,
+   "admits pax":true,
+   "pax amount":15,
+   "decrement amount":1,
+   "increment amount":1,
+   "type gross price":215,
+   "maximum capacity":4,
+   "capacity without pax":4,
+   "capacity with pax":4,
+   "children capacity":3,
+   "room services":[
+      "2 niveles", 
+      "2 habitaciones amplias con cama King size", 
+      "2 baños", 
+      "sala de estar", 
+      "escritorio", 
+      "wifi", 
+      "nevera ejecutiva", 
+      "microondas", 
+      "caja fuerte", 
+      "televisor con DirecTV", 
+      "nevera ejecutiva", 
+      "agua caliente", 
+      "aire acondicionado", 
+      "no incluye desayuno", 
+      "no admite mascotas"
+   ],
+   "room images":[
+       "king_deluxe_1_3840x2160.webp",
+       "king_deluxe_2_3840x2160.webp",
+       "king_deluxe_3_3840x2160.webp",
+       "king_deluxe_4_3840x2160.webp"
+   ],
+   "room thumbnail image":[
+       "king_deluxe_3_960x540.webp"
+   ],
+   "room capacity images":[
+       "2_adult.svg"
+   ]
+}

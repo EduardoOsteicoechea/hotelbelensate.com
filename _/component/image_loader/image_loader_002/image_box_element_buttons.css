@@ -1,0 +1,112 @@
+.image_loader_002_image_box_element_buttons
+{
+	position: absolute;
+	top: 0px;
+	/* right: 20%; */
+	height: 30px;
+	width: 100%;
+	margin: 0 auto 0 auto;
+	/* border: var(--b1); */
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 5px;
+	background: rgba(255,255,255,1);
+	padding: 5px 5px 5px 10px;	
+	/* box-shadow: 3px 3px 5px rgba(0,0,0,.5); */
+}
+
+
+.image_loader_002_image_box_element_buttons_button
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 20px;
+	width: 20px;
+	/* border: solid 1px var(--c1); */
+	background: var(--c1);
+	border-radius: 50px;
+	box-shadow: 3px 3px 8px rgba(0,0,0,.25);
+	font-size: .5rem;
+	font-weight: 900;
+	cursor: pointer;
+}
+.image_loader_002_image_box_element_buttons_button:hover
+{
+	background: var(--c2);
+	color: var(--c1);
+}
+.image_loader_002_image_box_element_buttons_button_tooltip
+{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	position: absolute;
+	top: 60px;
+	right: 0px;
+	background: var(--c1);
+	overflow: hidden;
+	height: 0px;
+	width: 100%;
+	color: var(--c2);
+	font-size: .5rem;
+	font-weight: 900;
+}
+
+.image_loader_002_activate_button 
+{
+}
+
+.image_loader_002_disable_button 
+{
+}
+
+.image_loader_002_expand_button 
+{
+}
+
+.image_loader_002_delete_button 
+{
+
+	background: var(--c_bad);
+	color: var(--c1);
+}
+
+
+.image_loader_002_images_names_container
+{
+	position: absolute;
+	top: 25px;
+	right: 0;
+	background: var(--c1);
+	padding: .5rem;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	overflow: hidden;
+}
+.image_loader_002_images_names_container_image_name
+{
+	display: flex;
+	justify-content: space-between;
+}
+.image_loader_002_images_names_container_image_name > *
+{
+	font-size: .5rem;
+	font-weight: 900;
+}
+
+
+
+
+@media only screen and (min-width: 951px) { 
+}
+
+@media only screen and (max-width: 950px) and (min-width: 451px) { 
+
+}
+
+@media only screen and (max-width: 450px) {  
+
+}

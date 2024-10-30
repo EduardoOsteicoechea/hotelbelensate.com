@@ -1,0 +1,49 @@
+{
+   "room_name":"Cabaña",
+   "type_id":"03",
+   "room_numbers_in_administration":[47,48,49,50,57,58,59],
+   "is_enabled":true,
+   "admits_pax":false,
+   "pax_amount":15,
+   "decrement_amount":1,
+   "increment_amount":1,
+   "gross_price":176.1,
+   "net_price":176.1,
+   "capacity":6,
+   "capacity_with_pax":6,
+   "children_capacity":5,
+   "room_services":[
+       "ubicada en el área colonial", 
+       "2 habitaciones con cama matrimonial", 
+       "1 habitación con 2 camas individuales", 
+       "2 baños", 
+       "wifi", 
+       "televisor con DirecTV", 
+       "mini sala de estar", 
+       "nevera ejecutiva y microondas",
+       "aire acondicionado", 
+       "no incluye desayuno"
+   ],
+   "room_images":[
+       "cabana_1_3840x2160.webp",
+       "cabana_2_3840x2160.webp",
+       "cabana_3_3840x2160.webp",
+       "cabana_4_3840x2160.webp"
+   ],
+   "room_thumbnail_image":[
+       "cabana_1_960x540.webp"
+   ],
+   "room_capacity_images":[
+       "6_adult.svg"
+   ],
+   "room_icons":[
+      ["cama matrimonial", "bed_regular.svg","Cama matrimonial (150cm x 200cm)."],
+      ["cama matrimonial", "bed_regular.svg","Cama matrimonial (150cm x 200cm)."],
+      ["dos camas individuales", "bed_single_double.svg","Dos camas individuales de tamaño estándar."],
+      ["microondas", "microwave.svg","Equipo de microondas integrado en habitación."],
+      ["televisor", "tv.svg","Televisor de pantalla plana."],
+      ["wifi", "wifi.svg","Internet de alta velocidad las 24 horas."],
+      ["caja fuerte", "safe.svg","Bóveda personal para proteger sus pertenencias."],
+      ["nevera ejecutiva", "executive_fridge.svg","Nevera ejecutiva integrada en la habitación."]
+   ]
+}

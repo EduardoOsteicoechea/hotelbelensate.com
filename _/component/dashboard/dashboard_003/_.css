@@ -1,0 +1,448 @@
+.dashboard_003_outer_container
+{
+    display: block;
+    background: var(--a_1);
+    width: 100dvw;
+    letter-spacing: .1dvw;
+    
+    line-height: 1.5dvw;
+}
+
+
+        
+.dashboard_003_filters
+{
+    /* border: var(--b1); */
+    width: 100dvw;
+    display: grid;
+    grid-template-rows: 3dvw auto 1dvw auto 0dvw auto 2dvw auto 3dvw;
+    grid-template-columns: 7dvw 16dvw 1.5dvw 16dvw 1.5dvw 16dvw 1.5dvw 16dvw 1.5dvw 16dvw 7dvw;
+}
+
+
+
+.dashboard_003_filters_title_and_action_container
+{
+    grid-row: 2;
+    grid-column: 1 / span all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3dvw;
+    padding: 0;
+}
+.dashboard_003_filters_title_and_action_container_title
+{
+    font-size: var(--fs_6);
+}
+
+
+
+
+.dashboard_003_filter_container
+{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 1dvw;
+    grid-row: 4;
+    padding: 2dvw 2.5dvw;
+    text-align: center;
+    font-size: var(--fs_3);
+}
+.dashboard_003_filter_container > h3
+{
+    font-size: var(--fs_6);
+}
+.dashboard_003_filter_container > *:not(h3)
+{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: .25dvw;
+    font-size: var(--fs_3);
+    gap: .25dvw;
+    /* justify-content: space-between; */
+}
+.dashboard_003_filter_container > * > *
+{
+    width: 100%;
+    display: flex;
+    font-size: var(--fs_3);
+}
+.dashboard_003_filter_container input
+{
+    height: 1.5dvw;
+    font-size: var(--fs_3);
+    padding: 0 .25dvw;
+}
+.dashboard_003_filter_container input[type="checkbox"] 
+{
+    margin-right: 1dvw;
+}
+.dashboard_003_filter_container button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: var(--c3);
+    color: var(--c2);
+    height: 2.25dvw;
+    font-size: var(--fs_3);
+    letter-spacing: .1dvw;
+}
+
+
+
+
+
+
+
+.dashboard_003_dates_filters_container
+{
+    grid-column: 2;
+}
+.dashboard_003_dates_filters_container_title
+{
+
+}
+.dashboard_003_arrival_filter_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.dashboard_003_arrival_filter_container_label
+{
+
+}
+.dashboard_003_arrival_filter_container_date_picker
+{
+    width: 100%;
+
+}
+.dashboard_003_departure_filter_container
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.dashboard_003_departure_filter_container_label
+{
+
+}
+.dashboard_003_departure_filter_container_date_picker
+{
+    width: 100%;
+
+}
+
+
+
+.dashboard_003_capacity_filters_container
+{
+    grid-column: 4;
+}
+.dashboard_003_capacity_filters_container_title
+{
+
+}
+.dashboard_003_adults_filter_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.dashboard_003_adults_filter_container_label
+{
+
+}                    
+.dashboard_003_adults_filter_container_input
+{
+    width: 100%;
+}
+.dashboard_003_children_filter_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.dashboard_003_children_filter_container_label
+{
+
+}                     
+.dashboard_003_children_filter_container_input
+{
+    width: 100%;
+}
+.dashboard_003_children_filter_container_children_ages_container
+{
+
+}
+.dashboard_003_children_filter_container_children_ages_container_indication
+{
+
+}
+.dashboard_003_children_filter_container_children_ages_container_items_container
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: .5dvw;
+    width: 100%;
+}
+.dashboard_003_children_filter_container_children_ages_container_items_container> div
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.dashboard_003_children_filter_container_children_ages_container_items_container > div > input
+{
+    width: 100%;
+}
+.dashboard_003_children_filter_container_children_ages_container_items_container > button
+{
+    width: 100%;
+    height: 2dvw;
+    margin-top: .5dvw;
+    background: var(--c1);
+}
+
+
+
+.dashboard_003_room_filter_container
+{
+    grid-column: 6;
+}
+.dashboard_003_room_filter_container_title
+{
+
+}               
+.dashboard_003_room_filter_container_checkboxes_container
+{
+
+}                    
+.dashboard_003_room_filter_container_checkboxes_items_container
+{
+
+}
+.dashboard_003_room_filter_container_checkboxes_container_checkbox
+{
+
+}
+.dashboard_003_room_filter_container_checkboxes_container_label
+{
+
+}
+
+
+
+.dashboard_003_budget_filter_container
+{
+    grid-column: 8;
+}
+.dashboard_003_budget_filter_container_title
+{
+
+}
+.dashboard_003_budget_filter_container_checkboxes_container
+{
+
+}                                
+.dashboard_003_room_filter_container_checkboxes_items_container
+{
+
+}
+.dashboard_003_budget_filter_container_checkboxes_container_checkbox
+{
+
+}
+.dashboard_003_budget_filter_container_checkboxes_container_label
+{
+
+}    
+
+
+
+.dashboard_003_location_filter_container
+{
+    grid-column: 10;
+}
+.dashboard_003_location_filter_container_title
+{
+
+}        
+.dashboard_003_location__filter_container_checkboxes_container
+{
+
+}                               
+.dashboard_003_room_filter_container_checkboxes_items_container
+{
+
+}
+.dashboard_003_location_filter_container_checkboxes_container_checkbox
+{
+
+}
+.dashboard_003_location_filter_container_checkboxes_container_label
+{
+
+}
+
+
+
+
+.dashboard_003_filter_sumary_container_sumary_container_item_container
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-self: end;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1dvw;
+}
+.dashboard_003_filter_sumary_container_sumary_container_item_container > div
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .25dvw;
+}
+.dashboard_003_filter_sumary_container_sumary_container_item_container > *:not(button)
+{
+    display: none;
+}
+.dashboard_003_filter_sumary_container_sumary_container_item_container > button
+{
+    width: 100%;
+}
+
+
+
+.filled_filters
+{
+    background: var(--success_1);
+    background: var(--c1);
+}
+
+.completedFilterState
+{
+    background: var(--success_1);
+    background: var(--c1);
+}
+
+
+
+
+.dashboard_003_apply_filters_button_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-row: 8;
+    grid-column: 1 / span all;
+    padding: 1dvw;
+}
+/* .dashboard_003_apply_filters_button_container > div > p
+{
+    display: none;
+} */
+.dashboard_003_applied_filters_container
+{
+   grid-row: 6;
+   grid-column: 1 / span all;
+
+    color: var(--c2);
+    display: flex;
+    gap: 2dvw;
+    justify-content: center;
+    align-items: center;
+    padding: 1dvw 1dvw;
+    font-size: var(--fs_3);
+}
+.dashboard_003_applied_filters_container > div
+{
+    height: 100%;
+    background: var(--c1);
+    padding: 1dvw 1dvw;
+}
+.dashboard_003_apply_filters_button
+{
+    color: var(--c1);
+    background: var(--c2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 2.75dvw;
+    width: 12dvw;
+    padding: 0 1dvw;
+    font-size: var(--fs_3);
+}
+
+
+
+
+/*appliedFilterContainer*/
+/*appliedFilterContainer*/
+/*appliedFilterContainer*/
+/*appliedFilterContainer*/
+
+#datesFilterAppliedIndicatorContainer{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 1dvw;
+}
+#datesFilterAppliedIndicatorHeading{
+
+}
+#datesFilterAppliedIndicatorDeleteButton{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 2dvw;
+   width: 2dvw;
+   background: var(--c2);
+   cursor: pointer;
+}
+#datesFilterAppliedIndicatorDeleteButtonContainerBar1{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   height: 40%;
+   width: 10%;
+   background: var(--c1);
+   transform: rotate(45deg);
+   left: .1dvw;
+}
+#datesFilterAppliedIndicatorDeleteButtonContainerBar2{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 40%;
+   width: 10%;
+   background: var(--c1);
+   transform: rotate(135deg);
+   right: .1dvw;
+}

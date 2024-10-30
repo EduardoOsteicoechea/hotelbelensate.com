@@ -1,0 +1,40 @@
+{
+   "room name":"Especial Deluxe",
+   "room numbers in administration":[101,176,197,84],
+   "is enabled":true,
+   "admits pax":false,
+   "pax amount":15,
+   "decrement amount":1,
+   "increment amount":1,
+   "type gross price":100,
+   "maximum capacity":2,
+   "capacity without pax":2,
+   "capacity with pax":2,
+   "children capacity":1,
+   "room services":[
+      "acondicionada para capacidades especiales",
+      "ubicada en el área ejecutiva", 
+      "cama Queen size", 
+      "escritorio", 
+      "wifi", 
+      "televisor con DirecTV", 
+      "caja fuerte", 
+      "ducha de manos", 
+      "secador de cabello", 
+      "agua caliente", 
+      "aire acondicionado", 
+      "no incluye desayuno"
+   ],
+   "room images":[
+       "especial_deluxe_1_3840x2160.webp",
+       "especial_deluxe_2_3840x2160.webp",
+       "especial_deluxe_3_3840x2160.webp",
+       "especial_deluxe_4_3840x2160.webp"
+   ],
+   "room thumbnail image":[
+       "especial_deluxe_1_960x540.webp"
+   ],
+   "room capacity images":[
+       "2_adult.svg"
+   ]
+}

@@ -1,0 +1,13 @@
+{
+   "room_name":"Matrimonial Ejecutiva",
+   "id":190,
+   "is_enabled":true,
+   "location":"área ejecutiva",
+   "reserved_dates":[
+   ],
+   "pax_ammount":15,
+   "decrement":1,
+   "increment": 1,
+   "added_values": [],
+   "aditional_services": []
+}

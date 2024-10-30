@@ -1,0 +1,15 @@
+{
+   "room name":"Especial Deluxe",
+   "id":197,
+   "is enabled":1,
+   "location":"área ejecutiva",
+   "reserved dates":[
+      "2024-10-25",
+      "2024-10-26"
+   ],
+   "pax ammount":15,
+   "decrement":1,
+   "increment" : 1.2,
+   "added values" : [],
+   "aditional services" : []
+}

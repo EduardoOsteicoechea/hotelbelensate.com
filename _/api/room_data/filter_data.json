@@ -1,0 +1,149 @@
+{
+    "bookable_months":"1",
+    "rooms_locations":["área colonial", "área ejecutiva"],
+    "children_max_age":"11",
+    "rooms_capacities":[
+        "2",
+        "3",
+        "4",
+        "6"
+    ],
+    "rooms_names":[
+        "Suite Presidencial",
+		"Suite Presidencial Junior",
+		"Cabaña",
+		"Suite Ejecutiva",
+		"Suite Nupcial",
+		"Doble Deluxe",
+		"King Deluxe",
+		"Especial Deluxe",
+		"Matrimonial Ejecutiva",
+		"Semi Suite",
+		"Doble Colonial",
+		"Matrimonial Colonial"
+    ],
+    "rooms_types":[
+        "Presidencial",
+		"Deluxe",
+		"Cabaña",
+		"Suite",
+		"Matrimonial",
+		"Ejecutiva",
+		"Colonial"
+    ],
+    "rooms_prices":[
+        "215",
+        "185",
+        "176.1",
+        "135",
+        "116",
+        "107.5",
+        "107.5",
+        "100",
+        "92",
+        "74.7",
+        "70.7",
+        "58.7"        
+    ],
+    "rooms_price_spots":[
+        "170-220","90-135","60-90"
+    ],
+    "rooms_data":{
+        "Suite Presidencial":{
+            "name":"0",
+            "price":"0",
+            "price_spot":"0",
+            "location":"1",
+            "room_capacity":"1",
+            "room_capacity_with_pax":"2"
+        },
+		"Suite Presidencial Junior":{
+            "name":"1",
+            "price":"1",
+            "price_spot":"0",
+            "location":"1",
+            "room_capacity":"1",
+            "room_capacity_with_pax":"2"
+        },
+		"Cabaña":{
+            "name":"2",
+            "price":"2",
+            "price_spot":"0",
+            "location":"0",
+            "room_capacity":"3",
+            "room_capacity_with_pax":"0"
+        },
+		"Suite Ejecutiva":{
+            "name":"3",
+            "price":"3",
+            "price_spot":"1",
+            "location":"1",
+            "room_capacity":"0",
+            "room_capacity_with_pax":"1"
+        },
+		"Suite Nupcial":{
+            "name":"4",
+            "price":"4",
+            "price_spot":"1",
+            "location":"1",
+            "room_capacity":"0",
+            "room_capacity_with_pax":"0"
+        },
+		"Doble Deluxe":{
+            "name":"5",
+            "price":"5",
+            "price_spot":"1",
+            "location":"1",
+            "room_capacity":"1",
+            "room_capacity_with_pax":"2"
+        },
+		"King Deluxe":{
+            "name":"6",
+            "price":"6",
+            "price_spot":"1",
+            "location":"1",
+            "room_capacity":"0",
+            "room_capacity_with_pax":"0"
+        },
+		"Especial Deluxe":{
+            "name":"7",
+            "price":"7",
+            "price_spot":"1",
+            "location":"1",
+            "room_capacity":"0",
+            "room_capacity_with_pax":"0"
+        },
+		"Matrimonial Ejecutiva":{
+            "name":"8",
+            "price":"8",
+            "price_spot":"1",
+            "location":"1",
+            "room_capacity":"0",
+            "room_capacity_with_pax":"0"
+        },
+		"Semi Suite":{
+            "name":"9",
+            "price":"9",
+            "price_spot":"2",
+            "location":"1",
+            "room_capacity":"0",
+            "room_capacity_with_pax":"0"
+        },
+		"Doble Colonial":{
+            "name":"10",
+            "price":"10",
+            "price_spot":"2",
+            "location":"0",
+            "room_capacity":"1",
+            "room_capacity_with_pax":"2"
+        },
+		"Matrimonial Colonial":{
+            "name":"11",
+            "price":"11",
+            "price_spot":"2",
+            "location":"0",
+            "room_capacity":"0",
+            "room_capacity_with_pax":"0"
+        }
+    }
+}

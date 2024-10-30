@@ -1,0 +1,88 @@
+.header_003_outer_container
+{
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+ height: 7dvw;
+ width: 100%;
+ z-index: 9000;
+}    
+.header_003_logo_anchor
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 3dvw;
+    height: 100%;
+    padding: 0dvw 0dvw 0 0dvw;
+    background: var(--c1);
+    width: 36dvw;
+}        
+.header_003_logo_anchor_image
+{
+    height: 39%;
+}    
+.header_003_button_container
+{
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: .2dvw;
+    height: 100%;
+    width: 8dvw;
+}
+.header_003_button_container_bar
+{
+    width: 2dvw;
+    height: .2dvw;
+    background: var(--c2);
+}
+
+    
+
+
+.header_003_navigation_container
+{
+    position: absolute;
+    height: 7dvw;
+    gap: 2dvw;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64dvw;
+    padding: 0 0dvw 0 0;
+    z-index: 10000;
+}
+.header_003_navigation_container_button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5dvw;
+    font-family: f1b;
+    padding: 0 2dvw;
+    font-size: .8dvw;
+    letter-spacing: .15dvw;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--c2);
+}
+.header_003_navigation_container_button:hover
+{
+    /* background: var(--c3); */
+    background: var(--c8);
+}
+
+
+
+
+@media only screen and (max-width: 950px) and (min-width: 451px) { 
+}
+
+
+
+@media only screen and (max-width: 450px) {  
+}

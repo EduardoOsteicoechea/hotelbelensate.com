@@ -1,0 +1,170 @@
+.d001_search_bar
+{
+	grid-row: 2 / span 1;
+	grid-column:  2 / span 3;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 2.5dvw;	
+	background: var(--c1);
+	gap: 2dvw;
+	/* box-shadow: .0dvw .25dvw .5dvw rgba(0,0,0,.05); */
+	z-index: 5;
+}
+.d001_search_bar_parameters_container
+{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	gap: 2dvw;
+	width: 100%;
+	background: var(--c3);
+	padding: .5dvw 15vw .5dvw .5dvw;
+}
+.d001_search_bar_parameter_container
+{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: .75dvw;
+	/* background: #adadad; */
+}
+.d001_search_bar_parameter_container label
+{
+	font-size: .70dvw;
+	width: 40%;
+	font-weight: 100;
+	letter-spacing: .1dvw;
+	font-size: .80dvw;
+	color: var(--c7);
+}
+.d001_search_bar_parameter_container > input, .d001_search_bar_parameter_container > select
+{
+	height: 100%;
+	width: 60%;
+	padding: 0 .5dvw;
+	border: none;
+	font-family: inherit;
+	font-size: .75dvw;
+	letter-spacing: .1dvw;
+	background: var(--c1);
+	font-weight: 100;
+}
+.d001_search_bar_children_parameter_container > input, .search_bar_adults_parameter_container > input
+{
+	align-items: center;
+	width: 4dvw;
+	height: 100%;
+	width: 60%;
+	padding: 0 .5dvw;
+	border-radius: 0;
+	border: none;
+	font-family: inherit;
+	font-size: 1dvw;
+	background: var(--c1);
+	font-weight: 100;
+}
+
+
+
+.d001_search_bar_children_parameter_container_inputs_container
+{
+	position: absolute;
+	top: 3dvw;
+	display: flex;
+	max-height: 60dvh;
+	overflow-y: scroll;
+	flex-direction: column;
+	gap: .5dvw;
+	padding: 2.5dvw 1.5dvw 1.5dvw 1.5dvw;
+	border-radius: 0;
+	border: none;
+	font-size: 1dvw;
+	background: var(--c3);
+}
+.d001_search_bar_children_parameter_container_inputs_container > *
+{
+	width: 100%;
+}
+.d001_search_bar_children_parameter_container_inputs_container > input
+{
+	align-items: center;
+	width: 4dvw;
+	height: 1.75dvw;
+	width: 100%;
+	padding: 0 .5dvw;
+	border-radius: 0;
+	border: none;
+	font-family: inherit;
+	font-size: 1dvw;
+	background: var(--c1);
+	font-weight: 100;
+	margin-bottom: .5dvw;
+}
+.d001_search_bar_children_parameter_container_inputs_container > label
+{
+	width: 100%;
+}
+.d001_search_bar_children_age_container_close_button
+{
+	position: absolute;
+	top:0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 2.25dvw;
+	height: 2dvw;
+	font-size: .65dvw;
+	font-family: f1b;
+	background: var(--failure_1);
+	color: var(--c1);
+}
+.d001_search_bar_children_age_container_accept_button
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1dvw;
+	padding: 1dvw 0;
+	line-height:100%;
+	font-size: .65dvw;
+	font-family: f1b;
+	background: var(--success_1);
+	color: var(--c1);
+}
+
+
+
+.d001_search_bar_parameter_container:last-child
+{
+	grid-row: 4 / span 1;
+	grid-column:  2 / span 1;
+	height: 100%;
+	width: 23dvw;
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	padding: 0dvw 0dvw 0 10dvw;
+	position: absolute;
+	right: 0;
+}
+.d001_search_bar_parameter_container > button
+{
+	background: var(--c2);
+	color: var(--c1);
+	width: 100%;
+	border: none;
+	height: 100%;
+	font-size: .75dvw;
+	letter-spacing: .1dvw;
+	cursor: pointer;
+
+}
+.d001_search_bar_parameter_container > button:hover
+{
+	color: rgb(250, 253, 255);
+	background: rgb(80, 84, 86);
+}

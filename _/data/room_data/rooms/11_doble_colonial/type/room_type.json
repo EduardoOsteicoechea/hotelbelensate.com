@@ -1,0 +1,40 @@
+{
+   "room name":"Cabaña",
+   "room numbers in administration":[47,48,49,50,57,58,59],
+   "is enabled":true,
+   "admits pax":true,
+   "pax amount":15,
+   "decrement amount":1,
+   "increment amount":1,
+   "type gross price":176.1,
+   "maximum capacity":6,
+   "capacity without pax":6,
+   "capacity with pax":6,
+   "children capacity":5,
+   "room services":[
+       "ubicada en el área colonial", 
+       "2 habitaciones con cama matrimonial", 
+       "1 habitación con 2 camas individuales", 
+       "2 baños", 
+       "wifi", 
+       "televisor con DirecTV", 
+       "mini sala de estar", 
+       "nevera ejecutiva y microondas", 
+       "agua caliente", 
+       "aire acondicionado", 
+       "no incluye desayuno",  
+       "no admite mascotas"
+   ],
+   "room images":[
+       "cabana_1_3840x2160.webp",
+       "cabana_2_3840x2160.webp",
+       "cabana_3_3840x2160.webp",
+       "cabana_4_3840x2160.webp"
+   ],
+   "room thumbnail image":[
+       "cabana_1_960x540.webp"
+   ],
+   "room capacity images":[
+       "6_adult.svg"
+   ]
+}

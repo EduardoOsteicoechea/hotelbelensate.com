@@ -1,0 +1,132 @@
+.button_001
+{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5dvw;
+    bottom: 3dvw;
+    right: 2dvw;
+    padding: 1dvw 0.5dvw;
+    z-index: 5000;
+    /* background: var(--c8); */
+    background: var(--c1);
+    border-radius: 20dvw;
+    box-shadow: 1dvw 1dvw 1dvw rgba(0,0,0,.25);
+}
+.button_001:hover
+{
+    transform: scale(1.025);
+}
+.button_001_logo_anchor:hover
+{
+    transform: scale(1.05);
+}
+.button_001_logo_anchor
+{
+    display: flex;
+	padding: .0dvw;
+    width: 3dvw;
+    height: 3dvw;
+    background: var(--c2);
+    /* background: var(--c_whatsapp); */
+    border-radius: 20dvw;
+    overflow: visible;
+    box-shadow: .5dvw .5dvw .5dvw rgba(0,0,0,.25);
+}
+.button_001_logo_anchor_image
+{
+    bottom: .1dvw;
+    right: .1dvw;
+    height: 105%;
+    filter: brightness(100);
+}
+
+
+
+
+
+.button_001_scroll_button
+{
+    background: var(--c2);
+    width: 2.5dvw;
+    height: 2.5dvw;
+    border-radius: 20dvw;
+    padding: 0.75dvw;
+    z-index: 5000;
+    cursor: pointer;
+    /* background: var(--c_whatsapp); */
+}
+.button_001_scroll_button_bar
+{
+    width: 60%;
+    height: 25%;
+    background: var(--c1);
+    border-radius: 5dvw;
+}
+
+.button_001_top_scroll_button
+{
+    transform: rotate(0deg);
+    
+}
+.button_001_top_scroll_button_bar_1
+{
+    transform: rotate(45deg);
+    left: .3dvw;
+    top: .40dvw;
+}
+.button_001_top_scroll_button_bar_2
+{
+    transform: rotate(135deg);
+    right: .0dvw;
+    top: .15dvw;
+}
+
+.button_001_bottom_scroll_button
+{
+    transform: rotate(180deg);
+}
+.button_001_bottom_scroll_button_bar_1
+{
+    transform: rotate(45deg);
+    left: .3dvw;
+    top: .3dvw;
+}
+.button_001_bottom_scroll_button_bar_2
+{
+    transform: rotate(135deg);
+    right: .05dvw;
+    top: .0dvw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 950px) and (min-width: 451px) { 
+}
+
+
+
+@media only screen and (max-width: 450px) {  
+}

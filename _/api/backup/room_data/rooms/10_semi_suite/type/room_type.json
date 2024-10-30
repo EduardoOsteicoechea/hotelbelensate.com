@@ -1,0 +1,45 @@
+{
+   "room_name":"Semi Suite",
+   "type_id":"10",
+   "room_numbers_in_administration":[51,52,53,54,55,56],
+   "is_enabled":true,
+   "admits_pax":false,
+   "pax_amount":15,
+   "decrement_amount":1,
+   "increment_amount":1,
+   "gross_price":74.7,
+   "net_price":74.7,
+   "capacity":2,
+   "capacity_with_pax":2,
+   "children_capacity":1,
+   "room_services":[
+      "ubicada en el área colonial", 
+      "cama matrimonial", 
+      "2 ambientes", 
+      "mini sala de estar", 
+      "wifi", 
+      "televisor con NetUno", 
+      "nevera ejecutiva", 
+      "aire acondicionado", 
+      "agua caliente", 
+      "no incluye desayuno"
+   ],
+   "room_images":[
+      "semi_suite_1_3840x2160.webp",
+      "semi_suite_2_3840x2160.webp",
+      "semi_suite_3_3840x2160.webp"
+   ],
+   "room_thumbnail_image":[
+       "semi_suite_1_960x540.webp"
+   ],
+   "room_capacity_images":[
+       "2_adult.svg"
+   ],
+   "room_icons":[
+      ["cama matrimonial", "bed_regular.svg","Cama matrimonial (150cm x 200cm)."],
+      ["televisor", "tv.svg","Televisor de pantalla plana."],
+      ["wifi", "wifi.svg","Internet de alta velocidad las 24 horas."],
+      ["caja fuerte", "safe.svg","Bóveda personal para proteger sus pertenencias."],
+      ["nevera ejecutiva", "executive_fridge.svg","Nevera ejecutiva integrada en la habitación."]
+   ]
+}

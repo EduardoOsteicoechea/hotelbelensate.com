@@ -1,0 +1,56 @@
+Presidencial Master
+["2 niveles", "2 habitaciones amplias con cama King size", "2 baños", "sala de estar", "escritorio", "wifi", "nevera", "microondas", "caja fuerte", "televisor con DirecTV", "nevera ejecutiva", "agua caliente", "aire acondicionado", "no incluye desayuno", "no admite mascotas"]
+4 personas
+215
+
+Presidencial Junior 
+["habitación con cama King size", "habitación con cama matrimonial", "cuarto de sauna", "mini sala de estar", "escritorio", "2 habitaciones", " wifi", "televisor con DirecTV", "nevera ejecutiva", "caja fuerte", "aire acondicionado", "agua caliente", "no incluye desayuno", "no admite mascotas"]
+4 personas 
+185
+
+Cabaña
+["ubicada en el área colonial", "2 habitaciones con cama matrimonial", "1 habitación con 2 camas individuales", "2 baños", "wifi", "televisor con DirecTV", "mini sala de estar", "nevera ejecutiva y microondas", "agua caliente", "aire acondicionado", "no incluye desayuno", "no admite mascotas"]
+6 personas
+176.10
+
+Suite Ejecutiva
+["ubicada en el área ejecutiva", "cama King size", "habitación modernizada", "2 baños", "2 ambientes", "sala de estar", "escritorio", "sofá cama", "wifi", "televisor con DirecTV", "nevera ejecutiva", "caja fuerte", "agua caliente", "aire acondicionado", "no incluye desayuno", "no admite mascotas"]
+2 personas
+135
+
+Suite Nupcial
+["ubicada en el área ejecutiva", "cama King size", "jacuzzi", "wifi", "televisor con DirecTV", "nevera ejecutiva", "secador de cabello", "agua caliente", "aire acondicionado", "no incluye desayuno", "no admite mascotas"] 
+2 personas
+116
+
+Doble Deluxe
+["ubicada en el área ejecutiva", "2 camas matrimoniales en un mismo ambiente", "escritorio", "wifi", "nevera ejecutiva", "caja fuerte", "televisor con DirecTV", "secador de cabello", "agua caliente", "aire acondicionado", "no incluye desayuno", "no admite mascotas"]
+3 adultos
+2 adultos y 2 niños (menores de 11)
+107.50
+
+Especial Deluxe
+["ubicada en el área ejecutiva", "cama Queen size", "wifi", "televisor con DirecTV", "caja fuerte", "ducha de manos", "secador de cabello", "agua caliente", "aire acondicionado", "no incluye desayuno", "no admite mascotas"]
+2 personas
+100
+
+Matrimonial Ejecutiva 
+["ubicada en el área ejecutiva", "cama matrimonial", "wifi", "nevera ejecutiva", "caja fuerte", "televisor con DirecTV", "secador de cabello", "agua caliente", "aire acondicionado", "no incluye desayuno", "no admite mascotas"]
+2 personas
+92
+
+Semi Suite
+["ubicada en el área colonial", "cama matrimonial", "2 ambientes", "mini sala de estar", "wifi", "televisor con NetUno", "nevera ejecutiva", "aire acondicionado", "agua caliente", "no incluye desayuno", "no admite mascotas"]
+2 personas
+74,70
+
+Doble Colonial 
+["ubicada en el área colonial", "2 camas matrimoniales en un mismo ambiente", "wifi", "televisor con NetUno", "agua caliente", "aire acondicionado", "no incluye desayuno", "no admite mascotas"]
+3 adultos
+2 adultos y 2 niños (menores de 11)
+70.70
+
+Matrimonial Colonial 
+["ubicada en el área colonial", "cama matrimonial", "wifi", "televisor con NetUno", "agua caliente", "aire acondicionado", "no incluye desayuno", "no admite mascotas"]
+2 personas
+58.70

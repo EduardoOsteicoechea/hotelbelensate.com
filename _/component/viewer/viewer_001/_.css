@@ -1,0 +1,329 @@
+.viewer_001_outer_container
+{
+    display: flex;
+	height: 32dvw;
+	width: 100dvw;
+    overflow: hidden;
+    background: var(--c6);
+    background: rgb(233,233,233);
+    padding: 0dvw 0dvw 0dvw 2.5dvw;
+    font-family: f1l;
+    background: var(--c8);
+}
+
+
+
+.viewer_001_information_container
+{
+    display: flex;
+    /* align-items: flex-end; */
+    /* text-align: right; */
+    flex-direction: column;
+    gap: 2.5dvw;
+    height: 100%;
+    width: 30dvw;
+    padding: 3.5dvw 3dvw 3dvw 4dvw;
+    background: var(--c8);
+    color: var(--c2);
+    box-shadow: -.51dvw 0dvw 1dvw rgba(0,0,0,.2);
+    z-index: 1000;
+    text-align: center;
+}
+.viewer_001_information_container_bar
+{
+    display: flex;
+    height: 100%;
+    width: 3dvw;
+    background: rgba(240,240,240);
+}
+.viewer_001_information_container_left_bar
+{
+    display: flex;
+     box-shadow: -.5dvw 0dvw 1dvw rgba(0,0,0,.3);
+     background: var(--c8);
+    /* box-shadow: -.51dvw 0dvw 1dvw rgba(0,0,0,.18); */
+}
+.viewer_001_information_container_right_bar
+{
+    display: none;
+}
+
+.viewer_001_information_container_logo_container
+{
+    width: 100%;
+    height: 2.5dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 1.5dvw;
+}
+
+.viewer_001_information_container_title
+{
+
+    font-size: 1.75dvw !important;
+    letter-spacing: .2dvw;
+}
+
+.viewer_001_information_container_main_message
+{
+    line-height: 1.25dvw;
+    width: 90%;
+    font-size: .85dvw;
+    letter-spacing: .1dvw;
+    font-family: f1r;
+}
+
+.viewer_001_elements_array
+{
+    display: flex;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5dvw;
+    /* background: var(--c3); */
+    color: var(--c7);
+    font-size: .5dvw !important;
+    padding: 0dvw 0dvw 0dvw 0dvw;
+    /* border: var(--b1); */
+}
+.viewer_001_elements_array > *
+{
+    font-size: .8dvw !important;
+}
+.viewer_001_elements_array > p > span
+{
+    margin-left: .75dvw;
+}
+
+
+.viewer_001_information_container_secondary_message
+{
+    display: none;
+
+}
+
+.viewer_001_information_container_action_button
+{
+    /* position: absolute;
+    left: 4dvw;
+    bottom: 2.5dvw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3dvw;
+    color: var(--c1);
+    width: 11dvw;
+    font-size: .75dvw;
+    letter-spacing: .1dvw;
+    font-family: f1b;
+    cursor: pointer;
+	text-decoration: none;
+	color: var(--c7);
+	letter-spacing: .2dvw;
+	font-family: f1r;
+    margin: auto;
+    right: 1dvw;
+	border: solid .1dvw var(--c7);
+}
+.viewer_001_information_container_action_button:hover
+{
+    background: var(--c2);
+    color: var(--c1);
+}
+
+
+
+
+
+.viewer_001_image_container
+{
+    display: flex;
+    height: 100%;
+    width: 68dvw;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.viewer_001_image_container_image
+{
+    height: 120%;
+}
+
+.viewer_001_lateral_controls_container
+{
+
+}
+
+.viewer_001_lateral_controls_container_control
+{
+
+}
+
+.viewer_001_lateral_controls_container_left_control
+{
+
+}
+
+.viewer_001_lateral_controls_container_right_control
+{
+
+}
+
+.viewer_001_image_container_dot_controls_container
+{
+    position: absolute;
+    left: 25dvw;
+    bottom: 0dvw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 1dvw;
+    gap: 0;
+    z-index: 1000;
+    background: var(--c3) !important;
+}
+
+.viewer_001_image_container_dot_controls_container_dot
+{
+    display: flex;
+    align-items: center;
+    background: var(--c1) !important;
+    height: 1dvw;
+    width: 1dvw;
+    z-index: 10000;
+    cursor: pointer;
+    box-shadow: .3dvw .3dvw .3dvw rgba(0,0,0,.5);
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+.viewer_001_information_container_image_viewer_controls_container
+{
+    position: absolute;
+    left: 4dvw;
+    right: 0;
+    bottom: 6.0dvw;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    /* border: var(--b1); */
+    height: 6dvw; 
+    width: 100%;
+    gap: 2dvw;
+    
+}
+.viewer_001_information_container_image_viewer_controls_container_message
+{
+    display: none;
+}
+.viewer_001_information_container_image_viewer_controls_container_lateral_controls_container
+{
+    
+    /* margin-top: auto; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* justify-content: flex-end; */
+    gap: 1dvw;
+    /* border: var(--b1); */
+    height: 100%;
+    width: 100%;
+    height: 2dvw;
+}
+
+
+.viewer_001_information_container_image_viewer_controls_container_lateral_controls_control
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--c3);
+    height: 2dvw;
+    width: 2dvw;
+    /* border-radius: 10dvw;     */
+}
+.viewer_001_information_container_image_viewer_controls_container_lateral_controls_control:hover
+{
+    /* background: var(--c2); */
+    filter: invert(100);  
+}
+.viewer_001_information_container_image_viewer_controls_container_lateral_controls_left_control_bar
+{
+    background: var(--c7);
+    height: 30%;
+    width: .2dvw;
+    border-radius: 10dvw; 
+    transform: rotate(45deg);   
+}
+
+.viewer_001_information_container_image_viewer_controls_container_lateral_controls_left_control
+{
+
+}
+.viewer_001_information_container_image_viewer_controls_container_lateral_controls_left_control_bar_1
+{
+    transform: rotate(135deg);
+    top: 20%;
+}
+.viewer_001_information_container_image_viewer_controls_container_lateral_controls_left_control_bar_2
+{ 
+    transform: rotate(45deg);
+    bottom: 20%; 
+}
+.viewer_001_information_container_image_viewer_controls_container_lateral_controls_right_control
+{
+    
+}
+.viewer_001_information_container_image_viewer_controls_container_lateral_controls_right_control_bar_1
+{ 
+    transform: rotate(45deg);   
+    top: 20%;
+}
+.viewer_001_information_container_image_viewer_controls_container_lateral_controls_right_control_bar_2
+{  
+    transform: rotate(135deg);
+    bottom: 20%; 
+}
+
+.viewer_001_information_container_image_viewer_controls_container_dots_container
+{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* justify-content: flex-end; */
+    gap: 1dvw;
+    /* border: var(--b1); */
+    width: 100%;
+}
+.viewer_001_information_container_image_viewer_controls_container_dot
+{
+    background: var(--c9);
+    height: .65dvw;
+    width: .65dvw;
+    border-radius: 10dvw;    
+}
+
+
+
+.selected_dot{
+    background:var(--c2);
+}
+
+
+@media only screen and (max-width: 950px) and (min-width: 451px) { 
+  
+
+}
+
+
+
+@media only screen and (max-width: 450px) {  
+
+}

@@ -1,0 +1,139 @@
+.hero_003_outer_container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38dvw;
+    width: 100dvw;
+    overflow: hidden;
+    padding: 0dvw 0;
+    background: var(--c2);
+}
+
+.hero_003_hero_image_container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero_003_hero_image
+{
+
+}
+
+.hero_003_scroll_down_button
+{
+    top: -2dvw;
+    margin-left: calc(50% - 2dvw);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 4dvw;
+    width: 4dvw;
+    border-radius: 4dvw;
+    background: var(--c2);
+    overflow: hidden;
+    z-index: 1000;
+    cursor: pointer;
+    margin-bottom: -4dvw;
+}
+
+.hero_003_scroll_down_button_bar_1
+{
+    width: 30%;
+    height: 7%;
+    background: var(--c1);
+    transform: rotate(45deg);
+    left: .28dvw;
+    top: .2dvw;
+    border-radius: 5dvw;
+}
+.hero_003_scroll_down_button_bar_2
+{
+    width: 30%;
+    height: 7%;
+    background: var(--c1);
+    transform: rotate(135deg);
+    right: .28dvw;
+    top: .2dvw;
+    border-radius: 5dvw;
+
+}
+
+
+@media only screen and (max-width: 950px) and (min-width: 451px) { 
+  
+}
+
+
+
+@media only screen and (max-width: 450px) {  
+    .hero_003_outer_container
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80dvw;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .hero_003_hero_image_container
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .hero_003_hero_image
+    {
+        height: 100%;
+        width: 210%;
+        right: 7dvw;
+    }
+    
+    .hero_003_scroll_down_button
+    {
+        top: -7dvw;
+        margin-left: calc(50% - 7dvw);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 14dvw;
+        width: 14dvw;
+        border-radius: 44dvw;
+        background: var(--c2);
+        overflow: hidden;
+        z-index: 1000;
+        cursor: pointer;
+    }
+    
+    .hero_003_scroll_down_button_bar_1
+    {
+        width: 30%;
+        height: 8%;
+        background: var(--c1);
+        transform: rotate(45deg);
+        left: 1dvw;
+        top: .2dvw;
+        border-radius: 50px;
+    }
+    .hero_003_scroll_down_button_bar_2
+    {
+        width: 30%;
+        height: 8%;
+        background: var(--c1);
+        transform: rotate(135deg);
+        right: 1dvw;
+        top: .2dvw;
+        border-radius: 50px;
+    
+    }
+}
