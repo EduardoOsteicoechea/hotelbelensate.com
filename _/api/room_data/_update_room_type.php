@@ -28,17 +28,20 @@ $desired_key = array_search($room_folder_name, $rooms_directories_names);
 $room_folder_name = $new_type_data["type_id"] . "_" . strtolower(str_replace(' ', '_', $new_type_data["room_name"]));
 $file_path = "rooms" . "/" . $rooms_directories_names[$desired_key] . "/" . "type" . "/" . "room_type.json";  
 
-if (file_put_contents($file_path, json_encode($new_type_data), LOCK_EX)) {
-   echo "success";
-} else {
-   echo "error";
-}
+OverrideRoomTypeData($file_path, $new_type_data);
 
 // print_r($new_type_data);
 // echo $file_path;
 
-function GetDirectories($directory)
-{
+function OverrideRoomTypeData($file_path, $new_type_data){
+   $file_handle = fopen($file_path, 'w');
+   rewind($file_handle);
+   fwrite($file_handle, json_encode($new_type_data, JSON_UNESCAPED_UNICODE));
+   fclose($file_handle);
+   echo "success";
+};
+
+function GetDirectories($directory){
    $directories = [];
 
    if (is_dir($directory)) {
@@ -58,8 +61,7 @@ function GetDirectories($directory)
    return $directories;
 }
 
-function generateStringItemsArray(string $originalString): array
-{
+function generateStringItemsArray(string $originalString): array {
    $exploded_string = explode("|", $originalString);
    $new_array = [];
    foreach ($exploded_string as $new_value) {
