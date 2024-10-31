@@ -66,10 +66,34 @@ export default class {
         const dashboard = document.createElement("div");
         dashboard.id = "room_management_dashboard";
         dashboard.className = "room_management_dashboard";
+        // dashboard.appendChild(this._generate_management_dashboard_head(secret))
         room_types_array.forEach(room_type => {
             dashboard.appendChild(room_type.generate_type_management_dashboard());
         });
         return dashboard;
+    }
+    _generate_management_dashboard_head(secret) {
+        const container = document.createElement("div");
+        container.appendChild(this._generate_restore_defaults_button(secret));
+        return container;
+    }
+    _generate_restore_defaults_button(secret) {
+        const button = document.createElement("div");
+        button.onpointerup = async () => {
+            const formData = new FormData();
+            formData.append('secret', secret);
+            const response = await fetch("../../_/api/room_data/_restore_all.php", {
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok == false) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            let data = await response.json();
+            this._outer_container.innerHTML = "";
+            this._outer_container.appendChild(this.generate_rooms_management_dashboard(data));
+        };
+        return button;
     }
     _extract_secret_from_raw_data_object(data) {
         const raw_options_array_without_keys = this._extract_raw_options_array_without_keys(data);

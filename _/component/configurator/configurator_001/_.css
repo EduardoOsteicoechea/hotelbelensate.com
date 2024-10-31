@@ -16,7 +16,7 @@
    width: 100dvw;
 }
 .configurator_001_authenticator_container{
-   padding: 2dvw 0 0 0;
+   padding: 5dvw 0 0 0;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -27,10 +27,11 @@
    font-family: inherit;
 }
 .configurator_001_authenticator_container > h2{
-   font-size: 1.75dvw;
+   font-size: 1.25dvw;
+   letter-spacing: .2dvw;
 }
 .configurator_001_username_input_container{
-   margin-top: 1dvw;
+   margin-top: 2dvw;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -51,6 +52,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   font-family: inherit;
    width: 80%;
    height: 2.75dvw;
    padding: .5dvw 1dvw;
@@ -91,7 +93,7 @@
    justify-content: center;
    font-family: inherit;
    height: 2dvw;
-   margin-top: 1dvw;
+   margin-top: 2dvw;
    padding: .5dvw 2dvw;
    border: none;
    background: var(--c2);

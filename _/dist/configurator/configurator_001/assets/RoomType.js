@@ -136,7 +136,7 @@ export default class {
         let raw_data = await response.json();
         const data_array = this._extract_room_type_array_from_raw_data_object(raw_data, this._secret);
         const data = data_array[parseInt(this._type_id) - 1];
-        console.log(data);
+        // console.log(data)
         this._room_name = data.room_name;
         this._type_id = data.type_id;
         this._room_numbers_in_administration = data.room_numbers_in_administration;
@@ -242,6 +242,7 @@ export default class {
         const label = document.createElement("label");
         label.innerHTML = "Id de tipo";
         this._type_id_input.value = this._type_id.toString();
+        this._type_id_input.disabled = true;
         container.appendChild(label);
         container.appendChild(this._type_id_input);
         return container;

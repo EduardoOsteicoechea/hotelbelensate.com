@@ -207,7 +207,7 @@ export default class {
       const data_array: IRoomType[]  = this._extract_room_type_array_from_raw_data_object(raw_data, this._secret)
       const data: IRoomType  = data_array[parseInt(this._type_id) - 1]
 
-      console.log(data);
+      // console.log(data)
       
       this._room_name = data.room_name
       this._type_id = data.type_id
@@ -333,6 +333,7 @@ export default class {
       label.innerHTML = "Id de tipo"
 
       this._type_id_input.value = this._type_id.toString()
+      this._type_id_input.disabled = true
 
       container.appendChild(label)
       container.appendChild(this._type_id_input)
