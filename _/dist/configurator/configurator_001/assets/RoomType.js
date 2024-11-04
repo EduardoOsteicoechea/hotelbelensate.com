@@ -40,6 +40,23 @@ export default class {
         this._room_icons = data.room_icons;
         this._secret = secret;
     }
+    async update_units() {
+        let raw_untis_data = await this._get_type_units(this._type_id_input.value);
+        console.log(raw_untis_data);
+    }
+    async _get_type_units(type_id) {
+        const formData = new FormData();
+        formData.append('type_id', type_id);
+        const response = await fetch("../../_/api/room_data/_get_type_units.php", {
+            method: 'POST',
+            body: formData
+        });
+        if (response.ok == false) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        let raw_data = await response.json();
+        return raw_data;
+    }
     async update_registry() {
         const new_data = this._generate_new_data_object_for_json_file();
         await this._update_json_file_content(new_data);
@@ -50,19 +67,31 @@ export default class {
         this._type_properties_manager_container.innerHTML = "";
         this._type_properties_manager_container.id = "room_type_properties_container";
         this._type_properties_manager_container.className = "room_type_properties_container";
+        const unit_dashboard_header_container = document.createElement("div");
+        unit_dashboard_header_container.id = "unit_dashboard_header_container";
+        unit_dashboard_header_container.className = "unit_dashboard_header_container";
         const container_title = document.createElement("h3");
         container_title.innerHTML = this._room_name;
         container_title.id = this._room_name + "_" + "room_type_properties_container";
         container_title.className = "room_type_properties_container_title";
-        const update_register_container = document.createElement("div");
-        update_register_container.id = "update_register_button_container";
-        update_register_container.className = "update_register_button_container";
+        const update_units_button_container = document.createElement("div");
+        update_units_button_container.id = "update_units_button_container";
+        update_units_button_container.className = "update_button_container update_units_button_container";
+        const update_units_button = document.createElement("button");
+        update_units_button.innerHTML = "Actualizar unidades";
+        update_units_button.onpointerup = () => this.update_units();
+        update_units_button_container.appendChild(update_units_button);
+        const update_register_button_container = document.createElement("div");
+        update_register_button_container.id = "update_register_button_container";
+        update_register_button_container.className = "update_button_container update_register_button_container";
         const update_register_button = document.createElement("button");
         update_register_button.innerHTML = "Actualizar registro";
         update_register_button.onpointerup = () => this.update_registry();
-        update_register_container.appendChild(update_register_button);
-        this._type_properties_manager_container.appendChild(container_title);
-        this._type_properties_manager_container.appendChild(update_register_container);
+        update_register_button_container.appendChild(update_register_button);
+        unit_dashboard_header_container.appendChild(container_title);
+        unit_dashboard_header_container.appendChild(update_units_button_container);
+        unit_dashboard_header_container.appendChild(update_register_button_container);
+        this._type_properties_manager_container.appendChild(unit_dashboard_header_container);
         this._type_properties_manager_container.appendChild(this._generate_room_name_element());
         this._type_properties_manager_container.appendChild(this._generate_type_id_element());
         this._type_properties_manager_container.appendChild(this._generate_pax_ammount_element());
@@ -84,7 +113,13 @@ export default class {
         textareas_container.appendChild(this._generate_room_numbers_in_administration_element());
         textareas_container.appendChild(this._generate_room_icons_element());
         this._type_properties_manager_container.appendChild(textareas_container);
+        this._type_properties_manager_container.appendChild(this._generate_type_units_container());
         return this._type_properties_manager_container;
+    }
+    _generate_type_units_container() {
+        const container = document.createElement("div");
+        container.className = "room_type_units_container";
+        return container;
     }
     _extract_secret_from_raw_data_object(data) {
         const raw_options_array_without_keys = this._extract_raw_options_array_without_keys(data);

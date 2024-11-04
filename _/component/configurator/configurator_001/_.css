@@ -136,19 +136,25 @@
    padding: 1.5dvw;
 }
 
+
+.unit_dashboard_header_container{   
+   display: flex;
+   width: 100%;
+   /* border: var(--b1);    */
+}
 .room_type_properties_container_title{
    display: inline-block;
-   width: 70%;
+   width: 65%;
 }
-.update_register_button_container {
-   display: inline-block;
+.update_button_container {
    height: fit-content;
-   width: 20%;
+   width: fit-content;
    display: flex;
    justify-content: flex-end;
    margin-left: auto;
+   /* border: var(--b1); */
 }
-.update_register_button_container > button {
+.update_button_container > button {
    border: none;
    background: var(--c2);
    color: var(--c1);
@@ -158,6 +164,13 @@
    letter-spacing: .1dvw;
    font-size: .65dvw;
 }
+.update_register_button_container{
+   margin-left: 1dvw;
+}
+
+
+
+
 
 .room_type_label_and_input_container {
    display: flex;

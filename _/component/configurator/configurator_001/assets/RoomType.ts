@@ -1,6 +1,7 @@
 import IRoomType from "./IRoomType.js"
 
-export default class {
+export default class
+{
    _room_name: string
    _type_id: string
    _room_numbers_in_administration: string[]
@@ -45,8 +46,9 @@ export default class {
 
    constructor(
       data: IRoomType,
-      secret:string
-   ) {
+      secret: string
+   )
+   {
       this._room_name = data.room_name
       this._type_id = data.type_id
       this._room_numbers_in_administration = data.room_numbers_in_administration
@@ -68,35 +70,76 @@ export default class {
       this._secret = secret
    }
 
-   public async update_registry(){      
+   public async update_units()
+   {
+      let raw_untis_data = await this._get_type_units(this._type_id_input.value);
+      console.log(raw_untis_data);
+   }
+
+   public async _get_type_units(type_id: string)
+   {
+      const formData = new FormData();
+      formData.append('type_id', type_id);
+
+      const response = await fetch("../../_/api/room_data/_get_type_units.php", {
+         method: 'POST',
+         body: formData
+      });
+
+      if (response.ok == false)
+      {
+         throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      let raw_data = await response.json();
+      return raw_data;
+   }
+
+   public async update_registry()
+   {
       const new_data = this._generate_new_data_object_for_json_file()
       await this._update_json_file_content(new_data)
       this._clearInputsValues()
       await this.generate_type_management_dashboard_reloading_data()
    }
 
-   public generate_type_management_dashboard(): HTMLDivElement {
+   public generate_type_management_dashboard(): HTMLDivElement
+   {
+      this._type_properties_manager_container.innerHTML = "";
+      this._type_properties_manager_container.id = "room_type_properties_container";
+      this._type_properties_manager_container.className = "room_type_properties_container";      
 
-      this._type_properties_manager_container.innerHTML = ""
-      this._type_properties_manager_container.id = "room_type_properties_container"
-      this._type_properties_manager_container.className = "room_type_properties_container"
+      const unit_dashboard_header_container = document.createElement("div");
+      unit_dashboard_header_container.id = "unit_dashboard_header_container";
+      unit_dashboard_header_container.className = "unit_dashboard_header_container";
 
-      const container_title = document.createElement("h3")
-      container_title.innerHTML = this._room_name
-      container_title.id = this._room_name + "_" + "room_type_properties_container"
-      container_title.className = "room_type_properties_container_title"
+      const container_title = document.createElement("h3");
+      container_title.innerHTML = this._room_name;
+      container_title.id = this._room_name + "_" + "room_type_properties_container";
+      container_title.className = "room_type_properties_container_title";
 
-      const update_register_container = document.createElement("div");
-      update_register_container.id = "update_register_button_container";
-      update_register_container.className = "update_register_button_container";
+      const update_units_button_container = document.createElement("div");
+      update_units_button_container.id = "update_units_button_container";
+      update_units_button_container.className = "update_button_container update_units_button_container";
 
-      const update_register_button = document.createElement("button")
-      update_register_button.innerHTML = "Actualizar registro"
-      update_register_button.onpointerup = () => this.update_registry()
-      update_register_container.appendChild(update_register_button);
+      const update_units_button = document.createElement("button")
+      update_units_button.innerHTML = "Actualizar unidades"
+      update_units_button.onpointerup = () => this.update_units()
+      update_units_button_container.appendChild(update_units_button);
 
-      this._type_properties_manager_container.appendChild(container_title);
-      this._type_properties_manager_container.appendChild(update_register_container);
+      const update_register_button_container = document.createElement("div");
+      update_register_button_container.id = "update_register_button_container";
+      update_register_button_container.className = "update_button_container update_register_button_container";
+
+      const update_register_button = document.createElement("button");
+      update_register_button.innerHTML = "Actualizar registro";
+      update_register_button.onpointerup = () => this.update_registry();
+      update_register_button_container.appendChild(update_register_button);
+
+      unit_dashboard_header_container.appendChild(container_title);
+      unit_dashboard_header_container.appendChild(update_units_button_container);
+      unit_dashboard_header_container.appendChild(update_register_button_container);
+      this._type_properties_manager_container.appendChild(unit_dashboard_header_container);
 
       this._type_properties_manager_container.appendChild(this._generate_room_name_element());
       this._type_properties_manager_container.appendChild(this._generate_type_id_element());
@@ -123,10 +166,20 @@ export default class {
 
       this._type_properties_manager_container.appendChild(textareas_container);
 
+      this._type_properties_manager_container.appendChild(this._generate_type_units_container());
+
       return this._type_properties_manager_container;
    }
 
-   private _extract_secret_from_raw_data_object(data: object) : string
+   private _generate_type_units_container(): HTMLDivElement
+   {
+      const container: HTMLDivElement = document.createElement("div")
+      container.className = "room_type_units_container"
+
+      return container
+   }
+
+   private _extract_secret_from_raw_data_object(data: object): string
    {
       const raw_options_array_without_keys: any[] = this._extract_raw_options_array_without_keys(
          data
@@ -136,8 +189,8 @@ export default class {
 
       return secret
    }
-   
-   private _extract_room_type_array_from_raw_data_object(data: object, secret: string) : IRoomType[]
+
+   private _extract_room_type_array_from_raw_data_object(data: object, secret: string): IRoomType[]
    {
       const raw_options_array_without_keys: any[] = this._extract_raw_options_array_without_keys(
          data
@@ -151,64 +204,69 @@ export default class {
       const raw_options_types_array_data_as_interfaces: IRoomType[] = this._extract_raw_options_types_array_data_as_interfaces(
          raw_options_types_raw_data_array
       )
-      
+
       return raw_options_types_array_data_as_interfaces
    }
 
-   private _extract_raw_options_array_without_keys(data: object) : any[]
+   private _extract_raw_options_array_without_keys(data: object): any[]
    {
       const raw_options_array_without_keys: any[] = Object.values(data)
       return raw_options_array_without_keys
    }
 
-   private _extract_raw_options_types_raw_data_array(data: any[]) : any[]
+   private _extract_raw_options_types_raw_data_array(data: any[]): any[]
    {
       const raw_options_array_without_subobjects_keys: any[] = []
-      data.forEach(raw_option_array_without_keys => {
+      data.forEach(raw_option_array_without_keys =>
+      {
          raw_options_array_without_subobjects_keys.push(Object.values(raw_option_array_without_keys));
       })
       return raw_options_array_without_subobjects_keys
    }
 
-   private _extract_raw_options_array_without_subobjects_keys(data: any[]) : object[]
+   private _extract_raw_options_array_without_subobjects_keys(data: any[]): object[]
    {
       const raw_options_types_raw_data_array: object[] = []
-      data.forEach(raw_option_array_without_subobjects_keys => {
+      data.forEach(raw_option_array_without_subobjects_keys =>
+      {
          raw_options_types_raw_data_array.push(raw_option_array_without_subobjects_keys[0])
       })
       return raw_options_types_raw_data_array
    }
 
-   private _extract_raw_options_types_array_data_as_interfaces(data: object[]) : IRoomType[]
+   private _extract_raw_options_types_array_data_as_interfaces(data: object[]): IRoomType[]
    {
       const raw_options_types_array_data_as_interfaces: IRoomType[] = []
-      data.forEach(raw_option_type_raw_data_array => {
+      data.forEach(raw_option_type_raw_data_array =>
+      {
          raw_options_types_array_data_as_interfaces.push(raw_option_type_raw_data_array as IRoomType);
-      })   
+      })
       return raw_options_types_array_data_as_interfaces
    }
 
-   public async generate_type_management_dashboard_reloading_data(): Promise<void> {
+   public async generate_type_management_dashboard_reloading_data(): Promise<void>
+   {
 
       const formData = new FormData()
       formData.append('secret', this._secret)
-      
+
       const response = await fetch("../../_/api/room_data/_validation.php", {
          method: 'POST',
          body: formData
       })
 
-      if (response.ok == false) {
+      if (response.ok == false)
+      {
          throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
       let raw_data = await response.json()
 
-      const data_array: IRoomType[]  = this._extract_room_type_array_from_raw_data_object(raw_data, this._secret)
-      const data: IRoomType  = data_array[parseInt(this._type_id) - 1]
+      const data_array: IRoomType[] = this._extract_room_type_array_from_raw_data_object(raw_data, this._secret)
+      const data: IRoomType = data_array[parseInt(this._type_id) - 1]
 
       // console.log(data)
-      
+
       this._room_name = data.room_name
       this._type_id = data.type_id
       this._room_numbers_in_administration = data.room_numbers_in_administration
@@ -227,11 +285,12 @@ export default class {
       this._room_thumbnail_image = data.room_thumbnail_image
       this._room_capacity_images = data.room_capacity_images
       this._room_icons = data.room_icons
-      
+
       this.generate_type_management_dashboard()
    }
 
-   public _clearInputsValues(){
+   public _clearInputsValues()
+   {
       this._room_name_input.value = ""
       this._type_id_input.value = ""
       this._room_numbers_in_administration_input.innerHTML = ""
@@ -252,7 +311,8 @@ export default class {
       this._room_icons_input.innerHTML = ""
    }
 
-   private async _update_json_file_content(data: object){
+   private async _update_json_file_content(data: object)
+   {
       const formData = new FormData()
 
       formData.append("room_name", this._room_name_input.value)
@@ -281,37 +341,39 @@ export default class {
          body: formData
       })
 
-      console.log(await response.text())  
+      console.log(await response.text())
    }
 
-   private _generate_new_data_object_for_json_file(){
+   private _generate_new_data_object_for_json_file()
+   {
       const new_data = {
-         "room_name":this._room_name_input.value,
-         "type_id":this._type_id_input.value,
-         "pax_amount":this._pax_amount_input.value,
-         "decrement_amount":this._decrement_amount_input.value,
-         "increment_amount":this._increment_amount_input.value,
-         "gross_price":this._gross_price_input.value,
-         "net_price":this._net_price_input.value,
-         "capacity":this._capacity_input.value,
-         "capacity_with_pax":this._capacity_with_pax_input.value,
-         "children_capacity":this._children_capacity_input.value,
-         "room_services":this._room_services_input.value,
-         "room_capacity_images":this._room_capacity_images_input.value,
+         "room_name": this._room_name_input.value,
+         "type_id": this._type_id_input.value,
+         "pax_amount": this._pax_amount_input.value,
+         "decrement_amount": this._decrement_amount_input.value,
+         "increment_amount": this._increment_amount_input.value,
+         "gross_price": this._gross_price_input.value,
+         "net_price": this._net_price_input.value,
+         "capacity": this._capacity_input.value,
+         "capacity_with_pax": this._capacity_with_pax_input.value,
+         "children_capacity": this._children_capacity_input.value,
+         "room_services": this._room_services_input.value,
+         "room_capacity_images": this._room_capacity_images_input.value,
 
-         "is_enabled":this._is_enabled_input.value,
-         "admits_pax":this._admits_pax_input.value,
+         "is_enabled": this._is_enabled_input.value,
+         "admits_pax": this._admits_pax_input.value,
 
-         "room_numbers_in_administration":this._room_numbers_in_administration_input.value,
-         "room_images":this._room_images_input.value,
-         "room_thumbnail_image":this._room_thumbnail_image_input.value,
-         "room_icons":this._room_icons_input.value
+         "room_numbers_in_administration": this._room_numbers_in_administration_input.value,
+         "room_images": this._room_images_input.value,
+         "room_thumbnail_image": this._room_thumbnail_image_input.value,
+         "room_icons": this._room_icons_input.value
       }
 
       return new_data
    }
-   
-   private _generate_room_name_element(): HTMLDivElement {
+
+   private _generate_room_name_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -325,7 +387,8 @@ export default class {
       return container
    }
 
-   private _generate_type_id_element(): HTMLDivElement {
+   private _generate_type_id_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -340,7 +403,8 @@ export default class {
       return container
    }
 
-   private _generate_room_numbers_in_administration_element(): HTMLDivElement {
+   private _generate_room_numbers_in_administration_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -349,7 +413,8 @@ export default class {
 
       this._room_numbers_in_administration_input.disabled = true
 
-      this._room_numbers_in_administration.forEach(item => {
+      this._room_numbers_in_administration.forEach(item =>
+      {
          this._room_numbers_in_administration_input.innerHTML += item + " |\n"
       });
 
@@ -358,7 +423,8 @@ export default class {
       return container
    }
 
-   private _generate_is_enabled_element(): HTMLDivElement {
+   private _generate_is_enabled_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -373,7 +439,8 @@ export default class {
       return container
    }
 
-   private _generate_admits_pax_element(): HTMLDivElement {
+   private _generate_admits_pax_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -388,7 +455,8 @@ export default class {
       return container
    }
 
-   private _generate_pax_ammount_element(): HTMLDivElement {
+   private _generate_pax_ammount_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -402,7 +470,8 @@ export default class {
       return container
    }
 
-   private _generate_decrement_amount_element(): HTMLDivElement {
+   private _generate_decrement_amount_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -416,7 +485,8 @@ export default class {
       return container
    }
 
-   private _generate_increment_amount_element(): HTMLDivElement {
+   private _generate_increment_amount_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -430,7 +500,8 @@ export default class {
       return container
    }
 
-   private _generate_gross_price_element(): HTMLDivElement {
+   private _generate_gross_price_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -444,7 +515,8 @@ export default class {
       return container
    }
 
-   private _generate_net_price_element(): HTMLDivElement {
+   private _generate_net_price_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -458,7 +530,8 @@ export default class {
       return container
    }
 
-   private _generate_capacity_element(): HTMLDivElement {
+   private _generate_capacity_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -472,7 +545,8 @@ export default class {
       return container
    }
 
-   private _generate_capacity_with_pax_element(): HTMLDivElement {
+   private _generate_capacity_with_pax_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -486,7 +560,8 @@ export default class {
       return container
    }
 
-   private _generate_children_capacity_element(): HTMLDivElement {
+   private _generate_children_capacity_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -500,7 +575,8 @@ export default class {
       return container
    }
 
-   private _generate_room_services_element(): HTMLDivElement {
+   private _generate_room_services_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -509,7 +585,8 @@ export default class {
 
       this._room_services_input.disabled = false
 
-      this._room_services.forEach(item => {
+      this._room_services.forEach(item =>
+      {
          this._room_services_input.innerHTML += item + " |\n"
       });
 
@@ -518,7 +595,8 @@ export default class {
       return container
    }
 
-   private _generate_room_images_element(): HTMLDivElement {
+   private _generate_room_images_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -527,7 +605,8 @@ export default class {
 
       this._room_images_input.disabled = true
 
-      this._room_images.forEach(item => {
+      this._room_images.forEach(item =>
+      {
          this._room_images_input.innerHTML += item + " | \n\n"
       });
 
@@ -536,7 +615,8 @@ export default class {
       return container
    }
 
-   private _generate_room_thumbnail_image_element(): HTMLDivElement {
+   private _generate_room_thumbnail_image_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -551,7 +631,8 @@ export default class {
       return container
    }
 
-   private _generate_room_capacity_images_element(): HTMLDivElement {
+   private _generate_room_capacity_images_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -566,7 +647,8 @@ export default class {
       return container
    }
 
-   private _generate_room_icons_element(): HTMLDivElement {
+   private _generate_room_icons_element(): HTMLDivElement
+   {
       const container: HTMLDivElement = document.createElement("div")
       container.className = "room_type_label_and_input_container"
 
@@ -575,7 +657,8 @@ export default class {
 
       this._room_icons_input.disabled = true
 
-      this._room_icons.forEach(item => {
+      this._room_icons.forEach(item =>
+      {
          this._room_icons_input.innerHTML += item + " |\n"
       });
 
