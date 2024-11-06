@@ -11,5 +11,10 @@ export default class {
         this._added_values = data.added_values;
         this._aditional_services = data.aditional_services;
     }
+    print_html_elements() {
+        const container = document.createElement("div");
+        console.log(this);
+        return container;
+    }
 }
 //# sourceMappingURL=RoomUnit.js.map

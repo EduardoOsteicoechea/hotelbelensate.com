@@ -16,7 +16,20 @@
          "12"=>"12_matrimonial_colonial"
       ];
 
-      $units_folder = $folder_names_by_id[$id] . "units";
-      return $units_folder;
+      $units_folder = "";
+
+      if(isset($folder_names_by_id[$id]))
+      {
+         $units_folder .= "rooms";
+         $units_folder .= "/";
+         $units_folder .= $folder_names_by_id[$id];
+         $units_folder .= "/";
+         $units_folder .= "units";
+         return $units_folder;
+      }
+      else
+      {
+         return "Invalid or missing type ID: \"$id\"";
+      };
    };
 ?>

@@ -1,5 +1,10 @@
+import RoomUnit from "./RoomUnit.js";
 export default class {
     constructor(data, secret) {
+        this._type_data_api_base_route = "../../_/api/room_data/";
+        this._type_units_route = this._type_data_api_base_route + "_get_type_units.php";
+        this._type_data_update_route_validation = this._type_data_api_base_route + "_validation.php";
+        this._type_data_update_route = this._type_data_api_base_route + "_update_room_type.php";
         this._type_properties_manager_container = document.createElement("div");
         this._room_name_input = document.createElement("input");
         this._type_id_input = document.createElement("input");
@@ -40,14 +45,34 @@ export default class {
         this._room_icons = data.room_icons;
         this._secret = secret;
     }
-    async update_units() {
-        let raw_untis_data = await this._get_type_units(this._type_id_input.value);
+    async visualize_units() {
+        let raw_untis_data = await this._get_type_units_json_data(this._type_id_input.value);
+        this._generate_type_units_controls_sub_dashboard(raw_untis_data);
         console.log(raw_untis_data);
     }
-    async _get_type_units(type_id) {
+    _generate_type_units_controls_sub_dashboard(raw_untis_data) {
+        const type_units_control_main_container = this._generate_type_units_controls_container();
+        this._generate_type_units_controls(raw_untis_data, type_units_control_main_container);
+        this._type_properties_manager_container.appendChild(type_units_control_main_container);
+    }
+    _generate_type_units_controls_container() {
+        const container = document.createElement("div");
+        container.id = "type_units_container";
+        container.className = "type_units_container";
+        return container;
+    }
+    _generate_type_units_controls(raw_untis_data, container) {
+        raw_untis_data.forEach(unit_object => {
+            const unit_as_iroom_interface = unit_object;
+            const unit_type = new RoomUnit(unit_as_iroom_interface);
+            const unit_type_html_elements = unit_type.print_html_elements();
+            container.appendChild(unit_type_html_elements);
+        });
+    }
+    async _get_type_units_json_data(type_id) {
         const formData = new FormData();
         formData.append('type_id', type_id);
-        const response = await fetch("../../_/api/room_data/_get_type_units.php", {
+        const response = await fetch(this._type_units_route, {
             method: 'POST',
             body: formData
         });
@@ -57,7 +82,7 @@ export default class {
         let raw_data = await response.json();
         return raw_data;
     }
-    async update_registry() {
+    async update_type_registry() {
         const new_data = this._generate_new_data_object_for_json_file();
         await this._update_json_file_content(new_data);
         this._clearInputsValues();
@@ -78,15 +103,15 @@ export default class {
         update_units_button_container.id = "update_units_button_container";
         update_units_button_container.className = "update_button_container update_units_button_container";
         const update_units_button = document.createElement("button");
-        update_units_button.innerHTML = "Actualizar unidades";
-        update_units_button.onpointerup = () => this.update_units();
+        update_units_button.innerHTML = "Visualizar unidades";
+        update_units_button.onpointerup = () => this.visualize_units();
         update_units_button_container.appendChild(update_units_button);
         const update_register_button_container = document.createElement("div");
         update_register_button_container.id = "update_register_button_container";
         update_register_button_container.className = "update_button_container update_register_button_container";
         const update_register_button = document.createElement("button");
         update_register_button.innerHTML = "Actualizar registro";
-        update_register_button.onpointerup = () => this.update_registry();
+        update_register_button.onpointerup = () => this.update_type_registry();
         update_register_button_container.appendChild(update_register_button);
         unit_dashboard_header_container.appendChild(container_title);
         unit_dashboard_header_container.appendChild(update_units_button_container);
@@ -126,7 +151,7 @@ export default class {
         const secret = raw_options_array_without_keys[0].secret;
         return secret;
     }
-    _extract_room_type_array_from_raw_data_object(data, secret) {
+    _extract_room_type_array_from_raw_data_object(data) {
         const raw_options_array_without_keys = this._extract_raw_options_array_without_keys(data);
         const raw_options_array_without_subobjects_keys = this._extract_raw_options_types_raw_data_array(raw_options_array_without_keys);
         const raw_options_types_raw_data_array = this._extract_raw_options_array_without_subobjects_keys(raw_options_array_without_subobjects_keys);
@@ -159,19 +184,40 @@ export default class {
         return raw_options_types_array_data_as_interfaces;
     }
     async generate_type_management_dashboard_reloading_data() {
-        const formData = new FormData();
-        formData.append('secret', this._secret);
-        const response = await fetch("../../_/api/room_data/_validation.php", {
-            method: 'POST',
-            body: formData
-        });
-        if (response.ok == false) {
+        const form_data = this._generate_formdata_secret_request();
+        const response = await this._fetch_api_request(form_data);
+        if (this._response_is_ok(response) == false) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        let raw_data = await response.json();
-        const data_array = this._extract_room_type_array_from_raw_data_object(raw_data, this._secret);
-        const data = data_array[parseInt(this._type_id) - 1];
-        // console.log(data)
+        else {
+            const raw_data = await this._get_response_json_data(response);
+            const data_array = this._extract_room_type_array_from_raw_data_object(raw_data);
+            const data = this._get_update_request_type_object(data_array);
+            this._update_type_properties_data(data);
+            this.generate_type_management_dashboard();
+        }
+        ;
+    }
+    _generate_formdata_secret_request() {
+        const form_data = new FormData();
+        form_data.append('secret', this._secret);
+        return form_data;
+    }
+    _fetch_api_request(form_data) {
+        return fetch(this._type_data_update_route_validation, { method: 'POST', body: form_data });
+        ;
+    }
+    _response_is_ok(response) {
+        return response.ok;
+    }
+    _get_response_json_data(response) {
+        return response.json();
+    }
+    _get_update_request_type_object(data_array) {
+        const request_type_object = data_array[parseInt(this._type_id) - 1];
+        return request_type_object;
+    }
+    _update_type_properties_data(data) {
         this._room_name = data.room_name;
         this._type_id = data.type_id;
         this._room_numbers_in_administration = data.room_numbers_in_administration;
@@ -190,7 +236,6 @@ export default class {
         this._room_thumbnail_image = data.room_thumbnail_image;
         this._room_capacity_images = data.room_capacity_images;
         this._room_icons = data.room_icons;
-        this.generate_type_management_dashboard();
     }
     _clearInputsValues() {
         this._room_name_input.value = "";
@@ -232,7 +277,7 @@ export default class {
         formData.append("room_services", this._room_services_input.value);
         formData.append("room_images", this._room_images_input.value);
         formData.append("room_icons", this._room_icons_input.value);
-        const response = await fetch("../../_/api/room_data/_update_room_type.php", {
+        const response = await fetch(this._type_data_update_route, {
             method: 'POST',
             body: formData
         });

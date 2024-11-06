@@ -1,7 +1,14 @@
 import IRoomType from "./IRoomType.js"
+import IRoomUnit from "./IRoomUnit.js";
+import RoomUnit from "./RoomUnit.js";
 
 export default class
 {
+   _type_data_api_base_route: string = "../../_/api/room_data/";
+   _type_units_route: string = this._type_data_api_base_route + "_get_type_units.php";
+   _type_data_update_route_validation: string = this._type_data_api_base_route + "_validation.php";
+   _type_data_update_route: string = this._type_data_api_base_route + "_update_room_type.php";
+
    _room_name: string
    _type_id: string
    _room_numbers_in_administration: string[]
@@ -44,7 +51,8 @@ export default class
 
    _secret: string = ""
 
-   constructor(
+   constructor
+   (
       data: IRoomType,
       secret: string
    )
@@ -70,18 +78,44 @@ export default class
       this._secret = secret
    }
 
-   public async update_units()
+   public async visualize_units()
    {
-      let raw_untis_data = await this._get_type_units(this._type_id_input.value);
-      console.log(raw_untis_data);
+      let raw_untis_data : object[] = await this._get_type_units_json_data(this._type_id_input.value);
+      this._generate_type_units_controls_sub_dashboard(raw_untis_data);
+      // console.log(raw_untis_data);
    }
 
-   public async _get_type_units(type_id: string)
+   public _generate_type_units_controls_sub_dashboard( raw_untis_data: object[]) : void
+   {  
+      const type_units_control_main_container : HTMLDivElement = this._generate_type_units_controls_container();
+      this._generate_type_units_controls(raw_untis_data, type_units_control_main_container);
+      this._type_properties_manager_container.appendChild(type_units_control_main_container);
+   }
+
+   public _generate_type_units_controls_container() : HTMLDivElement
+   {  
+      const container : HTMLDivElement = document.createElement("div");
+      container.id = "type_units_container";
+      container.className = "type_units_container";
+      return container;
+   }
+
+   public _generate_type_units_controls( raw_untis_data: object[], container: HTMLDivElement) : void
+   {  
+      raw_untis_data.forEach(unit_object => {
+         const unit_as_iroom_interface: IRoomUnit = unit_object as IRoomUnit; 
+         const unit_type: RoomUnit = new RoomUnit(unit_as_iroom_interface);
+         const unit_type_html_elements: HTMLDivElement = unit_type.print_html_elements();
+         container.appendChild(unit_type_html_elements);
+      });
+   }
+
+   public async _get_type_units_json_data(type_id: string)
    {
       const formData = new FormData();
       formData.append('type_id', type_id);
 
-      const response = await fetch("../../_/api/room_data/_get_type_units.php", {
+      const response = await fetch(this._type_units_route, {
          method: 'POST',
          body: formData
       });
@@ -95,7 +129,7 @@ export default class
       return raw_data;
    }
 
-   public async update_registry()
+   public async update_type_registry()
    {
       const new_data = this._generate_new_data_object_for_json_file()
       await this._update_json_file_content(new_data)
@@ -107,7 +141,7 @@ export default class
    {
       this._type_properties_manager_container.innerHTML = "";
       this._type_properties_manager_container.id = "room_type_properties_container";
-      this._type_properties_manager_container.className = "room_type_properties_container";      
+      this._type_properties_manager_container.className = "room_type_properties_container";
 
       const unit_dashboard_header_container = document.createElement("div");
       unit_dashboard_header_container.id = "unit_dashboard_header_container";
@@ -123,8 +157,8 @@ export default class
       update_units_button_container.className = "update_button_container update_units_button_container";
 
       const update_units_button = document.createElement("button")
-      update_units_button.innerHTML = "Actualizar unidades"
-      update_units_button.onpointerup = () => this.update_units()
+      update_units_button.innerHTML = "Visualizar unidades"
+      update_units_button.onpointerup = () => this.visualize_units()
       update_units_button_container.appendChild(update_units_button);
 
       const update_register_button_container = document.createElement("div");
@@ -133,7 +167,7 @@ export default class
 
       const update_register_button = document.createElement("button");
       update_register_button.innerHTML = "Actualizar registro";
-      update_register_button.onpointerup = () => this.update_registry();
+      update_register_button.onpointerup = () => this.update_type_registry();
       update_register_button_container.appendChild(update_register_button);
 
       unit_dashboard_header_container.appendChild(container_title);
@@ -190,7 +224,7 @@ export default class
       return secret
    }
 
-   private _extract_room_type_array_from_raw_data_object(data: object, secret: string): IRoomType[]
+   private _extract_room_type_array_from_raw_data_object(data: object): IRoomType[]
    {
       const raw_options_array_without_keys: any[] = this._extract_raw_options_array_without_keys(
          data
@@ -244,49 +278,74 @@ export default class
       return raw_options_types_array_data_as_interfaces
    }
 
+
    public async generate_type_management_dashboard_reloading_data(): Promise<void>
    {
+      const form_data: FormData = this._generate_formdata_secret_request();
+      const response: Response = await this._fetch_api_request(form_data);
 
-      const formData = new FormData()
-      formData.append('secret', this._secret)
-
-      const response = await fetch("../../_/api/room_data/_validation.php", {
-         method: 'POST',
-         body: formData
-      })
-
-      if (response.ok == false)
+      if (this._response_is_ok(response) == false)
       {
          throw new Error(`HTTP error! Status: ${response.status}`);
       }
+      else
+      {
+         const raw_data = await this._get_response_json_data(response);
+         const data_array: IRoomType[] = this._extract_room_type_array_from_raw_data_object(raw_data);
+         const data: IRoomType = this._get_update_request_type_object(data_array);
+         this._update_type_properties_data(data);
+         this.generate_type_management_dashboard();
+      };
+   }
 
-      let raw_data = await response.json()
+   private _generate_formdata_secret_request(): FormData
+   {
+      const form_data = new FormData();
+      form_data.append('secret', this._secret);
+      return form_data;
+   }
 
-      const data_array: IRoomType[] = this._extract_room_type_array_from_raw_data_object(raw_data, this._secret)
-      const data: IRoomType = data_array[parseInt(this._type_id) - 1]
+   private _fetch_api_request(form_data: FormData): Promise<Response>
+   {
+      return fetch(this._type_data_update_route_validation, { method: 'POST', body: form_data });;
+   }
 
-      // console.log(data)
+   private _response_is_ok(response: Response): boolean
+   {
+      return response.ok;
+   }
 
-      this._room_name = data.room_name
-      this._type_id = data.type_id
-      this._room_numbers_in_administration = data.room_numbers_in_administration
-      this._is_enabled = data.is_enabled
-      this._admits_pax = data.admits_pax
-      this._pax_amount = data.pax_amount
-      this._decrement_amount = data.decrement_amount
-      this._increment_amount = data.increment_amount
-      this._gross_price = data.gross_price
-      this._net_price = data.net_price
-      this._capacity = data.capacity
-      this._capacity_with_pax = data.capacity_with_pax
-      this._children_capacity = data.children_capacity
-      this._room_services = data.room_services
-      this._room_images = data.room_images
-      this._room_thumbnail_image = data.room_thumbnail_image
-      this._room_capacity_images = data.room_capacity_images
-      this._room_icons = data.room_icons
+   private _get_response_json_data(response: Response): any
+   {
+      return response.json();
+   }
 
-      this.generate_type_management_dashboard()
+   private _get_update_request_type_object(data_array: IRoomType[]): IRoomType
+   {
+      const request_type_object = data_array[parseInt(this._type_id) - 1];
+      return request_type_object;
+   }
+
+   private _update_type_properties_data(data: IRoomType): void
+   {
+      this._room_name = data.room_name;
+      this._type_id = data.type_id;
+      this._room_numbers_in_administration = data.room_numbers_in_administration;
+      this._is_enabled = data.is_enabled;
+      this._admits_pax = data.admits_pax;
+      this._pax_amount = data.pax_amount;
+      this._decrement_amount = data.decrement_amount;
+      this._increment_amount = data.increment_amount;
+      this._gross_price = data.gross_price;
+      this._net_price = data.net_price;
+      this._capacity = data.capacity;
+      this._capacity_with_pax = data.capacity_with_pax;
+      this._children_capacity = data.children_capacity;
+      this._room_services = data.room_services;
+      this._room_images = data.room_images;
+      this._room_thumbnail_image = data.room_thumbnail_image;
+      this._room_capacity_images = data.room_capacity_images;
+      this._room_icons = data.room_icons;
    }
 
    public _clearInputsValues()
@@ -336,7 +395,7 @@ export default class
       formData.append("room_images", this._room_images_input.value)
       formData.append("room_icons", this._room_icons_input.value)
 
-      const response = await fetch("../../_/api/room_data/_update_room_type.php", {
+      const response = await fetch(this._type_data_update_route, {
          method: 'POST',
          body: formData
       })

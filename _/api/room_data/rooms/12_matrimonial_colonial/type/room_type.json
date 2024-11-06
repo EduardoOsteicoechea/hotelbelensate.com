@@ -1,45 +1,72 @@
 {
-   "room_name":"Matrimonial Colonial",
-   "type_id":"12",
-   "room_numbers_in_administration":[
-      35,36,37,38,39,40,
-      73,74,75,
-      77,78,80,81,85
+   "room_name": "Matrimonial Colonial",
+   "type_id": "12",
+   "is_enabled": true,
+   "admits_pax": true,
+   "pax_amount": 15,
+   "decrement_amount": 1,
+   "increment_amount": 1,
+   "gross_price": 176.1,
+   "net_price": 176.1,
+   "capacity": 2,
+   "room_thumbnail_image": "matrimonial_colonial_1_960x540.webp",
+   "room_capacity_images": "6_adult.svg",
+   "capacity_with_pax": 2,
+   "children_capacity": 1,
+   "room_numbers_in_administration": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "73",
+      "74",
+      "75",
+      "77",
+      "78",
+      "80",
+      "81",
+      "85"
    ],
-   "is_enabled":true,
-   "admits_pax":true,
-   "pax_amount":15,
-   "decrement_amount":1,
-   "increment_amount":1,
-   "gross_price":176.1,
-   "net_price":176.1,
-   "capacity":6,
-   "capacity_with_pax":6,
-   "children_capacity":5,
-   "room_services":[
-      "ubicada en el área colonial", 
-      "cama matrimonial", 
-      "wifi", 
-      "televisor con NetUno", 
-      "agua caliente", 
-      "aire acondicionado", 
+   "room_services": [
+      "ubicada en el área colonial",
+      "cama matrimonial",
+      "wifi",
+      "televisor con NetUno",
+      "agua caliente",
+      "aire acondicionado",
       "no incluye desayuno"
    ],
-   "room_images":[
+   "room_images": [
       "matrimonial_colonial_1_3840x2160.webp",
       "matrimonial_colonial_2_3840x2160.webp"
    ],
-   "room_thumbnail_image":[
-       "matrimonial_colonial_1_960x540.webp"
-   ],
-   "room_capacity_images":[
-       "6_adult.svg"
-   ],
-   "room_icons":[
-      ["cama matrimonial", "bed_regular.svg","Cama matrimonial (150cm x 200cm)."],
-      ["televisor", "tv.svg","Televisor de pantalla plana."],
-      ["wifi", "wifi.svg","Internet de alta velocidad las 24 horas."],
-      ["caja fuerte", "safe.svg","Bóveda personal para proteger sus pertenencias."],
-      ["nevera ejecutiva", "executive_fridge.svg","Nevera ejecutiva integrada en la habitación."]
+   "room_icons": [
+      [
+         "cama matrimonial",
+         "bed_regular.svg",
+         "Cama matrimonial (150cm x 200cm)."
+      ],
+      [
+         "televisor",
+         "tv.svg",
+         "Televisor de pantalla plana."
+      ],
+      [
+         "wifi",
+         "wifi.svg",
+         "Internet de alta velocidad las 24 horas."
+      ],
+      [
+         "caja fuerte",
+         "safe.svg",
+         "Bóveda personal para proteger sus pertenencias."
+      ],
+      [
+         "nevera ejecutiva",
+         "executive_fridge.svg",
+         "Nevera ejecutiva integrada en la habitación."
+      ]
    ]
 }
