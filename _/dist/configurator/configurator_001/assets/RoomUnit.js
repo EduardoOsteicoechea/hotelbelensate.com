@@ -12,7 +12,7 @@ export default class {
         this._aditional_services = data.aditional_services;
     }
     print_html_elements() {
-        const container = document.createElement("div");
+        const container = document.createElement("input");
         console.log(this);
         return container;
     }

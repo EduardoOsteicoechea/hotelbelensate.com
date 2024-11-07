@@ -30,7 +30,7 @@ export default class
 
    public print_html_elements(): HTMLDivElement
    {
-      const container : HTMLDivElement = document.createElement("div");
+      const container : HTMLInputElement = document.createElement("input");
       console.log(this);
       return container;
    }

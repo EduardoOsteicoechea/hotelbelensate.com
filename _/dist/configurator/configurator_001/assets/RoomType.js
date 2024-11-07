@@ -25,6 +25,7 @@ export default class {
         this._room_images_input = document.createElement("textarea");
         this._room_icons_input = document.createElement("textarea");
         this._secret = "";
+        this._type_units_container = document.createElement("div");
         this._room_name = data.room_name;
         this._type_id = data.type_id;
         this._room_numbers_in_administration = data.room_numbers_in_administration;
@@ -45,49 +46,15 @@ export default class {
         this._room_icons = data.room_icons;
         this._secret = secret;
     }
-    async visualize_units() {
-        let raw_untis_data = await this._get_type_units_json_data(this._type_id_input.value);
-        this._generate_type_units_controls_sub_dashboard(raw_untis_data);
-        console.log(raw_untis_data);
-    }
-    _generate_type_units_controls_sub_dashboard(raw_untis_data) {
-        const type_units_control_main_container = this._generate_type_units_controls_container();
-        this._generate_type_units_controls(raw_untis_data, type_units_control_main_container);
-        this._type_properties_manager_container.appendChild(type_units_control_main_container);
-    }
-    _generate_type_units_controls_container() {
-        const container = document.createElement("div");
-        container.id = "type_units_container";
-        container.className = "type_units_container";
-        return container;
-    }
-    _generate_type_units_controls(raw_untis_data, container) {
-        raw_untis_data.forEach(unit_object => {
-            const unit_as_iroom_interface = unit_object;
-            const unit_type = new RoomUnit(unit_as_iroom_interface);
-            const unit_type_html_elements = unit_type.print_html_elements();
-            container.appendChild(unit_type_html_elements);
-        });
-    }
-    async _get_type_units_json_data(type_id) {
-        const formData = new FormData();
-        formData.append('type_id', type_id);
-        const response = await fetch(this._type_units_route, {
-            method: 'POST',
-            body: formData
-        });
-        if (response.ok == false) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        let raw_data = await response.json();
-        return raw_data;
-    }
-    async update_type_registry() {
-        const new_data = this._generate_new_data_object_for_json_file();
-        await this._update_json_file_content(new_data);
-        this._clearInputsValues();
-        await this.generate_type_management_dashboard_reloading_data();
-    }
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    // Type generation section
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
     generate_type_management_dashboard() {
         this._type_properties_manager_container.innerHTML = "";
         this._type_properties_manager_container.id = "room_type_properties_container";
@@ -141,11 +108,15 @@ export default class {
         this._type_properties_manager_container.appendChild(this._generate_type_units_container());
         return this._type_properties_manager_container;
     }
-    _generate_type_units_container() {
-        const container = document.createElement("div");
-        container.className = "room_type_units_container";
-        return container;
-    }
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    // Methods for type data response transformation
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
     _extract_secret_from_raw_data_object(data) {
         const raw_options_array_without_keys = this._extract_raw_options_array_without_keys(data);
         const secret = raw_options_array_without_keys[0].secret;
@@ -183,128 +154,19 @@ export default class {
         });
         return raw_options_types_array_data_as_interfaces;
     }
-    async generate_type_management_dashboard_reloading_data() {
-        const form_data = this._generate_formdata_secret_request();
-        const response = await this._fetch_api_request(form_data);
-        if (this._response_is_ok(response) == false) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        else {
-            const raw_data = await this._get_response_json_data(response);
-            const data_array = this._extract_room_type_array_from_raw_data_object(raw_data);
-            const data = this._get_update_request_type_object(data_array);
-            this._update_type_properties_data(data);
-            this.generate_type_management_dashboard();
-        }
-        ;
-    }
-    _generate_formdata_secret_request() {
-        const form_data = new FormData();
-        form_data.append('secret', this._secret);
-        return form_data;
-    }
-    _fetch_api_request(form_data) {
-        return fetch(this._type_data_update_route_validation, { method: 'POST', body: form_data });
-        ;
-    }
-    _response_is_ok(response) {
-        return response.ok;
-    }
-    _get_response_json_data(response) {
-        return response.json();
-    }
-    _get_update_request_type_object(data_array) {
-        const request_type_object = data_array[parseInt(this._type_id) - 1];
-        return request_type_object;
-    }
-    _update_type_properties_data(data) {
-        this._room_name = data.room_name;
-        this._type_id = data.type_id;
-        this._room_numbers_in_administration = data.room_numbers_in_administration;
-        this._is_enabled = data.is_enabled;
-        this._admits_pax = data.admits_pax;
-        this._pax_amount = data.pax_amount;
-        this._decrement_amount = data.decrement_amount;
-        this._increment_amount = data.increment_amount;
-        this._gross_price = data.gross_price;
-        this._net_price = data.net_price;
-        this._capacity = data.capacity;
-        this._capacity_with_pax = data.capacity_with_pax;
-        this._children_capacity = data.children_capacity;
-        this._room_services = data.room_services;
-        this._room_images = data.room_images;
-        this._room_thumbnail_image = data.room_thumbnail_image;
-        this._room_capacity_images = data.room_capacity_images;
-        this._room_icons = data.room_icons;
-    }
-    _clearInputsValues() {
-        this._room_name_input.value = "";
-        this._type_id_input.value = "";
-        this._room_numbers_in_administration_input.innerHTML = "";
-        this._is_enabled_input.checked = false;
-        this._admits_pax_input.checked = false;
-        this._pax_amount_input.value = "";
-        this._decrement_amount_input.value = "";
-        this._increment_amount_input.value = "";
-        this._gross_price_input.value = "";
-        this._net_price_input.value = "";
-        this._capacity_input.value = "";
-        this._capacity_with_pax_input.value = "";
-        this._children_capacity_input.value = "";
-        this._room_services_input.innerHTML = "";
-        this._room_images_input.innerHTML = "";
-        this._room_thumbnail_image_input.value = "";
-        this._room_capacity_images_input.value = "";
-        this._room_icons_input.innerHTML = "";
-    }
-    async _update_json_file_content(data) {
-        const formData = new FormData();
-        formData.append("room_name", this._room_name_input.value);
-        formData.append("type_id", this._type_id_input.value);
-        formData.append("pax_amount", this._pax_amount_input.value);
-        formData.append("decrement_amount", this._decrement_amount_input.value);
-        formData.append("increment_amount", this._increment_amount_input.value);
-        formData.append("gross_price", this._gross_price_input.value);
-        formData.append("net_price", this._net_price_input.value);
-        formData.append("capacity", this._capacity_input.value);
-        formData.append("capacity_with_pax", this._capacity_with_pax_input.value);
-        formData.append("children_capacity", this._children_capacity_input.value);
-        formData.append("room_thumbnail_image", this._room_thumbnail_image_input.value);
-        formData.append("is_enabled", this._is_enabled_input.value);
-        formData.append("admits_pax", this._admits_pax_input.value);
-        formData.append("room_capacity_images", this._room_capacity_images_input.value);
-        formData.append("room_numbers_in_administration", this._room_numbers_in_administration_input.value);
-        formData.append("room_services", this._room_services_input.value);
-        formData.append("room_images", this._room_images_input.value);
-        formData.append("room_icons", this._room_icons_input.value);
-        const response = await fetch(this._type_data_update_route, {
-            method: 'POST',
-            body: formData
-        });
-        console.log(await response.text());
-    }
-    _generate_new_data_object_for_json_file() {
-        const new_data = {
-            "room_name": this._room_name_input.value,
-            "type_id": this._type_id_input.value,
-            "pax_amount": this._pax_amount_input.value,
-            "decrement_amount": this._decrement_amount_input.value,
-            "increment_amount": this._increment_amount_input.value,
-            "gross_price": this._gross_price_input.value,
-            "net_price": this._net_price_input.value,
-            "capacity": this._capacity_input.value,
-            "capacity_with_pax": this._capacity_with_pax_input.value,
-            "children_capacity": this._children_capacity_input.value,
-            "room_services": this._room_services_input.value,
-            "room_capacity_images": this._room_capacity_images_input.value,
-            "is_enabled": this._is_enabled_input.value,
-            "admits_pax": this._admits_pax_input.value,
-            "room_numbers_in_administration": this._room_numbers_in_administration_input.value,
-            "room_images": this._room_images_input.value,
-            "room_thumbnail_image": this._room_thumbnail_image_input.value,
-            "room_icons": this._room_icons_input.value
-        };
-        return new_data;
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    // Type properties controls generation section
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    _generate_type_units_container() {
+        this._type_units_container.id = "room_type_units_container";
+        this._type_units_container.className = "room_type_units_container";
+        return this._type_units_container;
     }
     _generate_room_name_element() {
         const container = document.createElement("div");
@@ -502,6 +364,186 @@ export default class {
         container.appendChild(label);
         container.appendChild(this._room_icons_input);
         return container;
+    }
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    // Update type data section
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    async update_type_registry() {
+        const new_data = this._generate_new_data_object_for_json_file();
+        await this._update_json_file_content(new_data);
+        this._clearInputsValues();
+        await this.generate_type_management_dashboard_reloading_data();
+    }
+    _generate_new_data_object_for_json_file() {
+        const new_data = {
+            "room_name": this._room_name_input.value,
+            "type_id": this._type_id_input.value,
+            "pax_amount": this._pax_amount_input.value,
+            "decrement_amount": this._decrement_amount_input.value,
+            "increment_amount": this._increment_amount_input.value,
+            "gross_price": this._gross_price_input.value,
+            "net_price": this._net_price_input.value,
+            "capacity": this._capacity_input.value,
+            "capacity_with_pax": this._capacity_with_pax_input.value,
+            "children_capacity": this._children_capacity_input.value,
+            "room_services": this._room_services_input.value,
+            "room_capacity_images": this._room_capacity_images_input.value,
+            "is_enabled": this._is_enabled_input.value,
+            "admits_pax": this._admits_pax_input.value,
+            "room_numbers_in_administration": this._room_numbers_in_administration_input.value,
+            "room_images": this._room_images_input.value,
+            "room_thumbnail_image": this._room_thumbnail_image_input.value,
+            "room_icons": this._room_icons_input.value
+        };
+        return new_data;
+    }
+    async generate_type_management_dashboard_reloading_data() {
+        const form_data = this._generate_formdata_secret_request(this._secret);
+        const response = await this._fetch_api_request(this._type_data_update_route_validation, form_data);
+        if (this._response_is_ok(response) == false) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        else {
+            const raw_data = await this._get_response_json_data(response);
+            const data_array = this._extract_room_type_array_from_raw_data_object(raw_data);
+            const data = this._get_update_request_type_object(data_array);
+            this._update_type_properties_data(data);
+            this.generate_type_management_dashboard();
+        }
+        ;
+    }
+    _generate_formdata_secret_request(secret) {
+        const form_data = new FormData();
+        form_data.append('secret', secret);
+        return form_data;
+    }
+    _fetch_api_request(route, form_data) {
+        return fetch(route, { method: 'POST', body: form_data });
+    }
+    _response_is_ok(response) {
+        return response.ok;
+    }
+    _get_response_json_data(response) {
+        return response.json();
+    }
+    _get_update_request_type_object(data_array) {
+        const request_type_object = data_array[parseInt(this._type_id) - 1];
+        return request_type_object;
+    }
+    _update_type_properties_data(data) {
+        this._room_name = data.room_name;
+        this._type_id = data.type_id;
+        this._room_numbers_in_administration = data.room_numbers_in_administration;
+        this._is_enabled = data.is_enabled;
+        this._admits_pax = data.admits_pax;
+        this._pax_amount = data.pax_amount;
+        this._decrement_amount = data.decrement_amount;
+        this._increment_amount = data.increment_amount;
+        this._gross_price = data.gross_price;
+        this._net_price = data.net_price;
+        this._capacity = data.capacity;
+        this._capacity_with_pax = data.capacity_with_pax;
+        this._children_capacity = data.children_capacity;
+        this._room_services = data.room_services;
+        this._room_images = data.room_images;
+        this._room_thumbnail_image = data.room_thumbnail_image;
+        this._room_capacity_images = data.room_capacity_images;
+        this._room_icons = data.room_icons;
+    }
+    _clearInputsValues() {
+        this._room_name_input.value = "";
+        this._type_id_input.value = "";
+        this._room_numbers_in_administration_input.innerHTML = "";
+        this._is_enabled_input.checked = false;
+        this._admits_pax_input.checked = false;
+        this._pax_amount_input.value = "";
+        this._decrement_amount_input.value = "";
+        this._increment_amount_input.value = "";
+        this._gross_price_input.value = "";
+        this._net_price_input.value = "";
+        this._capacity_input.value = "";
+        this._capacity_with_pax_input.value = "";
+        this._children_capacity_input.value = "";
+        this._room_services_input.innerHTML = "";
+        this._room_images_input.innerHTML = "";
+        this._room_thumbnail_image_input.value = "";
+        this._room_capacity_images_input.value = "";
+        this._room_icons_input.innerHTML = "";
+    }
+    async _update_json_file_content(data) {
+        const formData = new FormData();
+        formData.append("room_name", this._room_name_input.value);
+        formData.append("type_id", this._type_id_input.value);
+        formData.append("pax_amount", this._pax_amount_input.value);
+        formData.append("decrement_amount", this._decrement_amount_input.value);
+        formData.append("increment_amount", this._increment_amount_input.value);
+        formData.append("gross_price", this._gross_price_input.value);
+        formData.append("net_price", this._net_price_input.value);
+        formData.append("capacity", this._capacity_input.value);
+        formData.append("capacity_with_pax", this._capacity_with_pax_input.value);
+        formData.append("children_capacity", this._children_capacity_input.value);
+        formData.append("room_thumbnail_image", this._room_thumbnail_image_input.value);
+        formData.append("is_enabled", this._is_enabled_input.value);
+        formData.append("admits_pax", this._admits_pax_input.value);
+        formData.append("room_capacity_images", this._room_capacity_images_input.value);
+        formData.append("room_numbers_in_administration", this._room_numbers_in_administration_input.value);
+        formData.append("room_services", this._room_services_input.value);
+        formData.append("room_images", this._room_images_input.value);
+        formData.append("room_icons", this._room_icons_input.value);
+        const response = await fetch(this._type_data_update_route, {
+            method: 'POST',
+            body: formData
+        });
+        console.log(await response.text());
+    }
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    // Type Units generation section
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    /////////////////////////////////
+    async visualize_units() {
+        let raw_untis_data = await this._get_type_units_json_data(this._type_id_input.value);
+        console.log(raw_untis_data);
+        this._generate_type_units_controls_sub_dashboard(raw_untis_data);
+    }
+    async _get_type_units_json_data(type_id) {
+        const form_data = this._generate_formdata_type_id_request(type_id);
+        const response = await this._fetch_api_request(this._type_units_route, form_data);
+        if (this._response_is_ok(response) == false)
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        else
+            return await this._get_response_json_data(response);
+    }
+    _generate_formdata_type_id_request(type_id) {
+        const form_data = new FormData();
+        form_data.append('type_id', type_id);
+        return form_data;
+    }
+    _generate_type_units_controls_sub_dashboard(raw_untis_data) {
+        this._clear_type_units_container();
+        this._generate_type_units_controls(raw_untis_data, this._type_units_container);
+        this._type_properties_manager_container.appendChild(this._type_units_container);
+    }
+    _clear_type_units_container() {
+        this._type_units_container.innerHTML = "";
+    }
+    _generate_type_units_controls(raw_untis_data, container) {
+        raw_untis_data.forEach(unit_object => {
+            const unit_as_iroom_interface = unit_object;
+            const unit_type = new RoomUnit(unit_as_iroom_interface);
+            const unit_type_html_elements = unit_type.print_html_elements();
+            container.appendChild(unit_type_html_elements);
+        });
     }
 }
 //# sourceMappingURL=RoomType.js.map
