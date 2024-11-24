@@ -44,6 +44,7 @@ class configurator_001
             id="'. $component_id . "_" .'authenticator_container"
             class="'. $component_class . "_" .'authenticator_container"
             >
+            
                <h2>
                   Acceda para gestionar
                </h2>
@@ -61,7 +62,7 @@ class configurator_001
                   <input 
                   id="'. $component_id . "_" .'username_input"
                   class="'. $component_class . "_" .'username_input"
-                  type="text" 
+                  type="password" 
                   name="username"
                   >
                </div>
@@ -91,6 +92,7 @@ class configurator_001
                >
                   Acceder
                </button>
+
             </div>
         ';
 
@@ -141,10 +143,8 @@ class configurator_001
         /////////////////////////////////////
 
         $html = "";
-        $html .= $outer_container_start;
-        
+        $html .= $outer_container_start;        
         $html .= $authenticator;
-
         $html .= $javascript;
         $html .= $outer_container_end;
         echo $html;

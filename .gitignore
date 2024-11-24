@@ -1,1 +1,7 @@
 _secrets.php
+_encryption_secrets.php
+_encrypt.php
+_decrypt.php
+active_sessions/
+_valid_encrypted_combinations.json
+_valid_decrypted_combinations.json

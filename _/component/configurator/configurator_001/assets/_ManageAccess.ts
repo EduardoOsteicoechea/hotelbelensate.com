@@ -1,14 +1,19 @@
+import session_resume_credentials_validator from "./authentication/session_resume_credentials_validator.js";
+import session_resume_data from "./authentication/session_resume_data.js";
+import session_start_credentials_validator from "./authentication/session_start_credentials_validator.js";
+import session_start_data from "./authentication/session_start_data.js";
 import IRoomType from "./IRoomType.js";
+import constrain_input from "./miscellaneous/constrain_input.js";
 import RoomType from "./RoomType.js";
 
 export default class
 {
-
    _outer_container: HTMLDivElement
    _authenticator_container: HTMLDivElement
    _username_input: HTMLInputElement
    _password_input_input: HTMLInputElement
    _access_button: HTMLButtonElement
+   _mnfrwk_cookie: string[] = []
 
    constructor
    (
@@ -25,95 +30,160 @@ export default class
       this._password_input_input = password_input_input;
       this._access_button = access_button;
 
-      this._username_input.addEventListener("input", () =>
+      if (this.mnfrwk_cookie_is_set())
       {
-         this._constrain_input(
-            this._username_input
-         );
-      });
-
-      this._password_input_input.addEventListener("input", () =>
+         this._mnfrwk_cookie = this.get_mnfrwk_cookie(this.get_browser_cookies());
+         console.log(this._mnfrwk_cookie);
+         this._validate_active_session_data()
+      }
+      else
       {
-         this._constrain_input(
-            this._password_input_input
-         );
-      });
-
-      this._setup_validation();
+         this.focus_usermane_input();
+         this.constrain_input_input_on_input(this._username_input, 8);
+         this.constrain_input_input_on_input(this._password_input_input, 8);
+         this.setup_validation();
+      };
    }
 
-   private _constrain_input(
-      input: HTMLInputElement
-   ): void
+   private mnfrwk_cookie_is_set(): boolean
    {
+      const current_browser_cookies_object: any = this.get_browser_cookies();
 
-      if (input.value != "" && input.value.length > 8)
+      if (current_browser_cookies_object.hasOwnProperty("MNFRWK_USER_SESSION_TOKEN"))
       {
-         input.value = input.value.substring(0, 7)
-      }
+         return true;
+      };
+      return false;
+   }
 
-      const forbiddenCharacters: string[] = ["<", ">", ",", "/", "\\", "$", "%", "&", "(", ")", "{", "}", "[", "]", "?", "¿"]
+   private get_browser_cookies(): object
+   {
+      const current_browser_cookies: string = document.cookie;
+      const current_browser_cookies_array: string[] = current_browser_cookies.split(';');
+      const current_browser_cookies_object: any = {};
 
-      if (input.value != "")
+      current_browser_cookies_array.forEach(cookie =>
       {
-         forbiddenCharacters.forEach(character =>
+         const [name, value] = cookie.split('=');
+         current_browser_cookies_object[name.trim()] = value.trim();
+      });
+
+      return current_browser_cookies_object;
+   }
+
+   private get_mnfrwk_cookie(cookies_object: any): string[]
+   {
+      const mnfrwk_cookie_value: string = cookies_object["MNFRWK_USER_SESSION_TOKEN"];
+      const mnfrwk_cookie: string[] = ["MNFRWK_USER_SESSION_TOKEN", mnfrwk_cookie_value];
+      return mnfrwk_cookie;
+   }
+
+   private focus_usermane_input(): void
+   {
+      this._username_input.focus();
+   }
+
+   private constrain_input_input_on_input
+      (
+         input: HTMLInputElement,
+         character_limit: number
+      ): void
+   {
+      input.addEventListener("input", () =>
+      {
+         new constrain_input(input, character_limit);
+      });
+   }
+
+   private setup_validation(): void
+   {
+      this.validate_inputs_on_pointerup_event(this._access_button);
+   }
+
+   private validate_inputs_on_pointerup_event(button: HTMLButtonElement): void
+   {
+      button.onkeyup = (event) =>
+      {
+         if (event.key === 'Enter')
          {
-            if (input.value.includes(character))
-            {
-               alert(`El caracter "${character}" no es permitido.`)
-               input.value = input.value.substring(0, input.value.length - 1)
-            }
-         })
-      }
+            this._validate_data();
+         }
+      };
+      button.onpointerup = () => this._validate_data();
    }
 
-   private _setup_validation(): void
+   private async _validate_active_session_data(): Promise<void>
    {
-      this._access_button.addEventListener("pointerup", () =>
+      const session_data: session_resume_data = new session_resume_data
+      (
+         screen.availHeight.toString(),
+         screen.availWidth.toString(),
+         screen.colorDepth.toString(),
+         screen.pixelDepth.toString(),
+         navigator.language,
+         this._mnfrwk_cookie[1],
+         "manage_rooms_data"
+      );
+
+      const credentials_validator: session_resume_credentials_validator = new session_resume_credentials_validator(
+         session_data
+      );
+
+      await credentials_validator.fetch_api();
+
+      if 
+      (
+         credentials_validator.response_json != "invalid_credentials"
+            &&
+         credentials_validator.response_json.ok === undefined    
+      )
       {
-         this._validate_data()
-      })
+         this._outer_container.innerHTML = "";
+
+         this._outer_container.appendChild(
+            this.generate_rooms_management_dashboard(
+               credentials_validator.response_json
+            )
+         );
+      };
    }
 
    private async _validate_data(): Promise<void>
    {
-      try
+      const session_data: session_start_data = new session_start_data(
+         this._username_input.value,
+         this._password_input_input.value,
+         screen.availHeight.toString(),
+         screen.availWidth.toString(),
+         screen.colorDepth.toString(),
+         screen.pixelDepth.toString(),
+         navigator.language,
+         document.cookie
+      );
+
+      const credentials_validator: session_start_credentials_validator = 
+         new session_start_credentials_validator(
+            session_data
+         );
+
+      // console.log(session_data);
+
+      await credentials_validator.fetch_api();
+
+      if (credentials_validator.response_json != "invalid_credentials")
       {
-         const formData = new FormData()
-         formData.append('username', this._username_input.value)
-         formData.append('password', this._password_input_input.value)
-
-         const response = await fetch("../../_/api/room_data/_validation.php", {
-            method: 'POST',
-            body: formData
-         })
-
-         if (response.ok == false)
-         {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-         }
-
-         const data = await response.json()
-
-         if (data !== "")
-         {
-            this._outer_container.innerHTML = "";
-            this._outer_container.appendChild(this.generate_rooms_management_dashboard(data));
-         } else
-         {
-            alert('Nombre o contraseña incorrectos.');
-         }
-      } catch (error)
-      {
-         console.error(error);
-         alert('An error occurred. Please try again later.');
-      }
+         this._outer_container.innerHTML = "";
+         this._outer_container.appendChild(
+            this.generate_rooms_management_dashboard(credentials_validator.response_json)
+         );
+      };
    }
 
    private generate_rooms_management_dashboard(data: object): HTMLDivElement
    {
       const secret = this._extract_secret_from_raw_data_object(data)
-      const room_types_array: RoomType[] = this._extract_room_type_array_from_raw_data_object(data, secret)
+      const room_types_array: RoomType[] = 
+         this._extract_room_type_array_from_raw_data_object(data, secret)
 
       // console.log(room_types_array)
 

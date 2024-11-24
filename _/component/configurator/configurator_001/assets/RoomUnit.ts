@@ -107,13 +107,14 @@ export default class
 
    public _parameterize_room_unit_header_elements(): void
    {
-      this._room_unit_controls_container_title.innerHTML = "Unidades";
+      this._room_unit_controls_container_title.className = "room_type_units_controls_header_title";
 
+      this._room_unit_controls_container_hide_units_button.className = "room_type_units_controls_header_button";
       this._room_unit_controls_container_hide_units_button.onpointerup = () =>{
          this._room_unit_controls_container.innerHTML = "";
       };
 
-      this._room_unit_controls_container_update_units_button;
+      this._room_unit_controls_container_update_units_button.className = "room_type_units_controls_header_button";
 
       this._room_unit_controls_container_title_and_buttons_container.className = "room_type_units_controls_header";
    }
@@ -181,7 +182,7 @@ export default class
 
    public _populate_room_unit_header_elements(): void
    {
-      this._room_unit_controls_container_title.innerHTML = "Unidades";
+      this._room_unit_controls_container_title.innerHTML = "Unidades de " + this._room_name;
       this._room_unit_controls_container_hide_units_button.innerHTML = "Ocultar Unidades";
       this._room_unit_controls_container_update_units_button.innerHTML = "Actualizar Unidades";
    }

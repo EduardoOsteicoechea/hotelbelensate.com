@@ -99,6 +99,8 @@
    background: var(--c2);
    color: var(--c1);
    height: 2.75dvw;
+   font-size: .85dvw;
+   letter-spacing: .15dvw;
 }
 
 /* room_management_dashboard */
