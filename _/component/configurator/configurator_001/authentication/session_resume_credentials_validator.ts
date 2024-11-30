@@ -1,6 +1,4 @@
-import IRoom_types_data from "../data_model/IRoom_types_data.js"
 import session_resume_data from "./session_resume_data.js"
-
 
 export default class session_resume_credentials_validator
 {

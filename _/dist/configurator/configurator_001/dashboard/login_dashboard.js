@@ -3,6 +3,8 @@ import constrain_input from "../assets/miscellaneous/constrain_input.js";
 import RoomType from "../data_model/RoomType.js";
 import session_start_credentials_validator from "../authentication/session_start_credentials_validator.js";
 import session_start_data from "../authentication/session_start_data.js";
+import session_resume_credentials_validator from "../authentication/session_resume_credentials_validator.js";
+import session_resume_data from "../authentication/session_resume_data.js";
 export default class login_dashboard {
     constructor(root_folder, page_name, component_id, component_class_name, outer_container) {
         this.authentication_api_route = "../../_/api/authentication/_.php";
@@ -18,16 +20,61 @@ export default class login_dashboard {
         this.submit_button = document.createElement("button");
         this.room_management_dashboard_must_be_generated = false;
         this.credentials_dataform = null;
-        this._session_data = null;
+        this.session_data = null;
         this.credentials_validator = null;
-        this._session_data_credentials_validation_result = false;
-        this.room_types_data = [];
+        this.session_data_credentials_validation_result = false;
+        this.room_types_data = {};
+        this.room_type_data_array = [];
+        this.mnfrwk_cookie = [];
         this.root_folder = root_folder;
         this.page_name = page_name;
         this.component_id = component_id;
         this.component_class_name = component_class_name;
         this.outer_container = outer_container;
-        this.setup_component_elements();
+        if (this.mnfrwk_cookie_is_set()) {
+            this.mnfrwk_cookie = this.get_mnfrwk_cookie(this.get_browser_cookies());
+            console.log(this.mnfrwk_cookie);
+            this._validate_active_session_data();
+        }
+        else {
+            this.setup_component_elements();
+        }
+        ;
+    }
+    mnfrwk_cookie_is_set() {
+        const current_browser_cookies_object = this.get_browser_cookies();
+        console.log(current_browser_cookies_object);
+        if (current_browser_cookies_object.hasOwnProperty("MNFRWK_USER_SESSION_TOKEN")) {
+            return true;
+        }
+        ;
+        return false;
+    }
+    get_browser_cookies() {
+        const current_browser_cookies = document.cookie;
+        const current_browser_cookies_array = current_browser_cookies.split(';');
+        const current_browser_cookies_object = {};
+        current_browser_cookies_array.forEach(cookie => {
+            const [name, value] = cookie.split('=');
+            current_browser_cookies_object[name.trim()] = value.trim();
+        });
+        return current_browser_cookies_object;
+    }
+    get_mnfrwk_cookie(cookies_object) {
+        const mnfrwk_cookie_value = cookies_object["MNFRWK_USER_SESSION_TOKEN"];
+        const mnfrwk_cookie = ["MNFRWK_USER_SESSION_TOKEN", mnfrwk_cookie_value];
+        return mnfrwk_cookie;
+    }
+    async _validate_active_session_data() {
+        const session_data = new session_resume_data(screen.availHeight.toString(), screen.availWidth.toString(), screen.colorDepth.toString(), screen.pixelDepth.toString(), navigator.language, this.mnfrwk_cookie[1], "manage_rooms_data");
+        const credentials_validator = new session_resume_credentials_validator(session_data);
+        await credentials_validator.fetch_api();
+        if (credentials_validator.response_json != "invalid_credentials"
+            &&
+                credentials_validator.response_json.ok === undefined) {
+            this.generate_room_management_dashboard();
+        }
+        ;
     }
     //////////////////////////////
     //////////////////////////////
@@ -66,8 +113,6 @@ export default class login_dashboard {
     //////////////////////////////
     //////////////////////////////
     configure_login_dashboard_container() {
-        // this.login_dashboard_container.id = this.component_id + "_" + this.component_class_name + "_" + "login_dashboard_container";
-        // this.login_dashboard_container.className = this.login_dashboard_container.className + "_" + "login_dashboard_container";
         this.login_dashboard_container.id = "login_dashboard_container";
         this.login_dashboard_container.className = "login_dashboard_container";
     }
@@ -94,6 +139,7 @@ export default class login_dashboard {
         this.username_input.id = this.login_dashboard_container.id + "_" + "username_input";
         this.username_input.className = this.login_dashboard_container.className + "_" + "username_input";
         this.username_input.type = "password";
+        this.username_input.focus();
         new constrain_input(this.username_input, 8);
     }
     configure_password_label_and_input_container() {
@@ -160,16 +206,18 @@ export default class login_dashboard {
     async submit_credentials() {
         this.generate_credentials_dataform();
         this.generate_session_data();
-        if (this._session_data !== null) {
-            this.credentials_validator = new session_start_credentials_validator(this._session_data);
+        if (this.session_data !== null) {
+            this.credentials_validator = new session_start_credentials_validator(this.session_data);
             await this.credentials_validator.fetch_api();
             if (this.credentials_validator.response_json.veredict === "valid") {
                 delete this.credentials_validator.response_json.veredict;
                 const loosened_json_object_for_conversion = Object.values(this.credentials_validator.response_json);
-                const loosened_json_object_as_room_type_array_interface = loosened_json_object_for_conversion;
-                this.room_types_data = loosened_json_object_as_room_type_array_interface.room_types_array;
-                console.log(loosened_json_object_for_conversion);
-                this.remove_current_component_elements();
+                if (this.room_types_data !== null) {
+                    this.room_types_data.room_types_data = loosened_json_object_for_conversion;
+                    this.room_type_data_array = this.room_types_data.room_types_data;
+                }
+                ;
+                console.log(this.room_type_data_array);
                 this.generate_room_management_dashboard();
             }
             else {
@@ -184,7 +232,7 @@ export default class login_dashboard {
         ;
     }
     generate_session_data() {
-        this._session_data = new session_start_data(this.username_input.value, this.password_input.value, screen.availHeight.toString(), screen.availWidth.toString(), screen.colorDepth.toString(), screen.pixelDepth.toString(), navigator.language);
+        this.session_data = new session_start_data(this.username_input.value, this.password_input.value, screen.availHeight.toString(), screen.availWidth.toString(), screen.colorDepth.toString(), screen.pixelDepth.toString(), navigator.language);
     }
     generate_credentials_dataform() {
         this.credentials_dataform = new FormData();
@@ -201,9 +249,12 @@ export default class login_dashboard {
     //////////////////////////////
     //////////////////////////////
     async generate_room_management_dashboard() {
-        console.log(this.room_types_data);
-        this.room_types_data?.forEach(item => {
-            new RoomType(item);
+        this.remove_current_component_elements();
+        this.room_type_data_array?.forEach(type_data_array => {
+            const room_type_object = type_data_array.type;
+            const room_type_units_object_array = type_data_array.units;
+            const room_type_units_file_names = type_data_array.units_file_names;
+            new RoomType(this.root_folder, this.page_name, this.component_id, this.component_class_name, this.outer_container, room_type_object, room_type_units_object_array, room_type_units_file_names);
         });
     }
     //////////////////////////////

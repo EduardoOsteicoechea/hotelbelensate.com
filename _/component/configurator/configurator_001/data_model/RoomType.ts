@@ -1,6 +1,5 @@
 import IRoomType from "./IRoomType.js"
-// import IRoomUnit from "./IRoomUnit.js";
-// import RoomUnit from "./RoomUnit.js";
+import IRoomUnit from "./IRoomUnit.js";
 
 export default class
 {
@@ -8,6 +7,16 @@ export default class
    _type_units_route: string = this._type_data_api_base_route + "_get_type_units.php";
    _type_data_update_route_validation: string = this._type_data_api_base_route + "_validation.php";
    _type_data_update_route: string = this._type_data_api_base_route + "_update_room_type.php";
+   
+   root_folder: string;
+   page_name: string;
+   component_id: string;
+   component_class_name: string;
+   outer_container: HTMLDivElement;
+   authentication_api_route: string = "../../_/api/authentication/_.php";
+   
+   room_type_units_object_array: IRoomUnit[];
+   room_type_units_file_names: string[];
 
    _room_name: string
    _type_id: string
@@ -32,18 +41,23 @@ export default class
 
    _room_name_input: HTMLInputElement = document.createElement("input")
    _type_id_input: HTMLInputElement = document.createElement("input")
-   _pax_amount_input: HTMLInputElement = document.createElement("input")
+   _is_enabled_input: HTMLInputElement = document.createElement("input")
+   
    _decrement_amount_input: HTMLInputElement = document.createElement("input")
    _increment_amount_input: HTMLInputElement = document.createElement("input")
    _gross_price_input: HTMLInputElement = document.createElement("input")
    _net_price_input: HTMLInputElement = document.createElement("input")
+
    _capacity_input: HTMLInputElement = document.createElement("input")
    _capacity_with_pax_input: HTMLInputElement = document.createElement("input")
    _children_capacity_input: HTMLInputElement = document.createElement("input")
+
+   _admits_pax_input: HTMLInputElement = document.createElement("input")
+   _pax_amount_input: HTMLInputElement = document.createElement("input")
+
    _room_thumbnail_image_input: HTMLInputElement = document.createElement("input")
    _room_capacity_images_input: HTMLInputElement = document.createElement("input")
-   _is_enabled_input: HTMLInputElement = document.createElement("input")
-   _admits_pax_input: HTMLInputElement = document.createElement("input")
+
    _room_numbers_in_administration_input: HTMLTextAreaElement = document.createElement("textarea")
    _room_services_input: HTMLTextAreaElement = document.createElement("textarea")
    _room_images_input: HTMLTextAreaElement = document.createElement("textarea")
@@ -52,30 +66,44 @@ export default class
    _type_units_container: HTMLDivElement = document.createElement("div")
 
    constructor
-      (
-         data: IRoomType,
-      )
+   (
+      root_folder: string,
+      page_name: string,
+      component_id: string,
+      component_class_name: string,
+      outer_container: HTMLDivElement,
+      room_type_object: IRoomType,
+      room_type_units_object_array: IRoomUnit[],
+      room_type_units_file_names: string[]
+   )
    {
-      console.log("thanks Lord");
-      this._room_name = data.room_name
-      this._type_id = data.type_id
-      this._room_numbers_in_administration = data.room_numbers_in_administration
-      this._is_enabled = data.is_enabled
-      this._admits_pax = data.admits_pax
-      this._pax_amount = data.pax_amount
-      this._decrement_amount = data.decrement_amount
-      this._increment_amount = data.increment_amount
-      this._gross_price = data.gross_price
-      this._net_price = data.net_price
-      this._capacity = data.capacity
-      this._capacity_with_pax = data.capacity_with_pax
-      this._children_capacity = data.children_capacity
-      this._room_services = data.room_services
-      this._room_images = data.room_images
-      this._room_thumbnail_image = data.room_thumbnail_image
-      this._room_capacity_images = data.room_capacity_images
-      this._room_icons = data.room_icons
+      this._room_name = room_type_object.room_name;
+      this._type_id = room_type_object.type_id;
+      this._room_numbers_in_administration = room_type_object.room_numbers_in_administration;
+      this._is_enabled = room_type_object.is_enabled;
+      this._admits_pax = room_type_object.admits_pax;
+      this._pax_amount = room_type_object.pax_amount;
+      this._decrement_amount = room_type_object.decrement_amount;
+      this._increment_amount = room_type_object.increment_amount;
+      this._gross_price = room_type_object.gross_price;
+      this._net_price = room_type_object.net_price;
+      this._capacity = room_type_object.capacity;
+      this._capacity_with_pax = room_type_object.capacity_with_pax;
+      this._children_capacity = room_type_object.children_capacity;
+      this._room_services = room_type_object.room_services;
+      this._room_images = room_type_object.room_images;
+      this._room_thumbnail_image = room_type_object.room_thumbnail_image;
+      this._room_capacity_images = room_type_object.room_capacity_images;
+      this._room_icons = room_type_object.room_icons;
+      
+      this.root_folder = root_folder;
+      this.page_name = page_name;
+      this.component_id = component_id;
+      this.component_class_name = component_class_name;
+      this.outer_container = outer_container;
 
+      this.room_type_units_object_array = room_type_units_object_array;
+      this.room_type_units_file_names = room_type_units_file_names;
    }
 
    /////////////////////////////////

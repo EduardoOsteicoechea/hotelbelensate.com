@@ -1,4 +1,3 @@
-import IRoom_types_data from "../data_model/IRoom_types_data.js";
 import session_start_data from "./session_start_data.js";
 
 export default class session_start_credentials_validator
