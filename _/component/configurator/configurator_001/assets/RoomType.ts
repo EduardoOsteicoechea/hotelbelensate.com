@@ -49,14 +49,11 @@ export default class
    _room_images_input: HTMLTextAreaElement = document.createElement("textarea")
    _room_icons_input: HTMLTextAreaElement = document.createElement("textarea")
 
-   _secret: string = ""
-
    _type_units_container: HTMLDivElement = document.createElement("div")
 
    constructor
       (
          data: IRoomType,
-         secret: string
       )
    {
       this._room_name = data.room_name
@@ -77,7 +74,6 @@ export default class
       this._room_thumbnail_image = data.room_thumbnail_image
       this._room_capacity_images = data.room_capacity_images
       this._room_icons = data.room_icons
-      this._secret = secret
    }
 
    /////////////////////////////////
@@ -156,81 +152,6 @@ export default class
       this._type_properties_manager_container.appendChild(this._generate_type_units_container());
 
       return this._type_properties_manager_container;
-   }
-
-   /////////////////////////////////
-   /////////////////////////////////
-   /////////////////////////////////
-   /////////////////////////////////
-   // Methods for type data response transformation
-   /////////////////////////////////
-   /////////////////////////////////
-   /////////////////////////////////
-   /////////////////////////////////
-
-   private _extract_secret_from_raw_data_object(data: object): string
-   {
-      const raw_options_array_without_keys: any[] = this._extract_raw_options_array_without_keys(
-         data
-      )
-
-      const secret: string = raw_options_array_without_keys[0].secret
-
-      return secret
-   }
-
-   private _extract_room_type_array_from_raw_data_object(data: object): IRoomType[]
-   {
-      const raw_options_array_without_keys: any[] = this._extract_raw_options_array_without_keys(
-         data
-      )
-      const raw_options_array_without_subobjects_keys: any[] = this._extract_raw_options_types_raw_data_array(
-         raw_options_array_without_keys
-      )
-      const raw_options_types_raw_data_array: object[] = this._extract_raw_options_array_without_subobjects_keys(
-         raw_options_array_without_subobjects_keys
-      )
-      const raw_options_types_array_data_as_interfaces: IRoomType[] = this._extract_raw_options_types_array_data_as_interfaces(
-         raw_options_types_raw_data_array
-      )
-
-      return raw_options_types_array_data_as_interfaces
-   }
-
-   private _extract_raw_options_array_without_keys(data: object): any[]
-   {
-      const raw_options_array_without_keys: any[] = Object.values(data)
-      return raw_options_array_without_keys
-   }
-
-   private _extract_raw_options_types_raw_data_array(data: any[]): any[]
-   {
-      const raw_options_array_without_subobjects_keys: any[] = []
-      data.forEach(raw_option_array_without_keys =>
-      {
-         raw_options_array_without_subobjects_keys.push(Object.values(raw_option_array_without_keys));
-      })
-      return raw_options_array_without_subobjects_keys
-   }
-
-   private _extract_raw_options_array_without_subobjects_keys(data: any[]): object[]
-   {
-      const raw_options_types_raw_data_array: object[] = []
-      data.forEach(raw_option_array_without_subobjects_keys =>
-      {
-         raw_options_types_raw_data_array.push(raw_option_array_without_subobjects_keys[0])
-      })
-      return raw_options_types_raw_data_array
-   }
-
-   private _extract_raw_options_types_array_data_as_interfaces(data: object[]): IRoomType[]
-   {
-      const raw_options_types_array_data_as_interfaces: IRoomType[] = []
-      data.forEach(raw_option_type_raw_data_array =>
-      {
-         raw_options_types_array_data_as_interfaces.push(raw_option_type_raw_data_array as IRoomType);
-      })
-      return raw_options_types_array_data_as_interfaces
    }
 
    /////////////////////////////////
@@ -559,13 +480,13 @@ export default class
    {
       const new_data = this._generate_new_data_object_for_json_file()
       await this._update_json_file_content(new_data)
-      this._clearInputsValues()
-      await this.generate_type_management_dashboard_reloading_data()
+      window.location.reload();
    }
 
    private _generate_new_data_object_for_json_file()
    {
-      const new_data = {
+      const new_data = 
+      {
          "room_name": this._room_name_input.value,
          "type_id": this._type_id_input.value,
          "pax_amount": this._pax_amount_input.value,
@@ -591,32 +512,6 @@ export default class
       return new_data
    }
 
-   public async generate_type_management_dashboard_reloading_data(): Promise<void>
-   {
-      const form_data: FormData = this._generate_formdata_secret_request(this._secret);
-      const response: Response = await this._fetch_api_request(this._type_data_update_route_validation, form_data);
-
-      if (this._response_is_ok(response) == false)
-      {
-         throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      else
-      {
-         const raw_data = await this._get_response_json_data(response);
-         const data_array: IRoomType[] = this._extract_room_type_array_from_raw_data_object(raw_data);
-         const data: IRoomType = this._get_update_request_type_object(data_array);
-         this._update_type_properties_data(data);
-         this.generate_type_management_dashboard();
-      };
-   }
-
-   private _generate_formdata_secret_request(secret: string): FormData
-   {
-      const form_data = new FormData();
-      form_data.append('secret', secret);
-      return form_data;
-   }
-
    private _fetch_api_request(route: string, form_data: FormData): Promise<Response>
    {
       return fetch(route, { method: 'POST', body: form_data });
@@ -630,56 +525,6 @@ export default class
    private _get_response_json_data(response: Response): any
    {
       return response.json();
-   }
-
-   private _get_update_request_type_object(data_array: IRoomType[]): IRoomType
-   {
-      const request_type_object = data_array[parseInt(this._type_id) - 1];
-      return request_type_object;
-   }
-
-   private _update_type_properties_data(data: IRoomType): void
-   {
-      this._room_name = data.room_name;
-      this._type_id = data.type_id;
-      this._room_numbers_in_administration = data.room_numbers_in_administration;
-      this._is_enabled = data.is_enabled;
-      this._admits_pax = data.admits_pax;
-      this._pax_amount = data.pax_amount;
-      this._decrement_amount = data.decrement_amount;
-      this._increment_amount = data.increment_amount;
-      this._gross_price = data.gross_price;
-      this._net_price = data.net_price;
-      this._capacity = data.capacity;
-      this._capacity_with_pax = data.capacity_with_pax;
-      this._children_capacity = data.children_capacity;
-      this._room_services = data.room_services;
-      this._room_images = data.room_images;
-      this._room_thumbnail_image = data.room_thumbnail_image;
-      this._room_capacity_images = data.room_capacity_images;
-      this._room_icons = data.room_icons;
-   }
-
-   public _clearInputsValues()
-   {
-      this._room_name_input.value = ""
-      this._type_id_input.value = ""
-      this._room_numbers_in_administration_input.innerHTML = ""
-      this._is_enabled_input.checked = false
-      this._admits_pax_input.checked = false
-      this._pax_amount_input.value = ""
-      this._decrement_amount_input.value = ""
-      this._increment_amount_input.value = ""
-      this._gross_price_input.value = ""
-      this._net_price_input.value = ""
-      this._capacity_input.value = ""
-      this._capacity_with_pax_input.value = ""
-      this._children_capacity_input.value = ""
-      this._room_services_input.innerHTML = ""
-      this._room_images_input.innerHTML = ""
-      this._room_thumbnail_image_input.value = ""
-      this._room_capacity_images_input.value = ""
-      this._room_icons_input.innerHTML = ""
    }
 
    private async _update_json_file_content(data: object)

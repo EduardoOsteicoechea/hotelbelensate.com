@@ -377,8 +377,9 @@ export default class {
     async update_type_registry() {
         const new_data = this._generate_new_data_object_for_json_file();
         await this._update_json_file_content(new_data);
-        this._clearInputsValues();
-        await this.generate_type_management_dashboard_reloading_data();
+        window.location.reload();
+        // this._clearInputsValues()
+        // await this.generate_type_management_dashboard_reloading_data()
     }
     _generate_new_data_object_for_json_file() {
         const new_data = {

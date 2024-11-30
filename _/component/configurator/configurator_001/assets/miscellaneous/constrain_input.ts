@@ -13,8 +13,10 @@ export default class constrain_input
       this.input = input;
       this.input_max_length = input_max_length;
 
-      this.inforce_input_limit();
-      this.validate_input_characters();
+      this.input.oninput = ()=>{
+         this.inforce_input_limit();
+         this.validate_input_characters();
+      };
    }
 
    private inforce_input_limit(): void

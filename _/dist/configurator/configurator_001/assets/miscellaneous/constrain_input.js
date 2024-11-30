@@ -3,8 +3,10 @@ export default class constrain_input {
         this.forbidden_characters = ["<", ">", ",", "/", "\\", "$", "%", "&", "(", ")", "{", "}", "[", "]", "?", "¿"];
         this.input = input;
         this.input_max_length = input_max_length;
-        this.inforce_input_limit();
-        this.validate_input_characters();
+        this.input.oninput = () => {
+            this.inforce_input_limit();
+            this.validate_input_characters();
+        };
     }
     inforce_input_limit() {
         if (this.input_is_not_empty_string()

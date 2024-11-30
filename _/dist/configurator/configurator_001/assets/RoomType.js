@@ -1,6 +1,6 @@
 import RoomUnit from "./RoomUnit.js";
 export default class {
-    constructor(data, secret) {
+    constructor(data) {
         this._type_data_api_base_route = "../../_/api/room_data/";
         this._type_units_route = this._type_data_api_base_route + "_get_type_units.php";
         this._type_data_update_route_validation = this._type_data_api_base_route + "_validation.php";
@@ -24,7 +24,6 @@ export default class {
         this._room_services_input = document.createElement("textarea");
         this._room_images_input = document.createElement("textarea");
         this._room_icons_input = document.createElement("textarea");
-        this._secret = "";
         this._type_units_container = document.createElement("div");
         this._room_name = data.room_name;
         this._type_id = data.type_id;
@@ -44,7 +43,6 @@ export default class {
         this._room_thumbnail_image = data.room_thumbnail_image;
         this._room_capacity_images = data.room_capacity_images;
         this._room_icons = data.room_icons;
-        this._secret = secret;
     }
     /////////////////////////////////
     /////////////////////////////////
@@ -107,52 +105,6 @@ export default class {
         this._type_properties_manager_container.appendChild(textareas_container);
         this._type_properties_manager_container.appendChild(this._generate_type_units_container());
         return this._type_properties_manager_container;
-    }
-    /////////////////////////////////
-    /////////////////////////////////
-    /////////////////////////////////
-    /////////////////////////////////
-    // Methods for type data response transformation
-    /////////////////////////////////
-    /////////////////////////////////
-    /////////////////////////////////
-    /////////////////////////////////
-    _extract_secret_from_raw_data_object(data) {
-        const raw_options_array_without_keys = this._extract_raw_options_array_without_keys(data);
-        const secret = raw_options_array_without_keys[0].secret;
-        return secret;
-    }
-    _extract_room_type_array_from_raw_data_object(data) {
-        const raw_options_array_without_keys = this._extract_raw_options_array_without_keys(data);
-        const raw_options_array_without_subobjects_keys = this._extract_raw_options_types_raw_data_array(raw_options_array_without_keys);
-        const raw_options_types_raw_data_array = this._extract_raw_options_array_without_subobjects_keys(raw_options_array_without_subobjects_keys);
-        const raw_options_types_array_data_as_interfaces = this._extract_raw_options_types_array_data_as_interfaces(raw_options_types_raw_data_array);
-        return raw_options_types_array_data_as_interfaces;
-    }
-    _extract_raw_options_array_without_keys(data) {
-        const raw_options_array_without_keys = Object.values(data);
-        return raw_options_array_without_keys;
-    }
-    _extract_raw_options_types_raw_data_array(data) {
-        const raw_options_array_without_subobjects_keys = [];
-        data.forEach(raw_option_array_without_keys => {
-            raw_options_array_without_subobjects_keys.push(Object.values(raw_option_array_without_keys));
-        });
-        return raw_options_array_without_subobjects_keys;
-    }
-    _extract_raw_options_array_without_subobjects_keys(data) {
-        const raw_options_types_raw_data_array = [];
-        data.forEach(raw_option_array_without_subobjects_keys => {
-            raw_options_types_raw_data_array.push(raw_option_array_without_subobjects_keys[0]);
-        });
-        return raw_options_types_raw_data_array;
-    }
-    _extract_raw_options_types_array_data_as_interfaces(data) {
-        const raw_options_types_array_data_as_interfaces = [];
-        data.forEach(raw_option_type_raw_data_array => {
-            raw_options_types_array_data_as_interfaces.push(raw_option_type_raw_data_array);
-        });
-        return raw_options_types_array_data_as_interfaces;
     }
     /////////////////////////////////
     /////////////////////////////////
@@ -377,8 +329,7 @@ export default class {
     async update_type_registry() {
         const new_data = this._generate_new_data_object_for_json_file();
         await this._update_json_file_content(new_data);
-        this._clearInputsValues();
-        await this.generate_type_management_dashboard_reloading_data();
+        window.location.reload();
     }
     _generate_new_data_object_for_json_file() {
         const new_data = {
@@ -403,26 +354,6 @@ export default class {
         };
         return new_data;
     }
-    async generate_type_management_dashboard_reloading_data() {
-        const form_data = this._generate_formdata_secret_request(this._secret);
-        const response = await this._fetch_api_request(this._type_data_update_route_validation, form_data);
-        if (this._response_is_ok(response) == false) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        else {
-            const raw_data = await this._get_response_json_data(response);
-            const data_array = this._extract_room_type_array_from_raw_data_object(raw_data);
-            const data = this._get_update_request_type_object(data_array);
-            this._update_type_properties_data(data);
-            this.generate_type_management_dashboard();
-        }
-        ;
-    }
-    _generate_formdata_secret_request(secret) {
-        const form_data = new FormData();
-        form_data.append('secret', secret);
-        return form_data;
-    }
     _fetch_api_request(route, form_data) {
         return fetch(route, { method: 'POST', body: form_data });
     }
@@ -431,50 +362,6 @@ export default class {
     }
     _get_response_json_data(response) {
         return response.json();
-    }
-    _get_update_request_type_object(data_array) {
-        const request_type_object = data_array[parseInt(this._type_id) - 1];
-        return request_type_object;
-    }
-    _update_type_properties_data(data) {
-        this._room_name = data.room_name;
-        this._type_id = data.type_id;
-        this._room_numbers_in_administration = data.room_numbers_in_administration;
-        this._is_enabled = data.is_enabled;
-        this._admits_pax = data.admits_pax;
-        this._pax_amount = data.pax_amount;
-        this._decrement_amount = data.decrement_amount;
-        this._increment_amount = data.increment_amount;
-        this._gross_price = data.gross_price;
-        this._net_price = data.net_price;
-        this._capacity = data.capacity;
-        this._capacity_with_pax = data.capacity_with_pax;
-        this._children_capacity = data.children_capacity;
-        this._room_services = data.room_services;
-        this._room_images = data.room_images;
-        this._room_thumbnail_image = data.room_thumbnail_image;
-        this._room_capacity_images = data.room_capacity_images;
-        this._room_icons = data.room_icons;
-    }
-    _clearInputsValues() {
-        this._room_name_input.value = "";
-        this._type_id_input.value = "";
-        this._room_numbers_in_administration_input.innerHTML = "";
-        this._is_enabled_input.checked = false;
-        this._admits_pax_input.checked = false;
-        this._pax_amount_input.value = "";
-        this._decrement_amount_input.value = "";
-        this._increment_amount_input.value = "";
-        this._gross_price_input.value = "";
-        this._net_price_input.value = "";
-        this._capacity_input.value = "";
-        this._capacity_with_pax_input.value = "";
-        this._children_capacity_input.value = "";
-        this._room_services_input.innerHTML = "";
-        this._room_images_input.innerHTML = "";
-        this._room_thumbnail_image_input.value = "";
-        this._room_capacity_images_input.value = "";
-        this._room_icons_input.innerHTML = "";
     }
     async _update_json_file_content(data) {
         const formData = new FormData();

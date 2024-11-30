@@ -8,6 +8,10 @@ function authenticate_session(
    string $navigator_language
 ): bool
 {
+   include "error_message.php";
+   include "_encrypt.php";
+   include "store_user_session_server_data.php";
+
    $file_path = "active_sessions/".$cookie_data.".json";
    $json_data = file_get_contents($file_path);
    $decoded_json_data = json_decode($json_data, true);
@@ -20,15 +24,18 @@ function authenticate_session(
    // $stored_navigator_language =  "45"; // For error message test
    $stored_server_remote_address =  $decoded_json_data["server_remote_address"];
    $stored_server_http_user_agent =  $decoded_json_data["server_http_user_agent"];
+   $server_token_creation_time =  $decoded_json_data["server_token_creation_time"];
    $stored_server_token_expiration_time =  $decoded_json_data["server_token_expiration_time"];
+
+   $stored_cookie_data =  $decoded_json_data["cookie_data"];
+   
+
    
    if ($json_data === false)
    {
       error_message(401,"Error: we detected a different file_get_contents than the valid for your session token");
       return false;
    };
-
-   include "_encrypt.php";
 
    $encrypted_user_session_server_token = _encrypt($cookie_data);
 
@@ -92,17 +99,33 @@ function authenticate_session(
       return false;
    };
 
+   ///////////////////////////
+   ///////////////////////////
+   ///////////////////////////
+   ///////////////////////////
+   // Update user session expiration date
+   ///////////////////////////
+   ///////////////////////////
+   ///////////////////////////
+   ///////////////////////////
+   
+   $new_server_token_expiration_time =  time() + 1800;
+
+   store_user_session_server_data(      
+      $cookie_data,
+      $user_session_server_token,
+      $screen_available_height,
+      $screen_available_width,
+      $screen_color_depth,
+      $screen_pixel_depth,
+      $navigator_language,
+      $stored_cookie_data,
+      // "MNFRWK_USER_SESSION_TOKEN=".$cookie_data,
+      $_SERVER['REMOTE_ADDR'],
+      $_SERVER['HTTP_USER_AGENT'],
+      $server_token_creation_time,
+      $new_server_token_expiration_time
+   );
+
    return true;
-}
-
-function error_message(int $response_code, string $error_message): void
-{
-   $error_message = 
-   [
-      "ok"=>false,
-      "response_code"=>$response_code,
-      "error_message"=>$error_message." Ingrese sus credenciales nuevamente."
-   ];
-
-   echo json_encode($error_message, JSON_PRETTY_PRINT);
 }

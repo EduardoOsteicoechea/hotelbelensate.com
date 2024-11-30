@@ -11,7 +11,7 @@
 
 	new header_003($root_folder,$_SESSION,"gestion","rooms_header",);
 
-   new configurator_001($root_folder,$_SESSION,"gestion","room_configurator");
+   new configurator_001($root_folder,"gestion","room_configurator");
 	
 	new heading_004($root_folder,$_SESSION,"gestion","heading_1",);
 

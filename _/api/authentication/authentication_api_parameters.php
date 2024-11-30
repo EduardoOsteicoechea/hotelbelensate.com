@@ -13,6 +13,7 @@ class authentication_api_parameters
 
    public bool $post_request_was_made = false;
    public bool $client_device_fingerprint_was_submitted = false;
+   public bool $client_device_session_start_fingerprint_was_submitted = false;
    public bool $authentication_data_was_provided = false;
    public bool $authenticated_workflow_data_was_provided = false;
 
@@ -35,9 +36,21 @@ class authentication_api_parameters
                && 
             isset($_POST[$this->cookie_data])
          ;
+
+         $this->client_device_session_start_fingerprint_was_submitted =
+            isset($_POST[$this->screen_available_height]) 
+               && 
+            isset($_POST[$this->screen_available_width])
+               && 
+            isset($_POST[$this->screen_color_depth])
+               && 
+            isset($_POST[$this->screen_pixel_depth])
+               && 
+            isset($_POST[$this->navigator_language])
+         ;
          
          $this->authentication_data_was_provided =
-            $this->client_device_fingerprint_was_submitted
+            $this->client_device_session_start_fingerprint_was_submitted
                &&
             isset($_POST[$this->username]) 
                && 

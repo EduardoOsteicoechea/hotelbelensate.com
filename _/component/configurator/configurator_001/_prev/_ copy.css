@@ -1,0 +1,232 @@
+/* access panel */
+/* access panel */
+/* access panel */
+/* access panel */
+/* access panel */
+/* access panel */
+/* access panel */
+/* access panel */
+/* access panel */
+/* access panel */
+
+.configurator_001_outer_container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100dvw;
+}
+.configurator_001_authenticator_container{
+   padding: 5dvw 0 0 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   width: 30dvw;
+   gap: 1dvw;
+   letter-spacing: .1dvw;
+   font-family: inherit;
+}
+.configurator_001_authenticator_container > h2{
+   font-size: 1.25dvw;
+   letter-spacing: .2dvw;
+}
+.configurator_001_username_input_container{
+   margin-top: 2dvw;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   width: 100%;
+   font-size: .85dvw;
+   gap: 1dvw;
+}
+.configurator_001_username_input_label{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 1.5dvw;
+   font-family: f1b;
+}
+.configurator_001_username_input{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: inherit;
+   width: 80%;
+   height: 2.75dvw;
+   padding: .5dvw 1dvw;
+   border: none;
+   background: var(--c3);
+}
+.configurator_001_password_input_container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   font-size: .85dvw;
+   width: 100%;
+   gap: 1dvw;
+   margin-top: .5dvw;
+}
+.configurator_001_password_input_label{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 2dvw;
+   font-family: f1b;
+}
+.configurator_001_password_input_input{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 80%;
+   height: 2.75dvw;
+   padding: .5dvw 1dvw;
+   border: none;
+   background: var(--c3);
+}
+.configurator_001_access_button{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: inherit;
+   height: 2dvw;
+   margin-top: 2dvw;
+   padding: .5dvw 2dvw;
+   border: none;
+   background: var(--c2);
+   color: var(--c1);
+   height: 2.75dvw;
+   font-size: .85dvw;
+   letter-spacing: .15dvw;
+}
+
+/* room_management_dashboard */
+/* room_management_dashboard */
+/* room_management_dashboard */
+/* room_management_dashboard */
+/* room_management_dashboard */
+/* room_management_dashboard */
+/* room_management_dashboard */
+/* room_management_dashboard */
+/* room_management_dashboard */
+/* room_management_dashboard */
+/* room_management_dashboard */
+
+.room_management_dashboard{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   column-gap: 2dvw;
+   row-gap: 2dvw;
+   flex-wrap: wrap;
+   padding: 0dvw 6dvw 0 5dvw;
+   width: 100dvw;
+}
+
+.room_type_properties_container{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: start;
+   width: 100%;
+   column-gap: 1.5dvw;
+   row-gap: 1dvw;
+   background: var(--c3);
+   padding: 1.5dvw;
+}
+
+
+.unit_dashboard_header_container{   
+   display: flex;
+   width: 100%;
+   /* border: var(--b1);    */
+}
+.room_type_properties_container_title{
+   display: inline-block;
+   width: 65%;
+}
+.update_button_container {
+   height: fit-content;
+   width: fit-content;
+   display: flex;
+   justify-content: flex-end;
+   margin-left: auto;
+   /* border: var(--b1); */
+}
+.update_button_container > button {
+   border: none;
+   background: var(--c2);
+   color: var(--c1);
+   height: 2.75dvw;
+   padding: .5dvw 1dvw;
+   cursor: pointer;
+   letter-spacing: .1dvw;
+   font-size: .65dvw;
+}
+.update_register_button_container{
+   margin-left: 1dvw;
+}
+
+
+
+
+
+.room_type_label_and_input_container {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;  
+   row-gap: 0dvw;
+   align-items: start;
+   width: fit-content;
+}
+
+.room_type_label_and_input_container > * {   
+   font-family: inherit;
+   border: none;
+   letter-spacing: .1dvw;
+   width: 11dvw;
+}
+
+.room_type_label_and_input_container > label {   
+   height: 1.5dvw;
+   font-size: .65dvw;
+}
+
+.room_type_label_and_input_container > input {   
+   height: 2dvw;
+   padding: .25dvw .5dvw;
+   background: var(--c1);
+   font-size: .85dvw;
+}
+
+.room_type_label_and_input_container > input[type="checkbox"] {
+   height: 1dvw;
+   padding: .5dvw;
+   background: var(--c1);
+   font-size: 1dvw;
+   align-self: flex-start;
+   justify-self: flex-start;
+   width: min-content;
+ }
+
+.textareas_container{
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   gap: 2dvw;
+   width: 100%;
+}
+
+.room_type_label_and_input_container > textarea {   
+   height: 12dvw;
+   padding: .5dvw;
+   resize: none;
+   background: var(--c1);
+   font-size: .85dvw;
+   flex-grow: 1;
+   width: 20dvw;
+}
+
